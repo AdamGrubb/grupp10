@@ -1,5 +1,5 @@
-import Search from "./search";
-import RecipeSuggestions from "./recipeSuggestion";
+import Search from "../search/Search";
+import RecipeSuggestions from "../recipeSuggestions/RecipeSuggestion";
 
 export default function SiteContent() {
   return (

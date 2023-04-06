@@ -1,4 +1,4 @@
-import RecipeCard from "./recipeCard";
+import RecipeCard from "../recipeCard/RecipeCard";
 
 export default function RecipeSuggestions() {
   return (
