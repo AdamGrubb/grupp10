@@ -13,7 +13,7 @@ export default function RecipePage() {
         <h2 id="dishName">Name of the dish</h2>
 
         <section id="ServingsAndAllergens">
-          <h3>IMPORTERA Nutrition Facts</h3> {}
+          <h3>IMPORTERA Nutrition Facts</h3>
         </section>
 
         <section id="ingredients">
@@ -26,8 +26,8 @@ export default function RecipePage() {
 
       </article>
 
-      {/*Vi har ju redan gjort en tidigare hämtning när man sökte receptet, kan ju skapa en suggestion-här då.*/}
-      <RecipeSuggestions/>
+      {/* Vi har ju redan gjort en tidigare hämtning när man sökte receptet, kan ju skapa en suggestion-här då.
+      <RecipeSuggestions/> */}
     </>
   );
 }
