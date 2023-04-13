@@ -2,7 +2,7 @@ import logo from "../../assets/logo1.png";
 import { Link } from "react-router-dom";
 import "../../index.css";
 
-export default function Header() {
+export function Header() {
   return (
     <header className="flex header justify-between items-center bg-headerColor">
       <Link to="/">
