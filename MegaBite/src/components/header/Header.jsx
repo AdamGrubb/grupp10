@@ -1,4 +1,5 @@
 import logo from "../../assets/logo1.png";
+import megabite_logo from "../../assets/megabite_logo_test_white.png";
 
 export default function Header() {
   return (
@@ -6,7 +7,8 @@ export default function Header() {
       <div>
         <img src={logo} alt="MegaBiteLogo" className="h-24" />
       </div>
-      <div>MegaBite</div>
+      <img src={megabite_logo} alt="MegaBite_Test_Logo" className="h-24" />
+      {/* <div>MegaBite</div> */}
       <div>Menu</div>
     </header>
   );
