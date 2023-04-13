@@ -29,14 +29,14 @@
   left: 0;
   right: 0;
 }
+.content {
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
 .footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-}
-.content {
-  left: 0;
-  right: 0;
-  overflow: auto;
 }

@@ -1,5 +1,4 @@
 import RecipeCard from "../recipeCard/RecipeCard";
-import { Link } from "react-router-dom";
 import "./RecipeSuggestion.css";
 
 export default function RecipeSuggestions() {

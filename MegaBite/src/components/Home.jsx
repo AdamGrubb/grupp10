@@ -1,7 +1,7 @@
 import { Header } from "./header/Header";
 import { Footer } from "./footer/Footer";
 
-export function Home() {
+export default function Home() {
   return (
     <>
       <Header />
