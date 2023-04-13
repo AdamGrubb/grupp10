@@ -1,5 +1,4 @@
-import App from "../../App";
-import "../../App.css";
+import "../../index.css";
 
 export function Footer() {
   return (

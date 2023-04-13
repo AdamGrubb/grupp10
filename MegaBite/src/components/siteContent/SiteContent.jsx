@@ -1,6 +1,6 @@
 import Search from "../search/Search";
 import RecipeSuggestions from "../recipeSuggestions/RecipeSuggestion";
-import "../../App.css";
+import "../../index.css";
 
 export default function SiteContent() {
   return (
