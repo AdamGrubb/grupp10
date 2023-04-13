@@ -1,5 +1,5 @@
 import logo from "../../assets/logo1.png";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../index.css";
 
 export function Header() {
@@ -17,7 +17,6 @@ export function Header() {
 
         <div>Menu</div>
       </header>
-      <Outlet />
     </>
   );
 }
