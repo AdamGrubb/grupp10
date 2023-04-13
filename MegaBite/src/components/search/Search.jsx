@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Search() {
   return (
-    <section className="flex justify-center h-24 m-1 bg-searchAreaColor">
+    <section className="flex justify-center h-24 m-1 bg-searchBarColor">
       <div className="flex flex-col items-center">
         <h4 className="align-text-center">Welcome to MegaBite!</h4>
         <div className="">
