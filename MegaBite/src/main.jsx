@@ -6,9 +6,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // pages
 import Home from "./components/Home";
 import { NotFound } from "./components/notfound/NotFound";
-import RecipePage from "./components/recipePage/RecipePage";
+// import RecipePage from "./components/recipePage/RecipePage";    //Uncomment this when the page is added
 import SiteContent from "./components/siteContent/SiteContent";
-import SearchResults from "./components/searchResults/SearchResults";
+// import SearchResults from "./components/searchResults/SearchResults"; //Uncomment this when the page is added
 
 // css
 import "./index.css";
@@ -25,11 +25,11 @@ const router = createBrowserRouter([
       },
       {
         path: "searchresults",
-        element: <SearchResults />,
+        // element: <SearchResults />, //Uncomment this when the page is added
       },
       {
         path: "searchresults/recipePage/:recipeId",
-        element: <RecipePage />,
+        // element: <RecipePage />, //Uncomment this when the page is added
       },
     ],
   },
