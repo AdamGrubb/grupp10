@@ -1,0 +1,45 @@
+.searchBoxWrapperDiv {
+  border-width: 2px;
+  border-color: black;
+  border-radius: 40px;
+  height: 50px;
+  width: 240px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#searchBox {
+  color: black;
+  height: 36px;
+  position: relative;
+  background-color: rgba(255, 0, 0, 0);
+  outline: none;
+}
+
+#searchBox::placeholder {
+  color: black;
+}
+
+#btnSearch {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 187px;
+  width: 40px;
+  height: 40px;
+  color: black;
+  border-radius: 20px;
+  border-color: black;
+  border-width: 2px;
+}
+
+#btnSearch:focus {
+  width: 100px;
+}
+
+#magnGlass {
+  max-width: 20px;
+}
