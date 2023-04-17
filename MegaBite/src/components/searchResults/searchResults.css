@@ -1,0 +1,10 @@
+.search-results {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .arrow-img{
+    width: 1rem;
+    height: 1rem;
+    position: relative;
+}
