@@ -6,21 +6,21 @@ export default function SearchResults() {
   return (
     <section className="">
       <nav className="search-results">
-      <img className="arrow-img" src={arrow} alt="Previous" />
+        <img className="arrow-img" src={arrow} alt="Previous" />
         <RecipeCard />
         <RecipeCard />
         <RecipeCard />
         <img className="arrow-img" src={arrow} alt="Next" />
       </nav>
       <nav className="search-results">
-      <img className="arrow-img" src={arrow} alt="Previous" />
+        <img className="arrow-img" src={arrow} alt="Previous" />
         <RecipeCard />
         <RecipeCard />
         <RecipeCard />
         <img className="arrow-img" src={arrow} alt="Next" />
       </nav>
       <nav className="search-results">
-      <img className="arrow-img" src={arrow} alt="Previous" />
+        <img className="arrow-img" src={arrow} alt="Previous" />
         <RecipeCard />
         <RecipeCard />
         <RecipeCard />

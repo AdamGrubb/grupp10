@@ -33,9 +33,15 @@ const router = createBrowserRouter([
       {
         path: "searchresults",
         element: <SearchResults />,
+        children: [
+          {
+            path: "searchresults/recipePage", ///:recipeId
+            element: <RecipePage />,
+          },
+        ],
       },
       {
-        path: "searchresults/recipePage/:recipeId",
+        path: "/recipePage", ///:recipeId
         element: <RecipePage />,
       },
     ],

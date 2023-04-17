@@ -36,6 +36,12 @@
   border-width: 2px;
 }
 
+.btnSearch {
+  border-radius: 2px;
+  border-color: black;
+  color: black;
+}
+
 #btnSearch:focus {
   width: 100px;
 }

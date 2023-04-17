@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Search.css";
 import magnGlass from "../../assets/magnGlass.png";
 
@@ -9,6 +9,7 @@ export default function Search() {
   const [glutenFree, setGlutenFree] = useState(false);
   const [dairyFree, setDairyFree] = useState(false);
   const [vegan, setVegan] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <section className="flex justify-center h-24 mb-2 bg-searchAreaColor">
@@ -21,6 +22,15 @@ export default function Search() {
             onClick={() => setShowFilters(!showFilters)}
           >
             Filters
+          </button>
+          <button
+            type="submit"
+            onClick={() => {
+              navigate("/searchresults");
+            }}
+            className="absolute btnSearch mt-7 top-0 right-0 h-full px-4 text-sm border-2 border-solid"
+          >
+            Search
           </button>
           {showFilters && (
             <div
