@@ -1,10 +1,11 @@
 // react
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 // pages
-import Home from "./components/Home";
+import { Header } from "./components/header/Header";
+import { Footer } from "./components/footer/Footer";
 import { NotFound } from "./components/notfound/NotFound";
 // import RecipePage from "./components/recipePage/RecipePage";    //Uncomment this when the page is added
 import SiteContent from "./components/siteContent/SiteContent";
@@ -16,7 +17,13 @@ import "./index.css";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: (
+      <>
+        <Header />
+        <Outlet />
+        <Footer />
+      </>
+    ),
     errorElement: <NotFound />,
     children: [
       {
