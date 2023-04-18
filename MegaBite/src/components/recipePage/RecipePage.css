@@ -7,3 +7,47 @@
   font-size: 16px;
   width: auto;
 }
+.img {
+    max-width: 750px;
+    max-height: 500px;
+    margin-top: 48px;
+    
+}
+
+.info {
+    width: 300px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.ingredients {
+    width: 300px;
+    max-height: fit-content;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.recipeTitle {
+    color: rgb(9, 8, 8);
+    font-size: 2em;
+    font-weight: 750;
+}
+
+.description {
+    width: 1123px;
+    min-height: 200px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+#big {
+    color:black;
+    font-size: 1em;
+    font-weight: 500;
+}
+
