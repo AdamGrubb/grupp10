@@ -7,10 +7,10 @@ export default function RecipeCard() {
     <div className="recipeCard">
       <Link to="/recipePage">
         <img src={porridge} alt="recipe thumbnail" className="recipeThumb" />
+        <div className="recipe-overlay">
+          <div className="recipe-label">Recipe Name</div>
+        </div>
       </Link>
-      <div className="recipe-overlay">
-        <div className="recipe-label">Recipe Name</div>
-      </div>
     </div>
   );
 }
