@@ -1,8 +1,9 @@
 import porridge from "../../assets/porridge.jpg";
 import RecipeSuggestions from "../recipeSuggestions/RecipeSuggestion";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./RecipePage.css";
 export default function RecipePage() {
+  const navigate = useNavigate();
   return (
     // Denna renderas mellan header & footer på huvusidan. Article kommer vara diven som skyfflar om sectionerna beroende på storlek på skärmen så de hamnar rätt.
     // Förslagsvis skulle denna kunna ta emot ett recept med all info som prop och sen fördela ut informationen på sektionerna.
@@ -10,9 +11,9 @@ export default function RecipePage() {
     //
     <>
       <article>
-        <Link id="btnGoBack" to="/">
-          Go back
-        </Link>
+        <button className="btnGoBack" onClick={() => navigate(-1)}>
+          Go Back
+        </button>
         <img id="pictureOfDish" src={porridge} alt="Picture of dish" />
 
         <h2 id="dishName">Name of the dish</h2>

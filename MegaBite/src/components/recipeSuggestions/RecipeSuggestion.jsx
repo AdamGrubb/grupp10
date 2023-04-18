@@ -1,5 +1,6 @@
 import RecipeCard from "../recipeCard/RecipeCard";
 import "./RecipeSuggestion.css";
+import { Link } from "react-router-dom";
 
 export default function RecipeSuggestions() {
   const mockData = [<RecipeCard />, <RecipeCard />, <RecipeCard />];
@@ -9,7 +10,9 @@ export default function RecipeSuggestions() {
       <div className="flex justify-center suggestionWrapper">
         <ul className="flex justify-between suggUL">
           {mockData.map((card) => (
-            <li>{card}</li>
+            <li>
+              <Link to="/recipepage">{card}</Link>
+            </li>
           ))}
         </ul>
       </div>
