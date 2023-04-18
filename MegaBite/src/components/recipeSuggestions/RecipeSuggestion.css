@@ -1,8 +1,5 @@
-.suggUL {
-  width: 360px;
-}
-
-.suggestionWrapper {
-  height: 100px;
-  width: 360px;
+.recipeSuggestions {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
