@@ -1,0 +1,11 @@
+.Error {
+  margin-top: 250px;
+  color: black;
+}
+
+.btnError {
+  background-color: black;
+  color: white;
+  width: 150px;
+  height: 40px;
+}

@@ -1,10 +1,53 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+// react
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+// pages
+import { Header } from "./components/header/Header";
+import { Footer } from "./components/footer/Footer";
+import { NotFound } from "./components/notfound/NotFound";
+import RecipePage from "./components/recipePage/RecipePage";
+import SiteContent from "./components/siteContent/SiteContent";
+import SearchResults from "./components/searchResults/SearchResults";
+
+// css
+import "./index.css";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <>
+        <Header />
+        <Outlet />
+        <Footer />
+      </>
+    ),
+    errorElement: <NotFound />,
+    children: [
+      {
+        path: "/",
+        element: <SiteContent />,
+      },
+      {
+        path: "searchresults",
+        element: <SearchResults />,
+      },
+      {
+        path: "/searchresults/recipepage",
+        element: <RecipePage />,
+      },
+      {
+        path: "/recipepage", ///:recipeId
+        element: <RecipePage />,
+      },
+    ],
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);

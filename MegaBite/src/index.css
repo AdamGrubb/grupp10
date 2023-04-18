@@ -17,3 +17,30 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+#root {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgb(220, 237, 193);
+}
+
+.header {
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.content {
+  flex-grow: 1;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+.footer {
+  position: fixed;
+  height: 96px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

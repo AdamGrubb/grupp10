@@ -1,13 +1,22 @@
 import logo from "../../assets/logo1.png";
+import { Link } from "react-router-dom";
+import "../../index.css";
+import "./Header.css";
 
-export default function Header() {
+export function Header() {
   return (
-    <header className="flex justify-between items-center bg-headerColor">
-      <div>
-        <img src={logo} alt="MegaBiteLogo" className="h-24" />
-      </div>
-      <div>MegaBite</div>
-      <div>Menu</div>
-    </header>
+    <>
+      <header className="header h-24 bg-headerColor">
+        <Link to="/">
+          <img src={logo} className="header-logo" alt="MegaBite logo" />
+        </Link>
+        <Link className="header-title" to="/">
+          <div>
+            <h4 className="header-upper-font">MegaBite</h4>
+            <h4 className="header-lower-font">One bite at a time</h4>
+          </div>
+        </Link>
+      </header>
+    </>
   );
 }

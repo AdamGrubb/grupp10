@@ -1,3 +1,25 @@
-.megabite_logo{
-    max-width: 15rem;
+.header-logo {
+  max-width: 94px;
+  position: relative;
+}
+
+.header-title {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  margin-top: -80px;
+}
+
+.header-upper-font {
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+}
+
+.header-lower-font {
+  font-family: "Italiana", serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: -10px;
 }

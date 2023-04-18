@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+import "./Search.css";
+import magnGlass from "../../assets/magnGlass.png";
+
+import React, { useState } from "react";
 
 export default function Search() {
   const [showFilters, setShowFilters] = useState(false);
   const [glutenFree, setGlutenFree] = useState(false);
   const [dairyFree, setDairyFree] = useState(false);
   const [vegan, setVegan] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <section className="flex justify-center h-24 mb-2 bg-searchAreaColor">
@@ -18,8 +23,20 @@ export default function Search() {
           >
             Filters
           </button>
+          <button
+            type="submit"
+            onClick={() => {
+              navigate("/searchresults");
+            }}
+            className="absolute btnSearch mt-7 top-0 right-0 h-full px-4 text-sm border-2 border-solid"
+          >
+            Search
+          </button>
           {showFilters && (
-            <div className="absolute top-full left-0 right-0 px-4 py-2 border rounded shadow" style={{backgroundColor: "gray", zIndex: 1}}>
+            <div
+              className="absolute top-full left-0 right-0 px-4 py-2 border rounded shadow"
+              style={{ backgroundColor: "gray", zIndex: 1 }}
+            >
               <div className="flex items-center">
                 <input
                   type="checkbox"
