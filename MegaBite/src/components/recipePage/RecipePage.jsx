@@ -1,8 +1,10 @@
 import porridge from "../../assets/porridge.jpg";
 import RecipeSuggestions from "../recipeSuggestions/RecipeSuggestion";
+import { useNavigate } from "react-router-dom";
 import "./RecipePage.css";
 export default function RecipePage() {
   
+  const navigate = useNavigate();
   
   const recipe = {
   title: "Oatmeal porridge",
@@ -23,7 +25,10 @@ return (
   
   <>
       <article>
-      <div className="flex flex-col content-center" >
+      <button className="btnGoBack" onClick={() => navigate(-1)}>
+          Go Back
+      </button>
+      <div className="flex flex-col item-center" >
         <img className="img" id="pictureOfDish" src={porridge} alt="Picture of dish" />
         <h1 className="recipeTitle">{recipe.title}</h1>
         <section id="ServingsAndAllergens" className="">
@@ -40,8 +45,6 @@ return (
           {recipe.ingredients.map(item => ( <li key={item}>{item}</li> ))}
            </ul>
         </section>
-      
-
 
         <section className= "description bg-receptDescriptionColor">
           <h2 id="big">Description:</h2>
