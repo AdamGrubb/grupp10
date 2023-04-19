@@ -51,14 +51,15 @@ return (
             <li> {recipe.description}</li>
           </div>
         </section>
+
+        <section className="recipeSuggestion">
+          <h2 id="big">Suggestions</h2>
+          <div>{<RecipeSuggestions/>}</div>
+        </section>
+
         </div>
 
-      <section>
-      {<RecipeSuggestions/>}
-      </section>
-
       </article>
-
 
     </>
   );
