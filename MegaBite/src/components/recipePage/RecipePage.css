@@ -8,6 +8,15 @@
   width: auto;
 }
 
+.portions {
+    margin-left: 30px;
+    margin-bottom: 5px;
+}
+.clock {
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
 .box {
      
         display: flex;
@@ -58,3 +67,16 @@
     font-size: 1em;
     font-weight: 500;
 }
+
+.recipeSuggestion{
+
+    width: 300px;
+    
+    margin-bottom: 100px;
+    
+    padding-left: 10px;
+    
+    padding-top: 5px;
+    
+    padding-bottom: 10px; 
+    }
