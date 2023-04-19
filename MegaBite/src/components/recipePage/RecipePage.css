@@ -7,6 +7,7 @@
   font-size: 16px;
   width: auto;
 }
+
 .box {
      
         display: flex;
@@ -58,3 +59,7 @@
     font-weight: 500;
 }
 
+ul {
+     list-style-type: disc; 
+     margin-left: 10px;
+    }
