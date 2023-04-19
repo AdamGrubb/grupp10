@@ -67,12 +67,11 @@ return (
         <section className="recipeSuggestion">
           <h2 id="big">Suggestions</h2>
           <div>{<RecipeSuggestions/>}</div>
-            </section>
+        </section>
 
         </div>
 
       </article>
-
 
     </>
 );
