@@ -32,27 +32,26 @@ return (
         <img className="img" id="pictureOfDish" src={porridge} alt="Picture of dish" />
         <h1 className="recipeTitle">{recipe.title}</h1>
         <section id="ServingsAndAllergens" className="">
-          <ul style={{listStyle: 'disc'}} className="info bg-receptDescriptionColor">
+          <div className="info bg-receptDescriptionColor">
             <li>portions:{recipe.portions}portions:{recipe.portions}</li>
             <li>allergies: {recipe.allergies}</li>
             <li>time:{recipe.time}</li>
-            </ul>
+            </div>
         </section>
 
         <section className="ingredients bg-receptDescriptionColor">
           <h2 id="big">Ingredients:</h2>
-        <ul style={{listStyle: 'disc'}}> 
+          {/* <div style={{listStyle: 'disc'}}> */}-
+        <div> 
           {recipe.ingredients.map(item => ( <li key={item}>{item}</li> ))}
-           </ul>
+           </div>
         </section>
 
         <section className= "description bg-receptDescriptionColor">
           <h2 id="big">Description:</h2>
-          <ul>
-            <li>
-              <p>{recipe.description}</p>
-            </li>
-          </ul>
+          <div>
+            <li> {recipe.description}</li>
+          </div>
         </section>
         </div>
       </article>
