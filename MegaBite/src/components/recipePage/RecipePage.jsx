@@ -28,7 +28,7 @@ return (
       <button className="btnGoBack" onClick={() => navigate(-1)}>
           Go Back
       </button>
-      <div className="flex flex-col item-center" >
+      <div className="flex box flex-col" >
         <img className="img" id="pictureOfDish" src={porridge} alt="Picture of dish" />
         <h1 className="recipeTitle">{recipe.title}</h1>
         <section id="ServingsAndAllergens" className="">
