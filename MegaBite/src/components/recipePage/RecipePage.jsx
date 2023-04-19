@@ -15,8 +15,6 @@ export default function RecipePage() {
   allergies: ["egg", "vegan"]
 };
 
-
-
 return (
   // Denna renderas mellan header & footer på huvusidan. Article kommer vara diven som skyfflar om sectionerna beroende på storlek på skärmen så de hamnar rätt.
   // Förslagsvis skulle denna kunna ta emot ett recept med all info som prop och sen fördela ut informationen på sektionerna.
@@ -54,10 +52,14 @@ return (
           </div>
         </section>
         </div>
+
+      <section>
+      {<RecipeSuggestions/>}
+      </section>
+
       </article>
 
-      {/* Vi har ju redan gjort en tidigare hämtning när man sökte receptet, kan ju skapa en suggestion-här då.
-      <RecipeSuggestions/> */}
+
     </>
   );
 }
