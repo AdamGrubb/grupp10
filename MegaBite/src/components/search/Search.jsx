@@ -1,22 +1,35 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import "./Search.css";
 import magnGlass from "../../assets/magnGlass.png";
-
+import { SearchRecipes } from "../API/SearchRecipes";
 import React, { useState } from "react";
 
 export default function Search() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [showFilters, setShowFilters] = useState(false);
   const [glutenFree, setGlutenFree] = useState(false);
   const [dairyFree, setDairyFree] = useState(false);
   const [vegan, setVegan] = useState(false);
   const navigate = useNavigate();
+  const handleChange = (event) => {
+  setSearchParams(event.target.value.toLowerCase());    
+  };
 
+  const handleSubmit = (event) => {
+ 
+  event.preventDefault();
+  event.target.reset();
+  const recipeData = SearchRecipes(searchParams);
+    
+  };
   return (
     <section className="flex justify-center h-24 mb-2 bg-searchAreaColor">
       <div className="flex flex-col items-center">
         <h4 className="align-text-center">Welcome to MegaBite!</h4>
         <div className="relative">
-          <input type="text" name="" id="" placeholder="Search..." />
+          <form onSubmit={handleSubmit}>
+          
+          <input type="text" onChange={handleChange} placeholder="Search..." />
           <button
             className="absolute top-0 right-0 h-full px-4 text-sm text-gray-500"
             onClick={() => setShowFilters(!showFilters)}
@@ -32,6 +45,7 @@ export default function Search() {
           >
             Search
           </button>
+          </form>
           {showFilters && (
             <div
               className="absolute top-full left-0 right-0 px-4 py-2 border rounded shadow"
