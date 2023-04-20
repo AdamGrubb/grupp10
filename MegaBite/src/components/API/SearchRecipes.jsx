@@ -7,6 +7,8 @@ export async function SearchRecipes(queryParams) {
 
   searchParams.append("includeNutrition", "false");
   searchParams.append("apikey", apikey);
+  searchParams.append("query", query);
+ 
 
   const response = await fetch(`${baseUrl}?${searchParams}`);
   const results = await response.json();
