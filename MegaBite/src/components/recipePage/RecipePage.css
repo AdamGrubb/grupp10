@@ -27,7 +27,7 @@
 .img {
     max-width: 300px;
     max-height: 500px;
-    margin: 20px;
+    margin: 10px;
     
 }
 
@@ -37,6 +37,8 @@
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-top: 10px;
+    color: black;
 }
 
 .ingredients {
@@ -45,12 +47,12 @@
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
+    color: black;
 }
 
 .recipeTitle {
     color: rgb(9, 8, 8);
     font-size: 2em;
-    font-weight: 750;
 }
 
 .description {
@@ -60,11 +62,12 @@
     margin-bottom: 30px;
     padding-left: 10px;
     padding-top: 10px;
+    color: black;
 }
 
 #big {
     color:black;
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: 500;
 }
 
@@ -80,3 +83,12 @@
     
     padding-bottom: 10px; 
     }
+
+/* just making the paragraphs inline */
+div > span { display: inline-block; }
+
+/* appending the commas */
+div > span:after { content: ", " }
+
+/* removing it for the last index */
+div > span:last-of-type:after { content: "" }
