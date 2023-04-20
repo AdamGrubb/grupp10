@@ -2,9 +2,11 @@ import porridge from "../../assets/porridge.jpg";
 import RecipeSuggestions from "../recipeSuggestions/RecipeSuggestion";
 import { useNavigate } from "react-router-dom";
 import "./RecipePage.css";
+import Portions from "./PortionsFunction";
+import React, { useState } from "react";
 export default function RecipePage() {
   const navigate = useNavigate();
-  //const [Portions, setPortions] = useState(4);
+  const [portions, setPortions] = useState(4);
 
   // Variabel för klockikonen i inforutan
   let clock = (
@@ -25,7 +27,7 @@ export default function RecipePage() {
   );
 
   //variabeln för portions ikonen i inforutan
-  let portions = (
+  let portionsInfo = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -43,25 +45,12 @@ export default function RecipePage() {
   );
 
   //Tillfällig variabel för att läsa ett recept
-  const recipe = {
+  let recipe = {
     title: "Oatmeal porridge",
     ingredients: [
-      "havregryn",
-      "vatten",
-      "salt",
-      "salt",
-      "salt",
-      "salt",
-      "havregryn",
-      "vatten",
-      "salt",
-      "salt",
-      "salt",
-      "havregryn",
-      "vatten",
-      "salt",
-      "salt",
-      "salt",
+      { name: "havregryn", amount: 2 },
+      { name: "salt", amount: 4 },
+      { name: "havregryn", amount: 2 },
     ],
     description: [
       "Koka upp vatten och havregryn och rör om under tiden.",
@@ -100,11 +89,13 @@ export default function RecipePage() {
                   {clock} &ensp; {recipe.time} Min
                 </p>
                 <div className="flex portions">
-                  <p>{portions}</p>
-                  <select className="bg-receptDescriptionColor">
+                  <p>{portionsInfo}</p>
+                  <select
+                    className="bg-receptDescriptionColor"
+                    onChange={(e) => setPortions(e.target.value)}
+                  >
                     <option value="4">4</option>
-                    <option value="6">6</option>
-                    <option value="8">8</option>
+                    <option value="6">6</option> <option value="8">8</option>
                   </select>
                 </div>
               </div>
@@ -121,7 +112,11 @@ export default function RecipePage() {
             <h2 id="big">Ingredients:</h2>
             <div>
               {recipe.ingredients.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item}>
+                  {item.name}
+                  <span> </span>
+                  {(item.amount = Portions(portions, item.amount))}
+                </li>
               ))}
             </div>
           </section>
