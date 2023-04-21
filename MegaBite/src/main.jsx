@@ -7,7 +7,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Header } from "./components/header/Header";
 import { Footer } from "./components/footer/Footer";
 import { NotFound } from "./components/notfound/NotFound";
-import RecipePage from "./components/recipePage/RecipePage";
+import RecipePageDesktop from "./components/recipePage/RecipePageDesktop";
 import SiteContent from "./components/siteContent/SiteContent";
 import SearchResults from "./components/searchResults/SearchResults";
 
@@ -36,11 +36,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/searchresults/recipepage",
-        element: <RecipePage />,
+        element: <RecipePageDesktop />,
       },
       {
         path: "/recipepage", ///:recipeId
-        element: <RecipePage />,
+        element: <RecipePageDesktop />,
       },
     ],
   },
