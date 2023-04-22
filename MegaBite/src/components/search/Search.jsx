@@ -21,7 +21,6 @@ export default function Search() {
     event.preventDefault();
     event.target.reset();
     setRecipeData(SearchRecipes(searchParams));
-    return recipeData; //funkar detta?
   };
 
   return (
