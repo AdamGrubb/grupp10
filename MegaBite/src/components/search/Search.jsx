@@ -9,42 +9,47 @@ export default function Search() {
   const [showFilters, setShowFilters] = useState(false);
   const [glutenFree, setGlutenFree] = useState(false);
   const [dairyFree, setDairyFree] = useState(false);
+  const [recipeData, setRecipeData] = useState([]);
   const [vegan, setVegan] = useState(false);
   const navigate = useNavigate();
+
   const handleChange = (event) => {
-  setSearchParams(event.target.value.toLowerCase());    
+    setSearchParams(event.target.value.toLowerCase());
   };
 
   const handleSubmit = (event) => {
- 
-  event.preventDefault();
-  event.target.reset();
-  const recipeData = SearchRecipes(searchParams);
-    
+    event.preventDefault();
+    event.target.reset();
+    setRecipeData(SearchRecipes(searchParams));
+    return recipeData; //funkar detta?
   };
+
   return (
     <section className="flex justify-center h-24 mb-2 bg-searchAreaColor">
       <div className="flex flex-col items-center">
         <h4 className="align-text-center">Welcome to MegaBite!</h4>
         <div className="relative">
           <form onSubmit={handleSubmit}>
-          
-          <input type="text" onChange={handleChange} placeholder="Search..." />
-          <button
-            className="absolute top-0 right-0 h-full px-4 text-sm text-gray-500"
-            onClick={() => setShowFilters(!showFilters)}
-          >
-            Filters
-          </button>
-          <button
-            type="submit"
-            onClick={() => {
-              navigate("/searchresults");
-            }}
-            className="absolute btnSearch mt-7 top-0 right-0 h-full px-4 text-sm border-2 border-solid"
-          >
-            Search
-          </button>
+            <input
+              type="text"
+              onChange={handleChange}
+              placeholder="Search..."
+            />
+            <button
+              className="absolute top-0 right-0 h-full px-4 text-sm text-gray-500"
+              onClick={() => setShowFilters(!showFilters)}
+            >
+              Filters
+            </button>
+            <button
+              type="submit"
+              onClick={() => {
+                navigate("/searchresults");
+              }}
+              className="absolute btnSearch mt-7 top-0 right-0 h-full px-4 text-sm border-2 border-solid"
+            >
+              Search
+            </button>
           </form>
           {showFilters && (
             <div
