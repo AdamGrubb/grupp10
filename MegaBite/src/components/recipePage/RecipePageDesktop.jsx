@@ -1,12 +1,15 @@
 import porridge from "../../assets/porridge.jpg";
 import RecipeSuggestions from "../recipeSuggestions/RecipeSuggestion";
-import { useNavigate } from "react-router-dom";
-import "./RecipePageDesktop.css";
+import { useNavigate, useLocation } from "react-router-dom";
+import "./RecipePage.css";
 import Portions from "./PortionsFunction";
 import React, { useState } from "react";
 export default function RecipePageDesktop() {
   const navigate = useNavigate();
-  const [portions, setPortions] = useState(2);
+  const [portions, setPortions] = useState(4);
+  const location = useLocation();
+  const recipe = location.state;
+  console.log(recipe);
 
   // Variabel för klockikonen i inforutan
   let clock = (
@@ -45,23 +48,23 @@ export default function RecipePageDesktop() {
   );
 
   //Tillfällig variabel för att läsa ett recept
-  let recipe = {
-    title: "Oatmeal porridge",
-    ingredients: [
-      { name: "havregryn", amount: 2 },
-      { name: "salt", amount: 4 },
-      { name: "havregryn", amount: 2 },
-    ],
-    description: [
-      "Koka upp vatten och havregryn och rör om under tiden.",
-      "Koka upp vatten och havregryn och rör om under tiden.",
-      "Koka upp vatten och havregryn och rör om under tiden.",
-      "Koka upp vatten och havregryn och rör om under tiden.",
-    ],
-    time: 12,
-    portions: 4,
-    allergens: ["egg", "vegan"],
-  };
+  // let recipe = {
+  //   title: "Oatmeal porridge",
+  //   ingredients: [
+  //     { name: "havregryn", amount: 2 },
+  //     { name: "salt", amount: 4 },
+  //     { name: "havregryn", amount: 2 },
+  //   ],
+  //   description: [
+  //     "Koka upp vatten och havregryn och rör om under tiden.",
+  //     "Koka upp vatten och havregryn och rör om under tiden.",
+  //     "Koka upp vatten och havregryn och rör om under tiden.",
+  //     "Koka upp vatten och havregryn och rör om under tiden.",
+  //   ],
+  //   time: 12,
+  //   portions: 4,
+  //   allergens: ["egg", "vegan"],
+  // };
 
   return (
     // Denna renderas mellan header & footer på huvusidan. Article kommer vara diven som skyfflar om sectionerna beroende på storlek på skärmen så de hamnar rätt.
@@ -89,7 +92,6 @@ export default function RecipePageDesktop() {
                       className="bg-receptDescriptionColor"
                       onChange={(e) => setPortions(e.target.value)}
                     >
-                      <option value="2">2</option>
                       <option value="4">4</option>
                       <option value="6">6</option> <option value="8">8</option>
                     </select>

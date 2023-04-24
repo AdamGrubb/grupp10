@@ -6,7 +6,7 @@ import Portions from "./PortionsFunction";
 import React, { useState } from "react";
 export default function RecipePage() {
   const navigate = useNavigate();
-  const [portions, setPortions] = useState(2);
+  const [portions, setPortions] = useState(4);
 
   // Variabel för klockikonen i inforutan
   let clock = (

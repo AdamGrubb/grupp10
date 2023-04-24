@@ -40,7 +40,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/recipepage", ///:recipeId
-        element: <RecipePageDesktop />,
+        element: (
+          <RecipePageDesktop
+            state={{
+              title: "Oatmeal porridge",
+              ingredients: [
+                { name: "havregryn", amount: 2 },
+                { name: "salt", amount: 4 },
+                { name: "havregryn", amount: 2 },
+              ],
+              description: [
+                "Koka upp vatten och havregryn och rör om under tiden.",
+                "Koka upp vatten och havregryn och rör om under tiden.",
+                "Koka upp vatten och havregryn och rör om under tiden.",
+                "Koka upp vatten och havregryn och rör om under tiden.",
+              ],
+              time: 12,
+              portions: 4,
+              allergens: ["egg", "vegan"],
+            }}
+          />
+        ),
       },
     ],
   },
