@@ -18,6 +18,7 @@ export async function SearchRecipes(queryParams) {
   searchParams.append("instructionsRequired", true);
   searchParams.append("apiKey", apikey);
   searchParams.append("number", 40);
+  searchParams.append("addRecipeInformation", true)
 
   //API call, if there is an error the error will be shown otherwise we return the data.
   try {
