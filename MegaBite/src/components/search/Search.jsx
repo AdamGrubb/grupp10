@@ -2,13 +2,18 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Search.css";
 import magnGlass from "../../assets/magnGlass.png";
 
+
 import React, { useState } from "react";
 
 export default function Search() {
   const [showFilters, setShowFilters] = useState(false);
+  const [dinner, setDinner] = useState(true);
+  const [lunch, setLunch] = useState(true);
+  const [breakfast, setBreakfast] = useState(true);
   const [glutenFree, setGlutenFree] = useState(false);
   const [dairyFree, setDairyFree] = useState(false);
   const [vegan, setVegan] = useState(false);
+  const [vegetarian, setVegetarian] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -40,6 +45,39 @@ export default function Search() {
               <div className="flex items-center">
                 <input
                   type="checkbox"
+                  id="breakfast"
+                  checked={breakfast}
+                  onChange={(e) => setBreakfast(e.target.checked)}
+                />
+                <label htmlFor="gluten-free" className="ml-2">
+                  Breakfast
+                </label>
+              </div>
+              <div className="flex items-center">
+                <input
+                  type="checkbox"
+                  id="lunch"
+                  checked={lunch}
+                  onChange={(e) => setLunch(e.target.checked)}
+                />
+                <label htmlFor="gluten-free" className="ml-2">
+                  Lunch
+                </label>
+              </div>
+               <div className="flex items-center ">
+                <input
+                  type="checkbox"
+                  id="dinner"
+                  checked={dinner}
+                  onChange={(e) => setDinner(e.target.checked)}
+                />
+                <label htmlFor="gluten-free" className="ml-2">
+                  Dinner
+                </label>
+              </div>
+              <div className="flex items-center mt-2">
+                <input
+                  type="checkbox"
                   id="gluten-free"
                   checked={glutenFree}
                   onChange={(e) => setGlutenFree(e.target.checked)}
@@ -68,6 +106,17 @@ export default function Search() {
                 />
                 <label htmlFor="vegan" className="ml-2">
                   Vegan
+                </label>
+              </div>
+              <div className="flex items-center">
+                <input
+                  type="checkbox"
+                  id="vegetarian"
+                  checked={vegetarian}
+                  onChange={(e) => setVegetarian(e.target.checked)}
+                />
+                <label htmlFor="vegan" className="ml-2">
+                  Vegetarian
                 </label>
               </div>
             </div>
