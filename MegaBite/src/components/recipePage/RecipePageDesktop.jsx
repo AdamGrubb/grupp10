@@ -93,7 +93,9 @@ export default function RecipePageDesktop() {
                       onChange={(e) => setPortions(e.target.value)}
                     >
                       <option value="2">2</option>
-                      <option value="4">4</option>
+                      <option value="4" selected={true}>
+                        4
+                      </option>
                       <option value="6">6</option>
                       <option value="8">8</option>
                     </select>
@@ -115,7 +117,7 @@ export default function RecipePageDesktop() {
                   <li key={item}>
                     {item.name}
                     <span> </span>
-                    {(item.amount = Portions(portions, item.amount))}
+                    {Portions(portions, item.amount)}
                   </li>
                 ))}
               </div>
