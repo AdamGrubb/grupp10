@@ -49,7 +49,7 @@ export default function Search() {
                   checked={breakfast}
                   onChange={(e) => setBreakfast(e.target.checked)}
                 />
-                <label htmlFor="gluten-free" className="ml-2">
+                <label htmlFor="breakfast" className="ml-2">
                   Breakfast
                 </label>
               </div>
@@ -60,7 +60,7 @@ export default function Search() {
                   checked={lunch}
                   onChange={(e) => setLunch(e.target.checked)}
                 />
-                <label htmlFor="gluten-free" className="ml-2">
+                <label htmlFor="lunch" className="ml-2">
                   Lunch
                 </label>
               </div>
@@ -71,7 +71,7 @@ export default function Search() {
                   checked={dinner}
                   onChange={(e) => setDinner(e.target.checked)}
                 />
-                <label htmlFor="gluten-free" className="ml-2">
+                <label htmlFor="dinner" className="ml-2">
                   Dinner
                 </label>
               </div>
@@ -115,7 +115,7 @@ export default function Search() {
                   checked={vegetarian}
                   onChange={(e) => setVegetarian(e.target.checked)}
                 />
-                <label htmlFor="vegan" className="ml-2">
+                <label htmlFor="vegetarian" className="ml-2">
                   Vegetarian
                 </label>
               </div>
