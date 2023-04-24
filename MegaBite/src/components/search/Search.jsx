@@ -17,10 +17,12 @@ export default function Search() {
     setSearchParams(event.target.value.toLowerCase());
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     event.target.reset();
-    setRecipeData(SearchRecipes(searchParams));
+    const data = await SearchRecipes(searchParams);
+    setRecipeData(data);
+    console.log(recipeData);
   };
 
   return (
