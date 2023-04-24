@@ -5,7 +5,6 @@ export async function SearchRecipes(queryParams) {
   //The base URL uses incoming recipeId and inserts it into the URL.
   const baseUrl = "https://api.spoonacular.com/recipes/complexSearch";
 
-  // const type = "breakfast";     //Hardcoded for testing, will be deleted
 
   //If incoming variable is empty an error will be displayed
   if (!queryParams || !queryParams.toString().trim()) {
@@ -17,7 +16,6 @@ export async function SearchRecipes(queryParams) {
   const searchParams = new URLSearchParams();
   searchParams.append("query", queryParams);
   searchParams.append("instructionsRequired", true);
-  searchParams.append("type", type); //Define breakfast, lunch och dinner
   searchParams.append("apiKey", apikey);
   searchParams.append("number", 40);
 
