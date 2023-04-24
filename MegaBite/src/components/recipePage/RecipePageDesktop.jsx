@@ -6,7 +6,7 @@ import Portions from "./PortionsFunction";
 import React, { useState } from "react";
 export default function RecipePageDesktop() {
   const navigate = useNavigate();
-  const [portions, setPortions] = useState(4);
+  const [portions, setPortions] = useState(2);
 
   // Variabel för klockikonen i inforutan
   let clock = (
@@ -89,6 +89,7 @@ export default function RecipePageDesktop() {
                       className="bg-receptDescriptionColor"
                       onChange={(e) => setPortions(e.target.value)}
                     >
+                      <option value="2">2</option>
                       <option value="4">4</option>
                       <option value="6">6</option> <option value="8">8</option>
                     </select>
