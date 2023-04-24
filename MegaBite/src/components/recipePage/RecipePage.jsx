@@ -74,54 +74,57 @@ export default function RecipePage() {
         <button className="btnGoBack rounded" onClick={() => navigate(-1)}>
           Go Back
         </button>
-        <div className="flex box flex-col">
+        <div className="showContent">
           <img
             className="img rounded-sm"
             id="pictureOfDish"
             src={porridge}
             alt="Picture of dish"
           />
-          <h1 className="recipeTitle">{recipe.title}</h1>
-          <section id="ServingsAndAllergens" className="">
-            <div className="info bg-receptDescriptionColor rounded-sm">
-              <div className="flex">
-                <p className="flex">
-                  {clock} &ensp; {recipe.time} Min
-                </p>
-                <div className="flex portions">
-                  <p>{portionsInfo}</p>
-                  <select
-                    className="bg-receptDescriptionColor"
-                    onChange={(e) => setPortions(e.target.value)}
-                  >
-                    <option value="2">2</option>
-                    <option value="4">4</option>
-                    <option value="6">6</option> <option value="8">8</option>
-                  </select>
+          <div className="infoBox">
+            <h1 className="recipeTitle">{recipe.title}</h1>
+            <section id="ServingsAndAllergens" className="">
+              <div className="info bg-receptDescriptionColor rounded-sm">
+                <div className="flex">
+                  <p className="flex">
+                    {clock} &ensp; {recipe.time} Min
+                  </p>
+                  <div className="flex portions">
+                    <p>{portionsInfo}</p>
+                    <select
+                      className="bg-receptDescriptionColor"
+                      onChange={(e) => setPortions(e.target.value)}
+                    >
+                      <option value="2">2</option>
+                      <option value="4">4</option>
+                      <option value="6">6</option> <option value="8">8</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="flex">
+                  <p>Allergens:&ensp;</p>
+                  {recipe.allergens.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
                 </div>
               </div>
-              <div className="flex">
-                <p>Allergens:&ensp;</p>
-                {recipe.allergens.map((item) => (
-                  <span key={item}>{item}</span>
+            </section>
+
+            <section className="ingredients bg-receptDescriptionColor rounded-sm">
+              <h2 id="big">Ingredients:</h2>
+              <div>
+                {recipe.ingredients.map((item) => (
+                  <li key={item}>
+                    {item.name}
+                    <span> </span>
+                    {(item.amount = Portions(portions, item.amount))}
+                  </li>
                 ))}
               </div>
-            </div>
-          </section>
-
-          <section className="ingredients bg-receptDescriptionColor rounded-sm">
-            <h2 id="big">Ingredients:</h2>
-            <div>
-              {recipe.ingredients.map((item) => (
-                <li key={item}>
-                  {item.name}
-                  <span> </span>
-                  {(item.amount = Portions(portions, item.amount))}
-                </li>
-              ))}
-            </div>
-          </section>
-
+            </section>
+          </div>
+        </div>
+        <div className="showContent">
           <section className="description bg-receptDescriptionColor rounded-sm">
             <h2 id="big">Description:</h2>
             {recipe.description.map((item) => (

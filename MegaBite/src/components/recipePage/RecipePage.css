@@ -8,9 +8,17 @@
   width: auto;
 }
 
+@media only screen and (max-width: 1024px)  {
 .portions {
     margin-left: 30px;
     margin-bottom: 5px;
+}
+
+.showContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px;
 }
 .clock {
     margin-left: 10px;
@@ -32,7 +40,7 @@
 }
 
 .info {
-    width: 300px;
+    max-width: 300px;
     margin-bottom: 30px;
     padding-left: 10px;
     padding-top: 10px;
@@ -41,8 +49,9 @@
     color: black;
 }
 
+
 .ingredients {
-    width: 300px;
+    max-width: 300px;
     max-height: fit-content;
     padding-left: 10px;
     padding-top: 10px;
@@ -56,13 +65,114 @@
 }
 
 .description {
-    width: 300px;
+    max-width: 300px;
     min-height: 200px;
     margin-top: 30px;
     margin-bottom: 30px;
     padding-left: 10px;
     padding-top: 10px;
     color: black;
+}
+
+#big {
+    color:black;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.recipeSuggestion{
+
+    max-width: 300px;
+    
+    margin-bottom: 100px;
+    
+    padding-left: 10px;
+    
+    padding-top: 5px;
+    
+    padding-bottom: 10px; 
+    }
+
+/* just making the paragraphs inline */
+div > span { display: inline-block; }
+
+/* appending the commas */
+div > span:after { content: ", " }
+
+/* removing it for the last index */
+div > span:last-of-type:after { content: "" }
+}
+
+@media only screen and (min-width: 1024px)  {
+
+      
+  .portions {
+    margin-left: 20px;
+    margin-bottom: 5px;
+   }
+.clock {
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.showContent {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.infoBox {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.img {
+    max-width: 500px;
+    max-height: 450px;
+    margin: 20px;
+    margin-top: 60px;
+    margin-right: 70px;
+    
+}
+
+.info {
+    width: 450px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 70px;
+    color: black;
+}
+
+.ingredients {
+    width: 450px;
+    max-height: fit-content;
+    min-height: 400px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 70px;
+    color: black;
+}
+
+.recipeTitle {
+    color: rgb(9, 8, 8);
+    font-size: 2em;
+    margin-left: 70px;
+}
+
+.description {
+    max-width: 1000px;
+    min-height: 200px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-top: 10px;
+    color: black;
+    margin-left: 70px;
+    margin-right: 70px;
 }
 
 #big {
@@ -92,3 +202,6 @@ div > span:after { content: ", " }
 
 /* removing it for the last index */
 div > span:last-of-type:after { content: "" }
+
+   
+}
