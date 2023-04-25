@@ -17,8 +17,8 @@ export default function Search() {
     setSearchword(e.target.value.toLowerCase());
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     if (!searchword || !searchword.trim()) {
       alert("Please enter a search query.");
       return null;
@@ -28,7 +28,7 @@ export default function Search() {
       return alert("Nothing to show");
     }
     setRecipeData(data);
-    event.target.reset();
+    e.target.reset();
     setSearchword("");
   };
 
