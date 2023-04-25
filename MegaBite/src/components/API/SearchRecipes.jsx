@@ -19,21 +19,26 @@ export async function SearchRecipes(queryParams) {
   try {
     const response = await fetch(`${baseUrl}?${searchParams}`);
     const apiResults = await response.json();
-    console.log(apiResults);
-    const recipeArray = apiResults.results.map((item) => ({
-      id: item.id,
-      title: item.title,
-      allergens: [
-        { glutenFree: item.glutenFree },
-        { lactose: item.dairyFree },
-        { vegetarian: item.vegetarian },
-        { vegan: item.vegan },
-      ],
-      servings: item.servings,
-      description: [...item.analyzedInstructions[0].steps],
-      ingredients: [...item.extendedIngredients],
-      img: item.image,
-    }));
+    const recipeArray = apiResults.results.map((item) => {
+      const instructions =
+        item.analyzedInstructions.length > 0
+          ? [...item.analyzedInstructions[0].steps]
+          : [];
+      return {
+        id: item.id,
+        title: item.title,
+        allergens: [
+          { glutenFree: item.glutenFree },
+          { lactose: item.dairyFree },
+          { vegetarian: item.vegetarian },
+          { vegan: item.vegan },
+        ],
+        servings: item.servings,
+        description: instructions,
+        ingredients: [...item.extendedIngredients],
+        img: item.image,
+      };
+    });
     return recipeArray;
   } catch (error) {
     // Show an error message to the user using console.error() or a UI element

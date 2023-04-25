@@ -19,17 +19,15 @@ export default function Search() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(searchword);
     if (!searchword || !searchword.trim()) {
       alert("Please enter a search query.");
       return null;
     }
     const data = await SearchRecipes(searchword);
-    console.log(data);
     if (data == null) {
       return alert("Nothing to show");
     }
-    setRecipeData(...data);
+    setRecipeData(data);
     event.target.reset();
     setSearchword("");
   };
@@ -60,51 +58,48 @@ export default function Search() {
               Filters
             </button>
           </div>
+          {showFilters && (
+            <div
+              className="absolute top-full left-0 right-0 px-4 py-2 border rounded shadow"
+              style={{ backgroundColor: "gray", zIndex: 1 }}
+            >
+              <div className="flex items-center">
+                <input
+                  type="checkbox"
+                  id="gluten-free"
+                  checked={glutenFree}
+                  onChange={(e) => setGlutenFree(e.target.checked)}
+                />
+                <label htmlFor="gluten-free" className="ml-2">
+                  Gluten-free
+                </label>
+              </div>
+              <div className="flex items-center">
+                <input
+                  type="checkbox"
+                  id="dairy-free"
+                  checked={dairyFree}
+                  onChange={(e) => setDairyFree(e.target.checked)}
+                />
+                <label htmlFor="dairy-free" className="ml-2">
+                  Dairy-free
+                </label>
+              </div>
+              <div className="flex items-center">
+                <input
+                  type="checkbox"
+                  id="vegan"
+                  checked={vegan}
+                  onChange={(e) => setVegan(e.target.checked)}
+                />
+                <label htmlFor="vegan" className="ml-2">
+                  Vegan
+                </label>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </>
   );
 }
-
-// {
-//   {showFilters && (
-//             <div
-//               className="absolute top-full left-0 right-0 px-4 py-2 border rounded shadow"
-//               style={{ backgroundColor: "gray", zIndex: 1 }}
-//             >
-//               <div className="flex items-center">
-//                 <input
-//                   type="checkbox"
-//                   id="gluten-free"
-//                   checked={glutenFree}
-//                   onChange={(e) => setGlutenFree(e.target.checked)}
-//                 />
-//                 <label htmlFor="gluten-free" className="ml-2">
-//                   Gluten-free
-//                 </label>
-//               </div>
-//               <div className="flex items-center">
-//                 <input
-//                   type="checkbox"
-//                   id="dairy-free"
-//                   checked={dairyFree}
-//                   onChange={(e) => setDairyFree(e.target.checked)}
-//                 />
-//                 <label htmlFor="dairy-free" className="ml-2">
-//                   Dairy-free
-//                 </label>
-//               </div>
-//               <div className="flex items-center">
-//                 <input
-//                   type="checkbox"
-//                   id="vegan"
-//                   checked={vegan}
-//                   onChange={(e) => setVegan(e.target.checked)}
-//                 />
-//                 <label htmlFor="vegan" className="ml-2">
-//                   Vegan
-//                 </label>
-//               </div>
-//             </div>
-//           )}
-// }
