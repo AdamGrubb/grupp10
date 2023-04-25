@@ -10,6 +10,7 @@ export default function Search() {
   const [showFilters, setShowFilters] = useState(false);
   const [glutenFree, setGlutenFree] = useState(false);
   const [dairyFree, setDairyFree] = useState(false);
+  const [vegan, setVegan] = useState(false);
   const [recipeData, setRecipeData] = useState([]);
   const navigate = useNavigate();
 
