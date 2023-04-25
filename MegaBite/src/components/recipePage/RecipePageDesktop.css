@@ -1,4 +1,4 @@
-.btnGoBack {
+/* .btnGoBack {
     color: black;
     border-width: 2px;
     margin: 2px;
@@ -102,4 +102,4 @@
   
   /* removing it for the last index */
   div > span:last-of-type:after { content: "" }
-  
+   */

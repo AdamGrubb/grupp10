@@ -76,7 +76,7 @@ export default function RecipePage() {
         </button>
         <div className="showContent">
           <img
-            className="img rounded-sm"
+            className="img rounded-lg"
             id="pictureOfDish"
             src={porridge}
             alt="Picture of dish"
@@ -84,7 +84,7 @@ export default function RecipePage() {
           <div className="infoBox">
             <h1 className="recipeTitle">{recipe.title}</h1>
             <section id="ServingsAndAllergens" className="">
-              <div className="info bg-receptDescriptionColor rounded-sm">
+              <div className="info bg-receptDescriptionColor rounded-lg">
                 <div className="flex">
                   <p className="flex">
                     {clock} &ensp; {recipe.time} Min
@@ -110,7 +110,7 @@ export default function RecipePage() {
               </div>
             </section>
 
-            <section className="ingredients bg-receptDescriptionColor rounded-sm">
+            <section className="ingredients bg-receptDescriptionColor rounded-lg">
               <h2 id="big">Ingredients:</h2>
               <div>
                 {recipe.ingredients.map((item) => (
@@ -124,8 +124,8 @@ export default function RecipePage() {
             </section>
           </div>
         </div>
-        <div className="showContent">
-          <section className="description bg-receptDescriptionColor rounded-sm">
+        <div className="showDescription showContent">
+          <section className="description bg-receptDescriptionColor rounded-lg">
             <h2 id="big">Description:</h2>
             {recipe.description.map((item) => (
               <li key={item}>{item}</li>
