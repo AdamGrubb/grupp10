@@ -8,7 +8,7 @@ export default function RecipePage() {
   const navigate = useNavigate();
   const [portions, setPortions] = useState(4);
 
-  // Variabel för klockikonen i inforutan
+  // OBJECT FOR CLOCK LOGO
   let clock = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@ export default function RecipePage() {
     </svg>
   );
 
-  //variabeln för portions ikonen i inforutan
+  //OBJECT FOR PORTIONS LOGO
   let portionsInfo = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -44,9 +44,9 @@ export default function RecipePage() {
     </svg>
   );
 
-  //Tillfällig variabel för att läsa ett recept
+  // TEMPORARY OBJECT TO READ AND PRESENT A RECIPE.
   let recipe = {
-    title: "Oatmeal porridge",
+    title: "Oatmeal Porridge",
     ingredients: [
       { name: "havregryn", amount: 2 },
       { name: "salt", amount: 4 },
@@ -64,16 +64,12 @@ export default function RecipePage() {
   };
 
   return (
-    // Denna renderas mellan header & footer på huvusidan. Article kommer vara diven som skyfflar om sectionerna beroende på storlek på skärmen så de hamnar rätt.
-    // Förslagsvis skulle denna kunna ta emot ett recept med all info som prop och sen fördela ut informationen på sektionerna.
-    // h3-taggarna är placeholders och ska ersättas av lämpliga element och upplägg t ex UL för ingredienser osv. Id är placeholder för att hålla reda på vilka delar av figman de motsvarar.
-    //
-
     <>
       <article>
         <button className="btnGoBack rounded" onClick={() => navigate(-1)}>
           Go Back
         </button>
+        <h1 className="recipeTitle">{recipe.title}</h1>
         <div className="showContent">
           <img
             className="img rounded-lg"
@@ -82,7 +78,6 @@ export default function RecipePage() {
             alt="Picture of dish"
           />
           <div className="infoBox">
-            <h1 className="recipeTitle">{recipe.title}</h1>
             <section id="ServingsAndAllergens" className="">
               <div className="info bg-receptDescriptionColor rounded-lg">
                 <div className="flex">
@@ -132,6 +127,7 @@ export default function RecipePage() {
             ))}
           </section>
 
+          {/* THIS SECTION MIGHT NEED SOME CHANGES WHEN RECIPE-SUGGESTIONS-TASK IS DONE */}
           <section className="recipeSuggestion">
             <h2 id="big">Suggestions</h2>
             <div>{<RecipeSuggestions />}</div>
