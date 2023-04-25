@@ -16,7 +16,7 @@ export async function SearchRecipes(queryParams) {
   searchParams.append("query", queryParams);
   searchParams.append("instructionsRequired", true);
   searchParams.append("apiKey", apikey);
-  searchParams.append("number", 40);
+  searchParams.append("number", 4);
   searchParams.append("addRecipeInformation", true);
   searchParams.append("fillIngredients", true);
 
@@ -24,7 +24,6 @@ export async function SearchRecipes(queryParams) {
   try {
     const response = await fetch(`${baseUrl}?${searchParams}`);
     const apiResults = await response.json();
-    console.log(apiResults);
     const recipeArray = apiResults.results.map((item) => ({
       id: item.id,
       title: item.title,
