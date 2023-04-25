@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./Search.css";
 import magnGlass from "../../assets/magnGlass.png";
 import { SearchRecipes } from "../API/SearchRecipes";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Search() {
   const [searchword, setSearchword] = useState("");
@@ -20,9 +20,16 @@ export default function Search() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(searchword);
+    if (!searchword || !searchword.trim()) {
+      alert("Please enter a search query.");
+      return null;
+    }
     const data = await SearchRecipes(searchword);
-    setRecipeData(data);
-    console.log(recipeData);
+    console.log(data);
+    if (data == null) {
+      return alert("Nothing to show");
+    }
+    setRecipeData(...data);
     event.target.reset();
     setSearchword("");
   };
@@ -33,7 +40,6 @@ export default function Search() {
         <div className="flex flex-col items-center">
           <h4 className="align-text-center">Welcome to MegaBite!</h4>
           <div className="relative">
-            <p className="ptagg">{searchword}</p>
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
