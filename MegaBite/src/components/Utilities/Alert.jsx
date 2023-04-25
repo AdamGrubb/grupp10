@@ -1,5 +1,5 @@
-import { Alert } from "@material-tailwind/react";
- 
-export default function AlertPopup({alertMessage}) {
+import { Alert } from "@mui/material";
+
+export default function AlertPopup({ alertMessage }) {
   return <Alert color="amber">{alertMessage}</Alert>;
 }
