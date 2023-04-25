@@ -1,6 +1,6 @@
 import RecipeCard from "../recipeCard/RecipeCard";
 import arrow from "../../assets/arrow.png";
-import "./searchResults.css";
+import "./SearchResults.css";
 import { Link } from "react-router-dom";
 
 export default function SearchResults() {
