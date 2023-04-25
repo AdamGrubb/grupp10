@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./Search.css";
 import magnGlass from "../../assets/magnGlass.png";
 import { SearchRecipes } from "../API/SearchRecipes";
-import AlertPopup from "../Utilities/Alert";
+// import AlertPopup from "../Utilities/Alert";
 import React, { useState } from "react";
 
 export default function Search() {
