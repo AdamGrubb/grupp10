@@ -26,6 +26,7 @@ export async function SearchRecipes(queryParams) {
         item.analyzedInstructions.length > 0
           ? [...item.analyzedInstructions[0].steps]
           : [];
+      const cuisineAreas = item.cuisines.length > 0 ? [...item.cuisines] : [];
       return {
         id: item.id,
         title: item.title,
@@ -35,10 +36,13 @@ export async function SearchRecipes(queryParams) {
           { vegetarian: item.vegetarian },
           { vegan: item.vegan },
         ],
+        readyInMinutes: item.readyInMinutes,
         servings: item.servings,
         description: instructions,
         ingredients: [...item.extendedIngredients],
         img: item.image,
+        mealType: item.dishTypes,
+        cuisine: cuisineAreas,
       };
     });
     return recipeArray;
