@@ -1,6 +1,4 @@
 import RecipeCard from "../recipeCard/RecipeCard";
-import arrow from "../../assets/arrow.png";
-import "./searchResults.css";
 import { Link } from "react-router-dom";
 
 export default function SearchResults() {
@@ -109,11 +107,7 @@ export default function SearchResults() {
         { vegan: false },
       ],
       servings: 2,
-      description: [
-        "Toast bread",
-        "Mash avocado",
-        "Spread avocado on toast",
-      ],
+      description: ["Toast bread", "Mash avocado", "Spread avocado on toast"],
       ingredients: [
         {
           id: 2001,
@@ -233,16 +227,19 @@ export default function SearchResults() {
       ],
       img: "https://cdn0.wideopenpets.com/wp-content/uploads/2017/09/Buff_Orpington_chicken_UK.jpg",
     },
-  ]
+  ];
 
   //Här ska jag ändra så att den tar emot en array av recept istället. Placeholdern är antal recept istället.
   const displayRecipeCards = (recipes) => {
+    if (recipes == null || recipes.length < 1) {
+      return <h1>No result</h1>;
+    }
     let RecipeCards = [];
     console.log(recipes);
     for (let x = 0; x < recipes.length; x++) {
       RecipeCards.push(
-        <Link to="/searchresults/recipepage" state={recipes[x]} >
-          <RecipeCard title={recipes[x].title} img={recipes[x].img}/>
+        <Link to="/searchresults/recipepage" state={recipes[x]}>
+          <RecipeCard title={recipes[x].title} img={recipes[x].img} />
         </Link>
       );
     }
@@ -251,14 +248,11 @@ export default function SearchResults() {
 
   return (
     <div>
-    <section className="width">
-      <nav className="flex flex-row flex-wrap justify-left ">
-        {displayRecipeCards(recipeFromStore)}
-      </nav>
-    </section>
-
+      <section className="w-56 lg:w-[28rem] mx-auto">
+        <nav className="flex flex-row flex-wrap justify-left ">
+          {displayRecipeCards(recipeFromStore)}
+        </nav>
+      </section>
     </div>
-
-
   );
 }
