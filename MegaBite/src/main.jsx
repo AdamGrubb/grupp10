@@ -29,11 +29,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <SiteContent />,
+        children: [
+          {
+            path: "searchresults",
+            element: <SearchResults />,
+          },
+        ],
       },
-      {
-        path: "searchresults",
-        element: <SearchResults />,
-      },
+
       {
         path: "/searchresults/recipepage",
         element: <RecipePage />,

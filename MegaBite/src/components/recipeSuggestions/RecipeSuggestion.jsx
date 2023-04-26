@@ -8,8 +8,8 @@ export default function RecipeSuggestions() {
   return (
     <section>
       <ul className="recipeSuggestions">
-        {mockData.map((card) => (
-          <li>
+        {mockData.map((card, index) => (
+          <li key={index}>
             <Link to="/recipepage">{card}</Link>
           </li>
         ))}
