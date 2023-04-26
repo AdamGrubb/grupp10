@@ -4,6 +4,7 @@ import magnGlass from "../../assets/magnGlass.png";
 import { SearchRecipes } from "../API/SearchRecipes";
 // import AlertPopup from "../Utilities/Alert";
 import React, { useState } from "react";
+import useFilter from "./useFilter";
 
 export default function Search() {
   const [searchword, setSearchword] = useState("");
@@ -13,6 +14,8 @@ export default function Search() {
   const [vegan, setVegan] = useState(false);
   const [recipeData, setRecipeData] = useState([]);
   const navigate = useNavigate();
+
+  const filteredRecipes = useFilter(glutenFree, dairyFree, vegetarian, vegan, breakfast, lunch, dinner);
 
   const handleChange = (e) => {
     setSearchword(e.target.value.toLowerCase());
