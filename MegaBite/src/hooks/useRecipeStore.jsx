@@ -20,6 +20,8 @@ const useRecipeStore = create((set) => ({
             { vegetarian: true },
             { vegan: true },
           ],
+          cuisine: ["Italian", "European"],
+
           servings: 4,
           description: [
             "Cook pasta in boiling water for 8-10 minutes",
@@ -102,6 +104,8 @@ const useRecipeStore = create((set) => ({
               },
             },
           ],
+          mealType: ["lunch", "main course"],
+          readyInMinutes: 60,
           img: "placeholder-website",
         },
         {
@@ -119,6 +123,9 @@ const useRecipeStore = create((set) => ({
             "Mash avocado",
             "Spread avocado on toast",
           ],
+          cuisine: ["Mediterranean"],
+          mealType: ["main course", "dinner"],
+          readyInMinutes: 45,
           ingredients: [
             {
               id: 2001,
@@ -184,6 +191,9 @@ const useRecipeStore = create((set) => ({
           ],
           servings: 2,
           description: ["Chop vegetables", "Combine ingredients in a bowl"],
+          cuisine: [],
+          mealType: ["side dish", "lunch"],
+          readyInMinutes: 30,
           ingredients: [
             {
               id: 3001,
