@@ -29,12 +29,10 @@ export default function SearchResults() {
   };
 
   return (
-    <div>
       <section className="w-56 lg:w-[28rem] mx-auto">
         <nav className="flex flex-row flex-wrap justify-left ">
           {displayRecipeCards(recipeFromStore)}
         </nav>
       </section>
-    </div>
   );
 }
