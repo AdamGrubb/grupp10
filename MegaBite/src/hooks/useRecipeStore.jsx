@@ -20,6 +20,11 @@ const useRecipeStore = create((set) => ({
             { vegetarian: true },
             { vegan: true },
           ],
+          mealType: [
+            { breakfast: true },
+            { lunch: false },
+            { dinner: true },
+          ],
           servings: 4,
           description: [
             "Cook pasta in boiling water for 8-10 minutes",
@@ -113,6 +118,11 @@ const useRecipeStore = create((set) => ({
             { vegetarian: true },
             { vegan: false },
           ],
+          mealType: [
+            { breakfast: true },
+            { lunch: false },
+            { dinner: true },
+          ],
           servings: 2,
           description: [
             "Toast bread",
@@ -181,6 +191,11 @@ const useRecipeStore = create((set) => ({
             { lactose: true },
             { vegetarian: false },
             { vegan: true },
+          ],
+          mealType: [
+            { breakfast: true },
+            { lunch: false },
+            { dinner: true },
           ],
           servings: 2,
           description: ["Chop vegetables", "Combine ingredients in a bowl"],
