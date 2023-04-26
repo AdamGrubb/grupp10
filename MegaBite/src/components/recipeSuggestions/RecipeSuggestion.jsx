@@ -11,28 +11,7 @@ export default function RecipeSuggestions() {
         <ul className="flex justify-between suggUL">
           {mockData.map((card) => (
             <li>
-              <Link
-                to="/recipepage"
-                state={{
-                  title: "Oatmeal porridge",
-                  ingredients: [
-                    { name: "havregryn", amount: 2 },
-                    { name: "salt", amount: 4 },
-                    { name: "havregryn", amount: 2 },
-                  ],
-                  description: [
-                    "Koka upp vatten och havregryn och rör om under tiden.",
-                    "Koka upp vatten och havregryn och rör om under tiden.",
-                    "Koka upp vatten och havregryn och rör om under tiden.",
-                    "Koka upp vatten och havregryn och rör om under tiden.",
-                  ],
-                  time: 12,
-                  portions: 4,
-                  allergens: ["egg", "vegan"],
-                }}
-              >
-                {card}
-              </Link>
+              <Link to="/recipepage">{card}</Link>
             </li>
           ))}
         </ul>
