@@ -8,3 +8,15 @@
     height: 1rem;
     position: relative;
 }
+
+.width {
+  width: 14rem;
+  margin: 0 auto;
+}
+@media (min-width: 1000px) {
+
+  .width {
+    width: 28rem;
+    margin: auto;
+  }
+}
