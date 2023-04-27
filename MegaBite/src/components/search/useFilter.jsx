@@ -18,7 +18,6 @@ const useFilter = (glutenFree, dairyFree, vegetarian, vegan, breakfast, lunch, d
     const allMealtypes = !breakfast && !lunch && !dinner;
 
     //breakfast && recipe.mealType.includes("breakfast")
-    console.log(stored);
     stored.forEach(recipe => {
         if (glutenFree && !recipe.allergens[0].glutenFree){
             return;
@@ -51,12 +50,11 @@ const useFilter = (glutenFree, dairyFree, vegetarian, vegan, breakfast, lunch, d
 
     });
 
-    console.log(filteredStore);
     return filteredStore;
 
 }
 
-export default Filter;
+export default function useFilter();
 
 
 

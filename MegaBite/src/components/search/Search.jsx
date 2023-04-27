@@ -5,6 +5,7 @@ import { SearchRecipes } from "../API/SearchRecipes";
 // import AlertPopup from "../Utilities/Alert";
 import React, { useState } from "react";
 import useFilter from "./useFilter";
+import {addRecipes} from "../../hooks/useRecipeStore";
 
 export default function Search() {
   const [searchword, setSearchword] = useState("");
@@ -14,7 +15,7 @@ export default function Search() {
   const [vegan, setVegan] = useState(false);
   const [recipeData, setRecipeData] = useState([]);
   const navigate = useNavigate();
-
+//const [filteredRecipes, setFilteredRecipes] = useState(useFilter(glutenFree, dairyFree, vegetarian, vegan, breakfast, lunch, dinner))
   const filteredRecipes = useFilter(glutenFree, dairyFree, vegetarian, vegan, breakfast, lunch, dinner);
 
   const handleChange = (e) => {
@@ -32,6 +33,7 @@ export default function Search() {
       return alert("Nothing to show");
     }
     setRecipeData(data);
+    addRecipes(recipeData);
     e.target.reset();
     setSearchword("");
   };
