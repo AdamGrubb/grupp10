@@ -4,8 +4,14 @@ import { create } from "zustand";
 const useRecipeStore = create((set) => ({
   recipeCollection: [],
 
+//filteredRecipeCollection is used to store a filtered version of recipeCollection.
+  filteredRecipeCollection: [],
+
   //You call on this function to store an array of recipe in recipeCollection. The parameter to the function is an array of recipes.
   addRecipes: (recipes) => set((state) => ({ recipeCollection: [...recipes] })),
+
+  //You call on this function to store an array of recipe in filteredRecipeCollection. The parameter to the function is an array of recipes.
+  addFilteredRecipes: (recipes) => set((state) => ({ filteredRecipeCollection: [...recipes] })),
 
   //This function has no parameters and is called to fill the recipeCollection with mock-result. It is to be used to test functions without having to call the API for data.
   fillPlaceholders: () =>
@@ -20,6 +26,8 @@ const useRecipeStore = create((set) => ({
             { vegetarian: true },
             { vegan: true },
           ],
+          cuisine: ["Italian", "European"],
+
           servings: 4,
           description: [
             "Cook pasta in boiling water for 8-10 minutes",
@@ -102,6 +110,8 @@ const useRecipeStore = create((set) => ({
               },
             },
           ],
+          mealType: ["lunch", "main course"],
+          readyInMinutes: 60,
           img: "placeholder-website",
         },
         {
@@ -119,6 +129,9 @@ const useRecipeStore = create((set) => ({
             "Mash avocado",
             "Spread avocado on toast",
           ],
+          cuisine: ["Mediterranean"],
+          mealType: ["main course", "dinner"],
+          readyInMinutes: 45,
           ingredients: [
             {
               id: 2001,
@@ -184,6 +197,9 @@ const useRecipeStore = create((set) => ({
           ],
           servings: 2,
           description: ["Chop vegetables", "Combine ingredients in a bowl"],
+          cuisine: [],
+          mealType: ["side dish", "lunch"],
+          readyInMinutes: 30,
           ingredients: [
             {
               id: 3001,
