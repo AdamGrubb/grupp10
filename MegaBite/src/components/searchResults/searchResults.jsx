@@ -4,9 +4,7 @@ import useRecipeStore from "../../hooks/useRecipeStore";
 
 export default function SearchResults() {
   //This gets the result from the filteredRecipeCollection.
-  const recipeFromStore = useRecipeStore(
-    (state) => state.filteredRecipeCollection
-  );
+  const recipeFromStore = useRecipeStore((state) => state.recipeCollection); // JOHANNES tillfälliga ändring
 
   const displayRecipeCards = (recipes) => {
     //This if-statement checks if the result from recipeStore is null or empty (0) and if its the case shows a "No Result".
