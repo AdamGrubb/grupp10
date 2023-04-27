@@ -20,7 +20,7 @@
 
 #root {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   flex-direction: column;
   width: 100%;
   background-color: rgb(220, 237, 193);
