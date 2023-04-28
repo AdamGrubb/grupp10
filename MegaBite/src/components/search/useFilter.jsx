@@ -57,7 +57,7 @@ export function Filter(
       return;
     }
   });
-  console.log("updated filtered store", filteredStore);
+  // console.log("updated filtered store", filteredStore);
   return filteredStore;
 }
 
@@ -87,9 +87,9 @@ export default function FilterButton() {
     )
   );
 
-  useEffect(() => {
-    console.log("updated array", filteredRecipes);
-  }, [filteredRecipes]);
+  // useEffect(() => {
+  //   console.log("updated array", filteredData);
+  // }, [filteredData]);
 
   useEffect(() => {
     setFilteredData();

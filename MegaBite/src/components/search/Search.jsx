@@ -9,16 +9,6 @@ import useRecipeStore from "../../hooks/useRecipeStore";
 
 export default function Search() {
   const addRecipeData = useRecipeStore((state) => state.addRecipes);
-
-  const addFilteredRecipeData = useRecipeStore(
-    (state) => state.addFilteredRecipes
-  );
-  const useRecipeData = useRecipeStore((state) => state.recipeCollection);
-
-  const useFilteredRecipeData = useRecipeStore(
-    (state) => state.filteredRecipeCollection
-  );
-
   const [showFilters, setShowFilters] = useState(false);
   const [searchword, setSearchword] = useState("");
   const [recipeData, setRecipeData] = useState([]);
@@ -48,7 +38,6 @@ export default function Search() {
   //When API is called and recipeData-array is updated, only then will Store get the new values.
   useEffect(() => {
     addRecipeData(recipeData);
-    console.log(useRecipeData);
     navigate("/searchresults");
   }, [recipeData]);
 
