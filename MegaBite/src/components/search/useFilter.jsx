@@ -1,3 +1,4 @@
+import { useFetcher } from "react-router-dom";
 import useRecipeStore from "../../hooks/useRecipeStore";
 import { useEffect, useState } from "react";
 
@@ -62,39 +63,19 @@ export function Filter(
 }
 
 export default function FilterButton() {
-  const addFilteredRecipeData = useRecipeStore(
-    (state) => state.addFilteredRecipes
-  );
-  const storedRecipes = useRecipeStore((state) => state.recipeCollection);
-  const [vegetarian, setVegetarian] = useState(false);
-  const [glutenFree, setGlutenFree] = useState(false);
-  const [dairyFree, setDairyFree] = useState(false);
-  const [breakfast, setBreakfast] = useState(false);
-  const [dinner, setDinner] = useState(false);
-  const [lunch, setLunch] = useState(false);
-  const [vegan, setVegan] = useState(false);
-
-  const [filteredData, setFilteredData] = useState(
-    Filter(
-      storedRecipes,
-      vegetarian,
-      glutenFree,
-      dairyFree,
-      breakfast,
-      dinner,
-      lunch,
-      vegan
-    )
-  );
-
-  // useEffect(() => {
-  //   console.log("updated array", filteredData);
-  // }, [filteredData]);
+  const [filters, setFilters] = useState({
+    vegetarian: false,
+    vegan: false,
+    glutenFree: false,
+    diaryFree: false,
+    breakfast: false,
+    lunch: false,
+    dinner: false,
+  });
 
   useEffect(() => {
-    setFilteredData();
-    addFilteredRecipeData(filteredData);
-  }, [vegetarian, glutenFree, dairyFree, breakfast, dinner, lunch, vegan]);
+    console.log("filters changed", filters);
+  }, [filters]);
 
   return (
     <>
@@ -105,9 +86,11 @@ export default function FilterButton() {
         <div className="flex items-center">
           <input
             type="checkbox"
-            id="breakfast"
-            checked={breakfast}
-            onChange={(e) => setBreakfast(e.target.checked)}
+            name="breakfast"
+            checked={filters.breakfast}
+            onChange={(e) => {
+              setFilters({ ...filters, breakfast: e.target.checked });
+            }}
           />
           <label htmlFor="breakfast" className="ml-2">
             Breakfast
@@ -116,9 +99,11 @@ export default function FilterButton() {
         <div className="flex items-center">
           <input
             type="checkbox"
-            id="lunch"
-            checked={lunch}
-            onChange={(e) => setLunch(e.target.checked)}
+            name="lunch"
+            checked={filters.lunch}
+            onChange={(e) => {
+              setFilters({ ...filters, lunch: e.target.checked });
+            }}
           />
           <label htmlFor="lunch" className="ml-2">
             Lunch
@@ -127,9 +112,11 @@ export default function FilterButton() {
         <div className="flex items-center ">
           <input
             type="checkbox"
-            id="dinner"
-            checked={dinner}
-            onChange={(e) => setDinner(e.target.checked)}
+            name="dinner"
+            checked={filters.dinner}
+            onChange={(e) => {
+              setFilters({ ...filters, dinner: e.target.checked });
+            }}
           />
           <label htmlFor="dinner" className="ml-2">
             Dinner
@@ -138,9 +125,11 @@ export default function FilterButton() {
         <div className="flex items-center mt-2">
           <input
             type="checkbox"
-            id="gluten-free"
-            checked={glutenFree}
-            onChange={(e) => setGlutenFree(e.target.checked)}
+            name="glutenFree"
+            checked={filters.glutenFree}
+            onChange={(e) => {
+              setFilters({ ...filters, glutenFree: e.target.checked });
+            }}
           />
           <label htmlFor="gluten-free" className="ml-2">
             Gluten-free
@@ -149,9 +138,11 @@ export default function FilterButton() {
         <div className="flex items-center">
           <input
             type="checkbox"
-            id="dairy-free"
-            checked={dairyFree}
-            onChange={(e) => setDairyFree(e.target.checked)}
+            name="diaryFree"
+            checked={filters.diaryFree}
+            onChange={(e) => {
+              setFilters({ ...filters, diaryFree: e.target.checked });
+            }}
           />
           <label htmlFor="dairy-free" className="ml-2">
             Dairy-free
@@ -160,9 +151,11 @@ export default function FilterButton() {
         <div className="flex items-center">
           <input
             type="checkbox"
-            id="vegan"
-            checked={vegan}
-            onChange={(e) => setVegan(e.target.checked)}
+            name="vegan"
+            checked={filters.vegan}
+            onChange={(e) => {
+              setFilters({ ...filters, vegan: e.target.checked });
+            }}
           />
           <label htmlFor="vegan" className="ml-2">
             Vegan
@@ -171,15 +164,32 @@ export default function FilterButton() {
         <div className="flex items-center">
           <input
             type="checkbox"
-            id="vegetarian"
-            checked={vegetarian}
-            onChange={(e) => setVegetarian(e.target.checked)}
+            name="vegetarian"
+            checked={filters.vegetarian}
+            onChange={(e) => {
+              setFilters({ ...filters, vegetarian: e.target.checked });
+            }}
           />
           <label htmlFor="vegetarian" className="ml-2">
             Vegetarian
           </label>
         </div>
+        <button onClick={} className="border">Set Filter</button>
       </div>
     </>
   );
 }
+
+const filteringArray = (arr, filter) => {
+  return arr.filter((item) => {
+    return (
+      (filter.vegetarian && item.vegetarian) ||
+      (filter.vegan && item.vegan) ||
+      (filter.glutenFree && item.glutenFree) ||
+      (filter.dairyFree && item.dairyFree) ||
+      (filter.breakfast && item.mealType === "Breakfast") ||
+      (filter.lunch && item.mealType === "Lunch") ||
+      (filter.dinner && item.mealType === "Dinner")
+    );
+  });
+};
