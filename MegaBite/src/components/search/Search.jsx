@@ -52,13 +52,6 @@ export default function Search() {
     navigate("/searchresults");
   }, [recipeData]);
 
-  // useEffect(() => {
-  //   console.log(useRecipeData);
-  //   const testArr = FilteredStore();
-  //   console.log(useFilteredRecipeData);
-  //   addFilteredRecipeData(testArr);
-  // }, [addRecipeData]);
-
   return (
     <>
       <section className="flex justify-center h-24 mb-2 bg-searchAreaColor">
