@@ -3,12 +3,22 @@ import React, { useState, useEffect } from "react";
 import "./Search.css";
 import magnGlass from "../../assets/magnGlass.png";
 import { SearchRecipes } from "../API/SearchRecipes";
-import Filter, { FilteredStore } from "./useFilter";
+import FilterButton, { Filter } from "./useFilter";
 import useRecipeStore from "../../hooks/useRecipeStore";
 // import AlertPopup from "../Utilities/Alert";
 
 export default function Search() {
   const addRecipeData = useRecipeStore((state) => state.addRecipes);
+
+  const addFilteredRecipeData = useRecipeStore(
+    (state) => state.addFilteredRecipes
+  );
+  const useRecipeData = useRecipeStore((state) => state.recipeCollection);
+
+  const useFilteredRecipeData = useRecipeStore(
+    (state) => state.filteredRecipeCollection
+  );
+
   const [showFilters, setShowFilters] = useState(false);
   const [searchword, setSearchword] = useState("");
   const [recipeData, setRecipeData] = useState([]);
@@ -38,8 +48,16 @@ export default function Search() {
   //When API is called and recipeData-array is updated, only then will Store get the new values.
   useEffect(() => {
     addRecipeData(recipeData);
+    console.log(useRecipeData);
     navigate("/searchresults");
   }, [recipeData]);
+
+  // useEffect(() => {
+  //   console.log(useRecipeData);
+  //   const testArr = FilteredStore();
+  //   console.log(useFilteredRecipeData);
+  //   addFilteredRecipeData(testArr);
+  // }, [addRecipeData]);
 
   return (
     <>
@@ -67,7 +85,7 @@ export default function Search() {
               Filters
             </button>
 
-            {showFilters && <Filter />}
+            {showFilters && <FilterButton />}
           </div>
         </div>
       </section>

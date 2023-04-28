@@ -1,9 +1,9 @@
-import { dialogActionsClasses } from "@mui/material";
 import useRecipeStore from "../../hooks/useRecipeStore";
 import { useEffect, useState } from "react";
 
 //hook instead of function
-export function FilteredStore(
+export function Filter(
+  recipeCollection,
   glutenFree,
   dairyFree,
   vegetarian,
@@ -13,22 +13,21 @@ export function FilteredStore(
   dinner
 ) {
   //Get the API-data stored in store
-  const stored = useRecipeStore((state) => state.recipeCollection);
 
   const filteredStore = [];
 
-  glutenFree = false;
-  dairyFree = false;
-  vegetarian = false;
-  vegan = false;
+  // glutenFree = false;
+  // dairyFree = false;
+  // vegetarian = false;
+  // vegan = false;
 
-  breakfast = true;
-  lunch = false;
-  dinner = false;
+  // breakfast = true;
+  // lunch = false;
+  // dinner = false;
   const allMealtypes = !breakfast && !lunch && !dinner;
 
   //breakfast && recipe.mealType.includes("breakfast")
-  stored.forEach((recipe) => {
+  recipeCollection.forEach((recipe) => {
     if (glutenFree && !recipe.allergens[0].glutenFree) {
       return;
     }
@@ -58,11 +57,15 @@ export function FilteredStore(
       return;
     }
   });
-
+  console.log("updated filtered store", filteredStore);
   return filteredStore;
 }
 
-export default function Filter() {
+export default function FilterButton() {
+  const addFilteredRecipeData = useRecipeStore(
+    (state) => state.addFilteredRecipes
+  );
+  const storedRecipes = useRecipeStore((state) => state.recipeCollection);
   const [vegetarian, setVegetarian] = useState(false);
   const [glutenFree, setGlutenFree] = useState(false);
   const [dairyFree, setDairyFree] = useState(false);
@@ -71,8 +74,9 @@ export default function Filter() {
   const [lunch, setLunch] = useState(false);
   const [vegan, setVegan] = useState(false);
 
-  const [test, setTest] = useState(
-    FilteredStore(
+  const [filteredData, setFilteredData] = useState(
+    Filter(
+      storedRecipes,
       vegetarian,
       glutenFree,
       dairyFree,
@@ -84,17 +88,12 @@ export default function Filter() {
   );
 
   useEffect(() => {
-    setTest();
-    console.log(test);
-    console.log(
-      vegetarian,
-      glutenFree,
-      dairyFree,
-      breakfast,
-      dinner,
-      lunch,
-      vegan
-    );
+    console.log("updated array", filteredRecipes);
+  }, [filteredRecipes]);
+
+  useEffect(() => {
+    setFilteredData();
+    addFilteredRecipeData(filteredData);
   }, [vegetarian, glutenFree, dairyFree, breakfast, dinner, lunch, vegan]);
 
   return (
