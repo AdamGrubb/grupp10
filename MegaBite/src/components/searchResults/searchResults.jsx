@@ -9,10 +9,6 @@ export default function SearchResults() {
     (state) => state.filteredRecipeCollection
   );
 
-  // useEffect(() => {
-  //   console.log("Hej från store", recipeFromStore);
-  // }, [recipeFromStore]);
-
   const displayRecipeCards = (recipes) => {
     //This if-statement checks if the result from recipeStore is null or empty (0) and if its the case shows a "No Result".
     if (recipes == null || recipes.length < 1) {

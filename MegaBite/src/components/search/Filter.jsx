@@ -9,17 +9,13 @@
     // lunch,
     // dinner
   ) => {
-    console.log(filters.glutenFree)
-    console.log(recipes);
 
     // const addFilteredRecipes = useRecipeStore((state) => state.addFilteredRecipes);
   
     // const recipeCollection = useRecipeStore(
     //   (state) => state.recipeCollection
     // );
-    const recipeCollection = [];
     //Get the API-data stored in store
-    console.log(2)
   
     const filteredStore = [];
   
@@ -38,7 +34,7 @@
       if (filters.glutenFree && !recipe.allergens[0].glutenFree) {
         return;
       }
-      if (filters.dairyFree && recipe.allergens[1].lactose) {
+      if (filters.dairyFree && !recipe.allergens[1].lactose) {
         return;
       }
       if (filters.vegetarian && !recipe.allergens[2].vegetarian) {
@@ -65,7 +61,7 @@
       //   return;
       // }
     });
-    console.log("updated filtered store", filteredStore);
+    // console.log("updated filtered store", filteredStore);
     // addFilteredRecipes(filteredStore);
     return filteredStore;
   }

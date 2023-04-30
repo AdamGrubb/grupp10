@@ -13,22 +13,17 @@ export default function FilterButton() {
     vegetarian: false,
     vegan: false,
     glutenFree: false,
-    diaryFree: false,
+    dairyFree: false,
     breakfast: false,
     lunch: false,
     dinner: false,
   });
 
   const filterSet = () => {
-    console.log("Hit kommer jag")
-    console.log(Filter(recipesFromApi, filters));
-    console.log("Efter detta")
     addFilteredRecipes(Filter(recipesFromApi, filters));
-    console.log("sen gick det");
   }
 
   useEffect(() => {
-    console.log("filters changed", filters);
     filterSet();
   }, [filters]);
 
@@ -94,10 +89,10 @@ export default function FilterButton() {
         <div className="flex items-center">
           <input
             type="checkbox"
-            name="diaryFree"
-            checked={filters.diaryFree}
+            name="dairyFree"
+            checked={filters.dairyFree}
             onChange={(e) => {
-              setFilters({ ...filters, diaryFree: e.target.checked });
+              setFilters({ ...filters, dairyFree: e.target.checked });
             }}
           />
           <label htmlFor="dairy-free" className="ml-2">

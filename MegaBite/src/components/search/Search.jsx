@@ -17,13 +17,11 @@ export default function Search() {
 
   //Used to grab whats typed into textfield. Den här omrenderas hela tiden, bättre att inte ha en use-state på den. Och bara ha submitknappen ta datan och skicka in i vad det nu är
   const handleChange = (e) => {
-    console.log("Nu söker jag")
     setSearchword(e.target.value.toLowerCase());
   };
 
   //Checks if search is empty, makes API call and then sets the searchresult.
   const handleSubmit = async (e) => {
-    console.log("Här blir sökningen gjord")
     e.preventDefault();
     if (!searchword || !searchword.trim()) {
       alert("Please enter a search query.");
@@ -42,7 +40,6 @@ export default function Search() {
 
   //When API is called and recipeData-array is updated, only then will Store get the new values. Varför inte låta den gå direkt på addRecipeData? I och med att den används direkt, varför ha den som en link?
   useEffect(() => {
-    console.log("It is now in use")
     addRecipeData(recipeData);
     navigate("/searchresults");
   }, [recipeData]);
@@ -71,7 +68,6 @@ export default function Search() {
               onClick={() => setShowFilters(!showFilters)}
             >
               <h1>Filters</h1>
-              
             </button>
 
             {showFilters && <FilterButton />}
