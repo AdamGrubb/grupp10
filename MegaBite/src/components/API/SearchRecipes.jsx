@@ -13,7 +13,7 @@ export async function SearchRecipes(queryParams) {
   searchParams.append("query", queryParams);
   searchParams.append("instructionsRequired", true);
   searchParams.append("apiKey", apikey);
-  searchParams.append("number", 40);
+  searchParams.append("number", 7);
   searchParams.append("addRecipeInformation", true);
   searchParams.append("fillIngredients", true);
 

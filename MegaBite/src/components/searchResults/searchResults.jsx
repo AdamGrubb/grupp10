@@ -1,12 +1,17 @@
 import RecipeCard from "../recipeCard/RecipeCard";
 import { Link } from "react-router-dom";
 import useRecipeStore from "../../hooks/useRecipeStore";
+import { useEffect } from "react";
 
 export default function SearchResults() {
   //This gets the result from the filteredRecipeCollection.
   const recipeFromStore = useRecipeStore(
     (state) => state.filteredRecipeCollection
   );
+
+  // useEffect(() => {
+  //   console.log("Hej från store", recipeFromStore);
+  // }, [recipeFromStore]);
 
   const displayRecipeCards = (recipes) => {
     //This if-statement checks if the result from recipeStore is null or empty (0) and if its the case shows a "No Result".

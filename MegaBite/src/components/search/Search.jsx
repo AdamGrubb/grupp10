@@ -3,8 +3,9 @@ import React, { useState, useEffect } from "react";
 import "./Search.css";
 import magnGlass from "../../assets/magnGlass.png";
 import { SearchRecipes } from "../API/SearchRecipes";
-import FilterButton, { Filter } from "./useFilter";
+import FilterButton from "./useFilter";
 import useRecipeStore from "../../hooks/useRecipeStore";
+import Filter from "./Filter";
 // import AlertPopup from "../Utilities/Alert";
 
 export default function Search() {
@@ -14,29 +15,34 @@ export default function Search() {
   const [recipeData, setRecipeData] = useState([]);
   const navigate = useNavigate();
 
-  //Used to grab whats typed into textfield.
+  //Used to grab whats typed into textfield. Den här omrenderas hela tiden, bättre att inte ha en use-state på den. Och bara ha submitknappen ta datan och skicka in i vad det nu är
   const handleChange = (e) => {
+    console.log("Nu söker jag")
     setSearchword(e.target.value.toLowerCase());
   };
 
   //Checks if search is empty, makes API call and then sets the searchresult.
   const handleSubmit = async (e) => {
+    console.log("Här blir sökningen gjord")
     e.preventDefault();
     if (!searchword || !searchword.trim()) {
       alert("Please enter a search query.");
       return null;
     }
+    console.log(searchword);
     const data = await SearchRecipes(searchword);
     if (data == null) {
       return alert("Nothing to show");
     }
-    setRecipeData(data);
+    console.log(data);
+    addRecipeData(data);
     e.target.reset();
     setSearchword("");
   };
 
-  //When API is called and recipeData-array is updated, only then will Store get the new values.
+  //When API is called and recipeData-array is updated, only then will Store get the new values. Varför inte låta den gå direkt på addRecipeData? I och med att den används direkt, varför ha den som en link?
   useEffect(() => {
+    console.log("It is now in use")
     addRecipeData(recipeData);
     navigate("/searchresults");
   }, [recipeData]);
@@ -64,7 +70,8 @@ export default function Search() {
               className="absolute top-0 right-0 h-full px-4 text-sm text-gray-500"
               onClick={() => setShowFilters(!showFilters)}
             >
-              Filters
+              <h1>Filters</h1>
+              
             </button>
 
             {showFilters && <FilterButton />}

@@ -1,68 +1,14 @@
 import { useFetcher } from "react-router-dom";
 import useRecipeStore from "../../hooks/useRecipeStore";
 import { useEffect, useState } from "react";
+import { Filter } from "./Filter";
 
 //hook instead of function
-export function Filter(
-  recipeCollection,
-  glutenFree,
-  dairyFree,
-  vegetarian,
-  vegan,
-  breakfast,
-  lunch,
-  dinner
-) {
-  //Get the API-data stored in store
 
-  const filteredStore = [];
-
-  // glutenFree = false;
-  // dairyFree = false;
-  // vegetarian = false;
-  // vegan = false;
-
-  // breakfast = true;
-  // lunch = false;
-  // dinner = false;
-  const allMealtypes = !breakfast && !lunch && !dinner;
-
-  //breakfast && recipe.mealType.includes("breakfast")
-  recipeCollection.forEach((recipe) => {
-    if (glutenFree && !recipe.allergens[0].glutenFree) {
-      return;
-    }
-    if (dairyFree && recipe.allergens[1].lactose) {
-      return;
-    }
-    if (vegetarian && !recipe.allergens[2].vegetarian) {
-      return;
-    }
-    if (vegan && !recipe.allergens[3].vegan) {
-      return;
-    }
-    if (breakfast && recipe.mealType[0].breakfast) {
-      filteredStore.push(recipe);
-      return;
-    }
-    if (lunch && recipe.mealType[1].lunch) {
-      filteredStore.push(recipe);
-      return;
-    }
-    if (dinner && recipe.mealType[2].dinner) {
-      filteredStore.push(recipe);
-      return;
-    }
-    if (allMealtypes) {
-      filteredStore.push(recipe);
-      return;
-    }
-  });
-  // console.log("updated filtered store", filteredStore);
-  return filteredStore;
-}
 
 export default function FilterButton() {
+  const recipesFromApi = useRecipeStore((state) => state.recipeCollection);
+  const addFilteredRecipes = useRecipeStore((state) => state.addFilteredRecipes);
   const [filters, setFilters] = useState({
     vegetarian: false,
     vegan: false,
@@ -73,8 +19,17 @@ export default function FilterButton() {
     dinner: false,
   });
 
+  const filterSet = () => {
+    console.log("Hit kommer jag")
+    console.log(Filter(recipesFromApi, filters));
+    console.log("Efter detta")
+    addFilteredRecipes(Filter(recipesFromApi, filters));
+    console.log("sen gick det");
+  }
+
   useEffect(() => {
     console.log("filters changed", filters);
+    filterSet();
   }, [filters]);
 
   return (
@@ -89,7 +44,8 @@ export default function FilterButton() {
             name="breakfast"
             checked={filters.breakfast}
             onChange={(e) => {
-              setFilters({ ...filters, breakfast: e.target.checked });
+              setFilters({ ...filters, breakfast: e.target.checked }
+                );
             }}
           />
           <label htmlFor="breakfast" className="ml-2">
@@ -174,7 +130,7 @@ export default function FilterButton() {
             Vegetarian
           </label>
         </div>
-        <button onClick={} className="border">Set Filter</button>
+        {/* <button onClick={} className="border">Set Filter</button> */}
       </div>
     </>
   );
