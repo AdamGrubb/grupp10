@@ -107,7 +107,8 @@ export default function RecipePage() {
                 </div> */}
               </div>
             </section>
-                {/* Här klagar den ibland på att ingredienserna får samma key, ibland lägger den nämligen in samma ingrediens två gånger. Typ olika varianter av mängd smör i recept ger flera element med samma id. Se Banana Butter Pie*/}
+                {/* Här klagar den ibland på att ingredienserna får samma key, ibland lägger den nämligen in samma ingrediens två gånger. Typ olika varianter av mängd smör i recept ger flera element med samma id. Se Banana Butter Pie. 
+                Ett alternativ skulle vara att använda "cleanName" då id:t blir unikt på riktigt.*/}
             <section className="ingredients bg-receptDescriptionColor rounded-lg">
               <h2 id="big">Ingredients:</h2>
               <div>

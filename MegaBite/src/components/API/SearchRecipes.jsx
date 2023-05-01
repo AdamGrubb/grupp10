@@ -5,7 +5,6 @@ export async function SearchRecipes(queryParams) {
   //6224658806df44eaa8ccb7cfc9abe6e9 JACOB
   //e00dc2fe3f314cee86a4eb59100267ef JOHANNES
 
-
   //The base URL uses incoming recipeId and inserts it into the URL.
   const baseUrl = "https://api.spoonacular.com/recipes/complexSearch";
 
