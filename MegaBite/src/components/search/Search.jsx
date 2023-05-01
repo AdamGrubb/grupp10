@@ -38,10 +38,10 @@ export default function Search() {
     setSearchword("");
   };
 
-  //When API is called and recipeData-array is updated, only then will Store get the new values. Varför inte låta den gå direkt på addRecipeData? I och med att den används direkt, varför ha den som en link?
+  //When API is called and recipeData-array is updated, only then will Store get the new values. Varför inte låta den gå direkt på addRecipeData?
   useEffect(() => {
-    addRecipeData(recipeData);
-    navigate("/searchresults");
+    // addRecipeData(recipeData); Denna gör så att resultatet i store ersätts vid useffect. Kommenterar ut då den nollställer sökresultatet.
+    navigate("/searchresults"); //Detta gör att mnan direkt hamnar på searchresult och råkar man gå tillbaka till "huvudsidan" så får man inte tillgång till sökresultaten
   }, [recipeData]);
 
   return (

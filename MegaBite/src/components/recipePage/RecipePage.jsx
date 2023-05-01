@@ -1,12 +1,15 @@
 import porridge from "../../assets/porridge.jpg";
 import RecipeSuggestions from "../recipeSuggestions/RecipeSuggestion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./RecipePage.css";
 import Portions from "./PortionsFunction";
 import React, { useState } from "react";
 export default function RecipePage() {
   const navigate = useNavigate();
   const [portions, setPortions] = useState(4);
+  const location = useLocation();
+  const recipeReal = location.state;
+  console.log(recipeReal);
 
   // OBJECT FOR CLOCK LOGO
   let clock = (
@@ -69,12 +72,12 @@ export default function RecipePage() {
         <button className="btnGoBack rounded" onClick={() => navigate(-1)}>
           Go Back
         </button>
-        <h1 className="recipeTitle">{recipe.title}</h1>
+        <h1 className="recipeTitle">{recipeReal.title}</h1>
         <div className="showContent">
           <img
             className="img rounded-lg"
             id="pictureOfDish"
-            src={porridge}
+            src={recipeReal.img}
             alt="Picture of dish"
           />
           <div className="infoBox">
@@ -82,7 +85,7 @@ export default function RecipePage() {
               <div className="info bg-receptDescriptionColor rounded-lg">
                 <div className="flex">
                   <p className="flex">
-                    {clock} &ensp; {recipe.time} Min
+                    {clock} &ensp; {recipeReal.readyInMinutes} Min
                   </p>
                   <div className="flex portions">
                     <p>{portionsInfo}</p>
@@ -96,23 +99,23 @@ export default function RecipePage() {
                     </select>
                   </div>
                 </div>
-                <div className="flex">
+                {/* <div className="flex">
                   <p>Allergens:&ensp;</p>
-                  {recipe.allergens.map((item) => (
+                  {recipeReal.allergens.map((item) => (
                     <span key={item}>{item}</span>
                   ))}
-                </div>
+                </div> */}
               </div>
             </section>
-
+                {/* Här klagar den ibland på att ingredienserna får samma key, ibland lägger den nämligen in samma ingrediens två gånger. Typ olika varianter av mängd smör i recept ger flera element med samma id. Se Banana Butter Pie*/}
             <section className="ingredients bg-receptDescriptionColor rounded-lg">
               <h2 id="big">Ingredients:</h2>
               <div>
-                {recipe.ingredients.map((item) => (
-                  <li key={item}>
+                {recipeReal.ingredients.map((item) => (
+                  <li key={item.id}>
                     {item.name}
                     <span> </span>
-                    {(item.amount = Portions(portions, item.amount))}
+                    {(Portions(portions, item.amount))}
                   </li>
                 ))}
               </div>
@@ -122,8 +125,8 @@ export default function RecipePage() {
         <div className="showDescription showContent">
           <section className="description bg-receptDescriptionColor rounded-lg">
             <h2 id="big">Description:</h2>
-            {recipe.description.map((item) => (
-              <li key={item}>{item}</li>
+            {recipeReal.description.map((item) => (
+              <li key={item.number}>{item.step}</li>
             ))}
           </section>
 

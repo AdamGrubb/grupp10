@@ -21,8 +21,8 @@ export default function SearchResults() {
     //This for-loop iterates over the array of recipes sent in as a parameter and creates recipecards and sends objekt-information to the recipe-page with the help of "State".
     for (let x = 0; x < recipes.length; x++) {
       RecipeCards.push(
-        <Link key={x} to="/searchresults/recipepage" state={recipes[x]}>
-          <RecipeCard id={x} title={recipes[x].title} img={recipes[x].img} />
+        <Link key={recipes[x].id} to="/searchresults/recipepage" state={recipes[x]}>
+          <RecipeCard id={recipes[x].id} title={recipes[x].title} img={recipes[x].img} />
         </Link>
       );
     }
