@@ -8,11 +8,11 @@ const useRecipeStore = create((set) => ({
   filteredRecipeCollection: [],
 
   //You call on this function to store an array of recipe in recipeCollection. The parameter to the function is an array of recipes.
-  addRecipes: (recipes) => set((state) => ({ recipeCollection: [...recipes] })),
+  addRecipes: (recipes) => set((state) => ({ recipeCollection: recipes })),
 
   //You call on this function to store an array of recipe in filteredRecipeCollection. The parameter to the function is an array of recipes.
   addFilteredRecipes: (recipes) =>
-    set((state) => ({ filteredRecipeCollection: [...recipes] })),
+    set((state) => ({ filteredRecipeCollection: recipes })),
 
   //This function has no parameters and is called to fill the recipeCollection with mock-result. It is to be used to test functions without having to call the API for data.
 }));
