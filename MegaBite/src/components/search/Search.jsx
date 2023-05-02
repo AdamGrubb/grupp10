@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import "./Search.css";
-
 import { SearchRecipes } from "../API/SearchRecipes";
 import FilterButton from "./Filter";
 import useRecipeStore from "../../hooks/useRecipeStore";
+import Location from "./LocationFilter";
 
 export default function Search() {
   const addRecipeData = useRecipeStore((state) => state.addRecipes);
