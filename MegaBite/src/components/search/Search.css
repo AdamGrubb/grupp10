@@ -49,3 +49,8 @@
 #magnGlass {
   max-width: 20px;
 }
+
+  .dropdown-list {
+   position: absolute;
+   z-index: 1000;
+  }

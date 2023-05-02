@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
+import "./Search.css";
 
-export default function Location() {
+export default function Location({ setLocation }) {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState(1);
   const dropdownRef = useRef(null);
@@ -43,13 +44,14 @@ export default function Location() {
     setLocation(e.target.value);
     setIsOpen(false);
   };
-
   return (
     <>
-      <section className="btnSearch mt-2 mr-12 justify-self-start text-sm border-2 border-solid">
+      {" "}
+      <section className="btnSearch mt-2 mr-12 justify-self-start text-sm border-2 border-solid dropdown-container">
+        {" "}
         <select
           ref={dropdownRef}
-          className="bg-receptDescriptionColor"
+          className="bg-receptDescriptionColor dropdown-list"
           onChange={handleChange}
           size={size}
           onClick={handleClick}
@@ -59,13 +61,15 @@ export default function Location() {
             maxHeight: isOpen ? "calc(1.6em * 5 + 0.25em * 2)" : "auto",
           }}
         >
+          {" "}
           {locationsArray.map((location) => (
             <option key={location.value} value={location.value}>
-              {location.displayText}
+              {" "}
+              {location.displayText}{" "}
             </option>
-          ))}
-        </select>
-      </section>
+          ))}{" "}
+        </select>{" "}
+      </section>{" "}
     </>
   );
 }

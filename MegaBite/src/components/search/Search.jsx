@@ -19,7 +19,7 @@ export default function Search() {
   const [vegan, setVegan] = useState(false);
   const [vegetarian, setVegetarian] = useState(false);
   const [recipeData, setRecipeData] = useState([]);
-  // const [location, setLocation] = useState("Denna ska ändras");
+  const [location, setLocation] = useState();
   const navigate = useNavigate();
   //const [filteredRecipes, setFilteredRecipes] = useState(useFilter(glutenFree, dairyFree, vegetarian, vegan, breakfast, lunch, dinner))
   const filteredRecipes = useFilter(
@@ -29,7 +29,8 @@ export default function Search() {
     vegan,
     breakfast,
     lunch,
-    dinner
+    dinner,
+    location
   );
 
   const handleChange = (e) => {
@@ -164,7 +165,7 @@ export default function Search() {
             )}
           </div>
 
-          <Location />
+          <Location setLocation={setLocation} />
         </div>
       </section>
     </>
