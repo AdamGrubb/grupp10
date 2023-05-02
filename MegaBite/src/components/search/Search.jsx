@@ -1,57 +1,47 @@
 import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import "./Search.css";
-import magnGlass from "../../assets/magnGlass.png";
+
 import { SearchRecipes } from "../API/SearchRecipes";
-// import AlertPopup from "../Utilities/Alert";
-import React, { useState } from "react";
-import useFilter from "./useFilter";
-import Location from "./LocationFilter";
-//import { addRecipes } from "../../hooks/useRecipeStore";
+import FilterButton from "./Filter";
+import useRecipeStore from "../../hooks/useRecipeStore";
 
 export default function Search() {
-  const [searchword, setSearchword] = useState("");
+  const addRecipeData = useRecipeStore((state) => state.addRecipes);
   const [showFilters, setShowFilters] = useState(false);
-  const [breakfast, setBreakfast] = useState(true);
-  const [lunch, setLunch] = useState(true);
-  const [dinner, setDinner] = useState(true);
-  const [glutenFree, setGlutenFree] = useState(false);
-  const [dairyFree, setDairyFree] = useState(false);
-  const [vegan, setVegan] = useState(false);
-  const [vegetarian, setVegetarian] = useState(false);
+  const [searchword, setSearchword] = useState("");
   const [recipeData, setRecipeData] = useState([]);
   const [location, setLocation] = useState();
   const navigate = useNavigate();
-  //const [filteredRecipes, setFilteredRecipes] = useState(useFilter(glutenFree, dairyFree, vegetarian, vegan, breakfast, lunch, dinner))
-  const filteredRecipes = useFilter(
-    glutenFree,
-    dairyFree,
-    vegetarian,
-    vegan,
-    breakfast,
-    lunch,
-    dinner,
-    location
-  );
 
+  //Used to grab whats typed into textfield. Den här omrenderas hela tiden, bättre att inte ha en use-state på den. Och bara ha submitknappen ta datan och skicka in i vad det nu är
   const handleChange = (e) => {
     setSearchword(e.target.value.toLowerCase());
   };
 
+  //Checks if search is empty, makes API call and then sets the searchresult.
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!searchword || !searchword.trim()) {
       alert("Please enter a search query.");
       return null;
     }
+    console.log(searchword);
     const data = await SearchRecipes(searchword);
     if (data == null) {
       return alert("Nothing to show");
     }
-    setRecipeData(data);
-    addRecipes(recipeData);
+    console.log(data);
+    addRecipeData(data);
     e.target.reset();
     setSearchword("");
   };
+
+  //When API is called and recipeData-array is updated, only then will Store get the new values. Varför inte låta den gå direkt på addRecipeData?
+  useEffect(() => {
+    // addRecipeData(recipeData); Denna gör så att resultatet i store ersätts vid useffect. Kommenterar ut då den nollställer sökresultatet.
+    navigate("/searchresults"); //Detta gör att mnan direkt hamnar på searchresult och råkar man gå tillbaka till "huvudsidan" så får man inte tillgång till sökresultaten
+  }, [recipeData]);
 
   return (
     <>
@@ -76,93 +66,10 @@ export default function Search() {
               className="absolute top-0 right-0 h-full px-4 text-sm text-gray-500"
               onClick={() => setShowFilters(!showFilters)}
             >
-              Filters
+              <h1>Filters</h1>
             </button>
 
-            {showFilters && (
-              <div
-                className="absolute top-full left-0 right-0 px-4 py-2 border rounded shadow"
-                style={{ backgroundColor: "gray", zIndex: 1 }}
-              >
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id="breakfast"
-                    checked={breakfast}
-                    onChange={(e) => setBreakfast(e.target.checked)}
-                  />
-                  <label htmlFor="breakfast" className="ml-2">
-                    Breakfast
-                  </label>
-                </div>
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id="lunch"
-                    checked={lunch}
-                    onChange={(e) => setLunch(e.target.checked)}
-                  />
-                  <label htmlFor="lunch" className="ml-2">
-                    Lunch
-                  </label>
-                </div>
-                <div className="flex items-center ">
-                  <input
-                    type="checkbox"
-                    id="dinner"
-                    checked={dinner}
-                    onChange={(e) => setDinner(e.target.checked)}
-                  />
-                  <label htmlFor="dinner" className="ml-2">
-                    Dinner
-                  </label>
-                </div>
-                <div className="flex items-center mt-2">
-                  <input
-                    type="checkbox"
-                    id="gluten-free"
-                    checked={glutenFree}
-                    onChange={(e) => setGlutenFree(e.target.checked)}
-                  />
-                  <label htmlFor="gluten-free" className="ml-2">
-                    Gluten-free
-                  </label>
-                </div>
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id="dairy-free"
-                    checked={dairyFree}
-                    onChange={(e) => setDairyFree(e.target.checked)}
-                  />
-                  <label htmlFor="dairy-free" className="ml-2">
-                    Dairy-free
-                  </label>
-                </div>
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id="vegan"
-                    checked={vegan}
-                    onChange={(e) => setVegan(e.target.checked)}
-                  />
-                  <label htmlFor="vegan" className="ml-2">
-                    Vegan
-                  </label>
-                </div>
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id="vegetarian"
-                    checked={vegetarian}
-                    onChange={(e) => setVegetarian(e.target.checked)}
-                  />
-                  <label htmlFor="vegetarian" className="ml-2">
-                    Vegetarian
-                  </label>
-                </div>
-              </div>
-            )}
+            {showFilters && <FilterButton />}
           </div>
 
           <Location setLocation={setLocation} />
