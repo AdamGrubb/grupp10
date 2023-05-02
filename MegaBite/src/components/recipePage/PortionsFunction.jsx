@@ -10,5 +10,5 @@ export default function Portions(portions, amount) {
     return amount * 2;
   }
 
-  return amount;
+  return amount + "&nbsp;";
 }

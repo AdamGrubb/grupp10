@@ -92,6 +92,7 @@ export default function RecipePage() {
                     <select
                       className="bg-receptDescriptionColor"
                       onChange={(e) => setPortions(e.target.value)}
+                      defaultValue={4}
                     >
                       <option value="2">2</option>
                       <option value="4">4</option>
@@ -107,16 +108,18 @@ export default function RecipePage() {
                 </div> */}
               </div>
             </section>
-                {/* Här klagar den ibland på att ingredienserna får samma key, ibland lägger den nämligen in samma ingrediens två gånger. Typ olika varianter av mängd smör i recept ger flera element med samma id. Se Banana Butter Pie. 
+            {/* Här klagar den ibland på att ingredienserna får samma key, ibland lägger den nämligen in samma ingrediens två gånger. Typ olika varianter av mängd smör i recept ger flera element med samma id. Se Banana Butter Pie. 
                 Ett alternativ skulle vara att använda "cleanName" då id:t blir unikt på riktigt.*/}
             <section className="ingredients bg-receptDescriptionColor rounded-lg">
               <h2 id="big">Ingredients:</h2>
               <div>
                 {recipeReal.ingredients.map((item) => (
                   <li key={item.id}>
+                    {Portions(portions, item.amount)}
+                    &ensp;
+                    {item.unit}
+                    &ensp;
                     {item.name}
-                    <span> </span>
-                    {(Portions(portions, item.amount))}
                   </li>
                 ))}
               </div>
@@ -127,7 +130,9 @@ export default function RecipePage() {
           <section className="description bg-receptDescriptionColor rounded-lg">
             <h2 id="big">Description:</h2>
             {recipeReal.description.map((item) => (
-              <li key={item.number}>{item.step}</li>
+              <li className="mr-5" key={item.number}>
+                {item.step}
+              </li>
             ))}
           </section>
 
