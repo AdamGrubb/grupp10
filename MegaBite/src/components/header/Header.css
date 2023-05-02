@@ -19,7 +19,8 @@
 
 .header-lower-font {
   font-family: "Italiana", serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
-  margin-top: -10px;
+  margin-top: -8px;
+  text-align: center;
 }

@@ -14,6 +14,7 @@ import Location from "./LocationFilter";
 
 export default function Search() {
   const addRecipeData = useRecipeStore((state) => state.addRecipes);
+  const addMockData = useRecipeStore((state) => state.addMock);
   const [showFilters, setShowFilters] = useState(false);
   const [searchword, setSearchword] = useState("");
   const [recipeData, setRecipeData] = useState([]);
@@ -28,30 +29,28 @@ export default function Search() {
   //Checks if search is empty, makes API call and then sets the searchresult.
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!searchword || !searchword.trim()) {
-      alert("Please enter a search query.");
-      return null;
-    }
-    console.log(searchword);
-    const data = await SearchRecipes(searchword);
-    if (data == null) {
-      return alert("Nothing to show");
-    }
-    console.log(data);
-    addRecipeData(data);
+    // if (!searchword || !searchword.trim()) {
+    //   alert("Please enter a search query.");
+    //   return null;
+    // }
+    // console.log(searchword);
+    // const data = await SearchRecipes(searchword);
+    // if (data == null) {
+    //   return alert("Nothing to show");
+    // }
+    addMockData();
     e.target.reset();
     setSearchword("");
   };
 
   //When API is called and recipeData-array is updated, only then will Store get the new values. Varför inte låta den gå direkt på addRecipeData?
   useEffect(() => {
-    // addRecipeData(recipeData); Denna gör så att resultatet i store ersätts vid useffect. Kommenterar ut då den nollställer sökresultatet.
     navigate("/searchresults"); //Detta gör att mnan direkt hamnar på searchresult och råkar man gå tillbaka till "huvudsidan" så får man inte tillgång till sökresultaten
   }, [recipeData]);
 
   return (
     <>
-      <section className="flex justify-center h-32 m-2 bg-searchFilterAreaColor">
+      <section className="flex justify-center h-32 mt-2 mr-2 ml-2 searchFilterArea bg-searchFilterAreaColor">
         <div className="flex flex-col items-center justify-center">
           <div className="relative">
             <form onSubmit={handleSubmit}>
@@ -63,7 +62,11 @@ export default function Search() {
                   placeholder="Search..."
                 />
               </div>
-              <button type="submit" id="btnSearch">
+              <button
+                type="submit"
+                id="btnSearch"
+                // className="bg-headerColor"
+              >
                 <img
                   src={MagnifyingGlass}
                   className="magnifying-glass"

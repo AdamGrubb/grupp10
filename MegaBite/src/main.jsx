@@ -9,7 +9,7 @@ import { Footer } from "./components/footer/Footer";
 import { NotFound } from "./components/notfound/NotFound";
 import RecipePage from "./components/recipePage/RecipePage";
 import SiteContent from "./components/siteContent/SiteContent";
-import SearchResults from "./components/searchResults/SearchResults";
+import SearchResults from "./components/searchResults/searchResults";
 
 // css
 import "./index.css";
