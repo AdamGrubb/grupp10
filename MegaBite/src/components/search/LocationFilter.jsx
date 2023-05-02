@@ -47,7 +47,6 @@ export default function Location({ setLocation }) {
           ref={dropdownRef}
           className="bg-receptDescriptionColor dropdown-list"
           onChange={handleChange}
-          size={size}
           onClick={handleClick}
         >
           {" "}
