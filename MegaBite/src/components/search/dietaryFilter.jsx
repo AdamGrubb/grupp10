@@ -1,4 +1,4 @@
-export const Filter = (recipes, filters) => {
+export const dietaryFilter = (recipes, filters) => {
   const filteredStore = [];
 
   const allMealtypes = !filters.breakfast && !filters.lunch && !filters.dinner;
@@ -36,4 +36,4 @@ export const Filter = (recipes, filters) => {
   return filteredStore;
 };
 
-export default Filter;
+export default dietaryFilter;

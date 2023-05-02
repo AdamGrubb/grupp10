@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import "./Search.css";
-import magnGlass from "../../assets/magnGlass.png";
+
 import { SearchRecipes } from "../API/SearchRecipes";
-import FilterButton from "./useFilter";
+import FilterButton from "./Filter";
 import useRecipeStore from "../../hooks/useRecipeStore";
-import Filter from "./Filter";
-// import AlertPopup from "../Utilities/Alert";
+
 
 export default function Search() {
   const addRecipeData = useRecipeStore((state) => state.addRecipes);

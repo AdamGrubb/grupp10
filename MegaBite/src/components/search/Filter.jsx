@@ -1,9 +1,6 @@
-import { useFetcher } from "react-router-dom";
 import useRecipeStore from "../../hooks/useRecipeStore";
 import { useEffect, useState } from "react";
-import { Filter } from "./Filter";
-
-//hook instead of function
+import { dietaryFilter } from "./dietaryFilter";
 
 
 export default function FilterButton() {
@@ -20,7 +17,7 @@ export default function FilterButton() {
   });
 
   const filterSet = () => {
-    addFilteredRecipes(Filter(recipesFromApi, filters));
+    addFilteredRecipes(dietaryFilter(recipesFromApi, filters));
   }
 
   useEffect(() => {
