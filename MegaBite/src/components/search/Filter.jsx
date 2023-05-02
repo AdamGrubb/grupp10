@@ -3,18 +3,9 @@ import { useEffect, useState } from "react";
 import { dietaryFilter } from "./dietaryFilter";
 
 
-export default function FilterButton() {
+export default function FilterButton({setFilters}, {filters}) {
   const recipesFromApi = useRecipeStore((state) => state.recipeCollection);
   const addFilteredRecipes = useRecipeStore((state) => state.addFilteredRecipes);
-  const [filters, setFilters] = useState({
-    vegetarian: false,
-    vegan: false,
-    glutenFree: false,
-    dairyFree: false,
-    breakfast: false,
-    lunch: false,
-    dinner: false,
-  });
 
   const filterSet = () => {
     addFilteredRecipes(dietaryFilter(recipesFromApi, filters));

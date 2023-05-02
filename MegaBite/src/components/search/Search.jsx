@@ -14,6 +14,16 @@ export default function Search() {
   const [recipeData, setRecipeData] = useState([]);
   const navigate = useNavigate();
 
+  const [filters, setFilters] = useState({
+    vegetarian: false,
+    vegan: false,
+    glutenFree: false,
+    dairyFree: false,
+    breakfast: false,
+    lunch: false,
+    dinner: false,
+  });
+
   //Used to grab whats typed into textfield. Den här omrenderas hela tiden, bättre att inte ha en use-state på den. Och bara ha submitknappen ta datan och skicka in i vad det nu är
   const handleChange = (e) => {
     setSearchword(e.target.value.toLowerCase());
@@ -69,7 +79,7 @@ export default function Search() {
               <h1>Filters</h1>
             </button>
 
-            {showFilters && <FilterButton />}
+            {showFilters && <FilterButton setFilters={setFilters} filters={filters}/>}
           </div>
         </div>
       </section>
