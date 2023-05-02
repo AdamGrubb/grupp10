@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "./Search.css";
 
-export default function Location() {
+export default function Location({ setLocation }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -34,31 +34,31 @@ export default function Location() {
     setIsOpen(!isOpen);
   };
 
+  const handleChange = (e) => {
+    setLocation(e.target.value);
+    setIsOpen(false);
+  };
   return (
     <>
-      <section
-        className="btnSearch mt-2 mr-12 justify-self-start text-sm border-2 border-solid dropdown-container dropdown-wrapper"
-        ref={dropdownRef}
-      >
-        <div
-          className="bg-receptDescriptionColor dropdown-select"
+      {" "}
+      <section className="btnSearch mt-2 mr-12 justify-self-start text-sm border-2 border-solid dropdown-container">
+        {" "}
+        <select
+          ref={dropdownRef}
+          className="bg-receptDescriptionColor dropdown-list"
+          onChange={handleChange}
+          size={size}
           onClick={handleClick}
         >
-          Select Locations
-        </div>
-        {isOpen && (
-          <ul className="bg-receptDescriptionColor dropdown-list">
-            {locationsArray.map((location) => (
-              <li key={location.value} className="checkbox-item">
-                <label>
-                  <input type="checkbox" value={location.value} />
-                  {location.displayText}
-                </label>
-              </li>
-            ))}
-          </ul>
-        )}
-      </section>
+          {" "}
+          {locationsArray.map((location) => (
+            <option key={location.value} value={location.value}>
+              {" "}
+              {location.displayText}{" "}
+            </option>
+          ))}{" "}
+        </select>{" "}
+      </section>{" "}
     </>
   );
 }
