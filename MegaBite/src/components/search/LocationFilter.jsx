@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import "./Search.css";
 
 export default function Location() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,10 +47,10 @@ export default function Location() {
 
   return (
     <>
-      <section className="btnSearch mt-2 mr-12 justify-self-start text-sm border-2 border-solid">
+      <section className="btnSearch mt-2 mr-12 justify-self-start text-sm border-2 border-solid dropdown-container dropdown-wrapper">
         <select
           ref={dropdownRef}
-          className="bg-receptDescriptionColor"
+          className="bg-receptDescriptionColor dropdown-list dropdown-select"
           onChange={handleChange}
           size={size}
           onClick={handleClick}
