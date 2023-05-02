@@ -38,7 +38,7 @@
   overflow: auto;
 }
 .footer {
-  position: fixed;
+  position: bottom;
   height: 96px;
   left: 0;
   right: 0;
