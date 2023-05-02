@@ -1,0 +1,24 @@
+.dropdown-section {
+  border-radius: 2px;
+  border-color: black;
+  color: black;
+  border-radius: 20px;
+  width: 10rem;
+  height: 2rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.dropdown-list {
+  z-index: 1000;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 130px;
+  overflow-y: auto;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 2px;
+}

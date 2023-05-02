@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import "./Search.css";
+import "./LocationFilter.css";
 
 export default function Location({ setLocation }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +41,7 @@ export default function Location({ setLocation }) {
   return (
     <>
       {" "}
-      <section className="btnSearch mt-2 mr-12 justify-self-start text-sm border-2 border-solid dropdown-container">
+      <section className="dropdown-section mt-2 mr-12 justify-self-start text-sm border-2 border-solid dropdown-container">
         {" "}
         <select
           ref={dropdownRef}

@@ -1,11 +1,13 @@
 import useRecipeStore from "../../hooks/useRecipeStore";
 import { useEffect, useState } from "react";
 import { dietaryFilter } from "./dietaryFilter";
-
+import "./Filter.css";
 
 export default function FilterButton() {
   const recipesFromApi = useRecipeStore((state) => state.recipeCollection);
-  const addFilteredRecipes = useRecipeStore((state) => state.addFilteredRecipes);
+  const addFilteredRecipes = useRecipeStore(
+    (state) => state.addFilteredRecipes
+  );
   const [filters, setFilters] = useState({
     vegetarian: false,
     vegan: false,
@@ -18,7 +20,7 @@ export default function FilterButton() {
 
   const filterSet = () => {
     addFilteredRecipes(dietaryFilter(recipesFromApi, filters));
-  }
+  };
 
   useEffect(() => {
     filterSet();
@@ -27,7 +29,7 @@ export default function FilterButton() {
   return (
     <>
       <div
-        className="absolute top-full left-0 right-0 px-4 py-2 border rounded shadow"
+        className="absolute filter-box left-0 right-0 px-4 py-2 border rounded shadow"
         style={{ backgroundColor: "gray", zIndex: 1 }}
       >
         <div className="flex items-center">
@@ -36,8 +38,7 @@ export default function FilterButton() {
             name="breakfast"
             checked={filters.breakfast}
             onChange={(e) => {
-              setFilters({ ...filters, breakfast: e.target.checked }
-                );
+              setFilters({ ...filters, breakfast: e.target.checked });
             }}
           />
           <label htmlFor="breakfast" className="ml-2">
