@@ -1,8 +1,6 @@
 .searchFilterArea {
-  border-radius: 10px;
-  border-width: 2px;
-  border-color: black;
-  /* background-color: rgb(159, 187, 129); */
+  border-radius: 2px;
+  opacity: 1;
 }
 
 .searchBoxWrapperDiv {
@@ -42,7 +40,7 @@
   border-radius: 20px;
   border-color: black;
   border-width: 2px;
-  background-color: rgb(173, 211, 125);
+  background-color: rgb(232, 234, 229);
 }
 
 .magnifying-glass {

@@ -29,8 +29,8 @@ export default function FilterButton() {
   return (
     <>
       <div
-        className="absolute filter-box left-0 right-0 px-4 py-2 border rounded shadow"
-        style={{ backgroundColor: "gray", zIndex: 1 }}
+        className="absolute bg-grayColor filter-box left-0 right-0 px-4 py-2 rounded shadow"
+        style={{ zIndex: 1 }}
       >
         <div className="flex items-center">
           <input

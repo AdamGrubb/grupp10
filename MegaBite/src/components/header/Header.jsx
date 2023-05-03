@@ -6,7 +6,7 @@ import "./Header.css";
 export function Header() {
   return (
     <>
-      <header className="header h-24 bg-headerColor">
+      <header className="header h-24 headerTest">
         <Link to="/">
           <img src={logo} className="header-logo" alt="MegaBite logo" />
         </Link>

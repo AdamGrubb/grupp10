@@ -2,7 +2,6 @@
 import "./Search.css";
 import MagnifyingGlass from "../../assets/magnGlass.png";
 import FilterIcon from "../../assets/filter.png";
-import FilterIcon1 from "../../assets/filter1.png";
 
 //LOGIC
 import { useNavigate } from "react-router-dom";
@@ -18,7 +17,7 @@ export default function Search() {
   const [showFilters, setShowFilters] = useState(false);
   const [searchword, setSearchword] = useState("");
   const [recipeData, setRecipeData] = useState([]);
-  const [location, setLocation] = useState();
+  const [location, setLocation] = useState("All location");
   const navigate = useNavigate();
 
   //Used to grab whats typed into textfield. Den här omrenderas hela tiden, bättre att inte ha en use-state på den. Och bara ha submitknappen ta datan och skicka in i vad det nu är
@@ -50,7 +49,7 @@ export default function Search() {
 
   return (
     <>
-      <section className="flex justify-center h-32 mt-2 mr-2 ml-2 searchFilterArea bg-searchFilterAreaColor">
+      <section className="flex justify-center h-32 m-4 bg-grayColor searchFilterArea">
         <div className="flex flex-col items-center justify-center">
           <div className="relative">
             <form onSubmit={handleSubmit}>
@@ -62,14 +61,11 @@ export default function Search() {
                   placeholder="Search..."
                 />
               </div>
-              <button
-                type="submit"
-                id="btnSearch"
-                // className="bg-headerColor"
-              >
+
+              <button type="submit" id="btnSearch" className="image-transition">
                 <img
                   src={MagnifyingGlass}
-                  className="magnifying-glass"
+                  className="absolute magnifying-glass"
                   alt="Searchbutton as a magnifying glass"
                 />
               </button>

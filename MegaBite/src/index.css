@@ -23,7 +23,12 @@
   min-height: 100vh;
   flex-direction: column;
   width: 100%;
-  background-color: rgb(220, 237, 193);
+}
+
+.background-image {
+  background-image: url("./src/assets/searchBackground.png");
+  background-size: contain;
+  background-position: center;
 }
 
 .header {
@@ -31,7 +36,9 @@
   left: 0;
   right: 0;
 }
+
 .content {
+  min-height: 100vh;
   flex-grow: 1;
   left: 0;
   right: 0;

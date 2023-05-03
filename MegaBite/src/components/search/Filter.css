@@ -1,3 +1,5 @@
 .filter-box {
   margin-top: 3.2rem;
+  color: black;
+  z-index: 1;
 }

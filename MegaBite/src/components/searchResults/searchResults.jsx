@@ -41,10 +41,8 @@ export default function SearchResults() {
   };
 
   return (
-    <section>
-      <nav className="display-recipecards">
-        {displayRecipeCards(recipeFromStore)}
-      </nav>
-    </section>
+    <nav className="display-recipecards">
+      {displayRecipeCards(recipeFromStore)}
+    </nav>
   );
 }
