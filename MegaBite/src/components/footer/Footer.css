@@ -25,7 +25,7 @@
 
 .footer {
   background-color: rgb(220, 237, 193);
-  height: 90px;
+  height: auto;
   left: 0;
   right: 0;
   bottom: 0;
