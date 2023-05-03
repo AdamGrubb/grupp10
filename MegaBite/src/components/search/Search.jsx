@@ -7,7 +7,6 @@ import useRecipeStore from "../../hooks/useRecipeStore";
 import Location from "./LocationFilter";
 import dietaryFilter from "./dietaryFilter";
 
-
 export default function Search() {
   const recipesFromApi = useRecipeStore((state) => state.recipeCollection);
   const addFilteredRecipes = useRecipeStore((state) => state.addFilteredRecipes);
