@@ -17,7 +17,7 @@ export function Footer() {
             </p>
             <p className="LinkedIn">
               <a href="https://grupp10.carrd.co/" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-linkedin"></i> LinkedIn
+                <i className="fab fa-linkedin"></i> Linkedin
               </a>
             </p>
             <div className="office-logo">
