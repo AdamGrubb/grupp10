@@ -1,5 +1,6 @@
 //CSS ICONS
 import "./Search.css";
+
 import MagnifyingGlass from "../../assets/magnGlass.png";
 import FilterIcon from "../../assets/filter.png";
 
