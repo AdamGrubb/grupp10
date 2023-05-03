@@ -5,13 +5,15 @@ import "./Search.css";
 import { SearchRecipes } from "../API/SearchRecipes";
 import FilterButton from "./Filter";
 import useRecipeStore from "../../hooks/useRecipeStore";
+import dietaryFilter from "./dietaryFilter";
 
 
 export default function Search() {
+  const recipesFromApi = useRecipeStore((state) => state.recipeCollection);
+  const addFilteredRecipes = useRecipeStore((state) => state.addFilteredRecipes);
   const addRecipeData = useRecipeStore((state) => state.addRecipes);
   const [showFilters, setShowFilters] = useState(false);
   const [searchword, setSearchword] = useState("");
-  const [recipeData, setRecipeData] = useState([]);
   const navigate = useNavigate();
 
   const [filters, setFilters] = useState({
@@ -24,7 +26,7 @@ export default function Search() {
     dinner: false,
   });
 
-  //Used to grab whats typed into textfield. Den här omrenderas hela tiden, bättre att inte ha en use-state på den. Och bara ha submitknappen ta datan och skicka in i vad det nu är
+  //Used to grab whats typed into textfield.
   const handleChange = (e) => {
     setSearchword(e.target.value.toLowerCase());
   };
@@ -36,22 +38,23 @@ export default function Search() {
       alert("Please enter a search query.");
       return null;
     }
-    console.log(searchword);
+
     const data = await SearchRecipes(searchword);
-    if (data == null) {
+
+    if (data == []) {//Doesn't really provide any functionality
       return alert("Nothing to show");
     }
-    console.log(data);
+  
     addRecipeData(data);
+
     e.target.reset();
     setSearchword("");
   };
 
-  //When API is called and recipeData-array is updated, only then will Store get the new values. Varför inte låta den gå direkt på addRecipeData?
-  useEffect(() => {
-    // addRecipeData(recipeData); Denna gör så att resultatet i store ersätts vid useffect. Kommenterar ut då den nollställer sökresultatet.
-    navigate("/searchresults"); //Detta gör att mnan direkt hamnar på searchresult och råkar man gå tillbaka till "huvudsidan" så får man inte tillgång till sökresultaten
-  }, [recipeData]);
+    useEffect(() => {
+    navigate("/searchresults");
+    addFilteredRecipes(dietaryFilter(recipesFromApi, filters));
+  }, [recipesFromApi, filters]);
 
   return (
     <>

@@ -1,20 +1,4 @@
-import useRecipeStore from "../../hooks/useRecipeStore";
-import { useEffect, useState } from "react";
-import { dietaryFilter } from "./dietaryFilter";
-
-
 export default function FilterButton(props) {
-  const recipesFromApi = useRecipeStore((state) => state.recipeCollection);
-  const addFilteredRecipes = useRecipeStore((state) => state.addFilteredRecipes);
-
-  const filterSet = () => {
-    addFilteredRecipes(dietaryFilter(recipesFromApi, props.filters));
-  }
-
-  useEffect(() => {
-    filterSet();
-  }, [props.filters]);
-
   return (
     <>
       <div
@@ -113,22 +97,7 @@ export default function FilterButton(props) {
             Vegetarian
           </label>
         </div>
-        {/* <button onClick={} className="border">Set Filter</button> */}
       </div>
     </>
   );
 }
-
-// const filteringArray = (arr, filter) => {
-//   return arr.filter((item) => {
-//     return (
-//       (filter.vegetarian && item.vegetarian) ||
-//       (filter.vegan && item.vegan) ||
-//       (filter.glutenFree && item.glutenFree) ||
-//       (filter.dairyFree && item.dairyFree) ||
-//       (filter.breakfast && item.mealType === "Breakfast") ||
-//       (filter.lunch && item.mealType === "Lunch") ||
-//       (filter.dinner && item.mealType === "Dinner")
-//     );
-//   });
-// };
