@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import "./Search.css";
-
 import { SearchRecipes } from "../API/SearchRecipes";
 import FilterButton from "./Filter";
 import useRecipeStore from "../../hooks/useRecipeStore";
+import Location from "./LocationFilter";
 import dietaryFilter from "./dietaryFilter";
 
 
@@ -14,6 +14,8 @@ export default function Search() {
   const addRecipeData = useRecipeStore((state) => state.addRecipes);
   const [showFilters, setShowFilters] = useState(false);
   const [searchword, setSearchword] = useState("");
+  const [location, setLocation] = useState();
+  
   const navigate = useNavigate();
 
   const [filters, setFilters] = useState({
@@ -84,6 +86,8 @@ export default function Search() {
 
             {showFilters && <FilterButton setFilters={setFilters} filters={filters}/>}
           </div>
+
+          <Location setLocation={setLocation} />
         </div>
       </section>
     </>
