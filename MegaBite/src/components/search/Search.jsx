@@ -1,6 +1,12 @@
+//CSS ICONS
+import "./Search.css";
+
+import MagnifyingGlass from "../../assets/magnGlass.png";
+import FilterIcon from "../../assets/filter.png";
+
+//LOGIC
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import "./Search.css";
 import { SearchRecipes } from "../API/SearchRecipes";
 import FilterButton from "./Filter";
 import useRecipeStore from "../../hooks/useRecipeStore";
@@ -9,12 +15,14 @@ import dietaryFilter from "./dietaryFilter";
 
 export default function Search() {
   const recipesFromApi = useRecipeStore((state) => state.recipeCollection);
-  const addFilteredRecipes = useRecipeStore((state) => state.addFilteredRecipes);
+  const addFilteredRecipes = useRecipeStore(
+    (state) => state.addFilteredRecipes
+  );
   const addRecipeData = useRecipeStore((state) => state.addRecipes);
   const [showFilters, setShowFilters] = useState(false);
   const [searchword, setSearchword] = useState("");
   const [location, setLocation] = useState();
-  
+
   const navigate = useNavigate();
 
   const [filters, setFilters] = useState({
@@ -42,48 +50,59 @@ export default function Search() {
 
     const data = await SearchRecipes(searchword);
 
-    if (data == []) {//Doesn't really provide any functionality
+    if (data == []) {
+      //Doesn't really provide any functionality
       return alert("Nothing to show");
     }
-  
+
     addRecipeData(data);
 
     e.target.reset();
     setSearchword("");
   };
 
-    useEffect(() => {
+  useEffect(() => {
     navigate("/searchresults");
     addFilteredRecipes(dietaryFilter(recipesFromApi, filters));
   }, [recipesFromApi, filters]);
 
   return (
     <>
-      <section className="flex justify-center h-24 mb-2 bg-searchAreaColor">
-        <div className="flex flex-col items-center">
-          <h4 className="align-text-center">Welcome to MegaBite!</h4>
+      <section className="flex justify-center h-32 m-4 bg-grayColor searchFilterArea">
+        <div className="flex flex-col items-center justify-center">
           <div className="relative">
             <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                onChange={handleChange}
-                placeholder="Search..."
-              />
-              <button
-                type="submit"
-                className="absolute btnSearch mt-7 top-0 right-0 h-full px-4 text-sm border-2 border-solid"
-              >
-                Search
+              <div className="relative searchBoxWrapperDiv">
+                <input
+                  className="searchBox"
+                  type="text"
+                  onChange={handleChange}
+                  placeholder="Search..."
+                />
+              </div>
+
+              <button type="submit" id="btnSearch" className="image-transition">
+                <img
+                  src={MagnifyingGlass}
+                  className="absolute magnifying-glass"
+                  alt="Searchbutton as a magnifying glass"
+                />
               </button>
             </form>
             <button
-              className="absolute top-0 right-0 h-full px-4 text-sm text-gray-500"
+              className="absolute filter-button top-12 right-0"
               onClick={() => setShowFilters(!showFilters)}
             >
-              <h1>Filters</h1>
+              <img
+                src={FilterIcon}
+                className="filter-icon"
+                alt="Filterbutton"
+              />
             </button>
 
-            {showFilters && <FilterButton setFilters={setFilters} filters={filters}/>}
+            {showFilters && (
+              <FilterButton setFilters={setFilters} filters={filters} />
+            )}
           </div>
 
           <Location setLocation={setLocation} />

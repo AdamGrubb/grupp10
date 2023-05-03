@@ -1,9 +1,11 @@
+import "./Filter.css";
+
 export default function FilterButton(props) {
   return (
     <>
       <div
-        className="absolute top-full left-0 right-0 px-4 py-2 border rounded shadow"
-        style={{ backgroundColor: "gray", zIndex: 1 }}
+        className="absolute bg-grayColor filter-box left-0 right-0 px-4 py-2 rounded shadow"
+        style={{ zIndex: 1 }}
       >
         <div className="flex items-center">
           <input
@@ -11,8 +13,10 @@ export default function FilterButton(props) {
             name="breakfast"
             checked={props.filters.breakfast}
             onChange={(e) => {
-              props.setFilters({ ...props.filters, breakfast: e.target.checked }
-                );
+              props.setFilters({
+                ...props.filters,
+                breakfast: e.target.checked,
+              });
             }}
           />
           <label htmlFor="breakfast" className="ml-2">
@@ -51,7 +55,10 @@ export default function FilterButton(props) {
             name="glutenFree"
             checked={props.filters.glutenFree}
             onChange={(e) => {
-              props.setFilters({ ...props.filters, glutenFree: e.target.checked });
+              props.setFilters({
+                ...props.filters,
+                glutenFree: e.target.checked,
+              });
             }}
           />
           <label htmlFor="gluten-free" className="ml-2">
@@ -64,7 +71,10 @@ export default function FilterButton(props) {
             name="dairyFree"
             checked={props.filters.dairyFree}
             onChange={(e) => {
-              props.setFilters({ ...props.filters, dairyFree: e.target.checked });
+              props.setFilters({
+                ...props.filters,
+                dairyFree: e.target.checked,
+              });
             }}
           />
           <label htmlFor="dairy-free" className="ml-2">
@@ -90,7 +100,10 @@ export default function FilterButton(props) {
             name="vegetarian"
             checked={props.filters.vegetarian}
             onChange={(e) => {
-              props.setFilters({ ...props.filters, vegetarian: e.target.checked });
+              props.setFilters({
+                ...props.filters,
+                vegetarian: e.target.checked,
+              });
             }}
           />
           <label htmlFor="vegetarian" className="ml-2">

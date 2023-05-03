@@ -4,7 +4,8 @@ export default {
   theme: {
     colors: {
       headerColor: "#9FBB81",
-      searchBarColor: "#ADD37D",
+      searchFilterAreaColor: "#ADD37D",
+      grayColor: "#E8EAE5",
       locationDropdownColor: "#AAD37D",
       receptDescriptionColor: "#AAD37D",
       foodNamebarColor: "#AAD37D",

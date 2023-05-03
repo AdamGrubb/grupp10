@@ -23,7 +23,13 @@
   min-height: 100vh;
   flex-direction: column;
   width: 100%;
-  background-color: rgb(220, 237, 193);
+}
+
+.background-image {
+  /* background-image: url("./src/assets/siteBackground.jpg"); */
+  background-image: url("./src/assets/siteBackgroundNina.png");
+  background-size: auto;
+  background-position: center center;
 }
 
 .header {
@@ -31,14 +37,15 @@
   left: 0;
   right: 0;
 }
+
 .content {
+  min-height: 100vh;
   flex-grow: 1;
   left: 0;
   right: 0;
   overflow: auto;
 }
 .footer {
-  position: fixed;
   height: 96px;
   left: 0;
   right: 0;

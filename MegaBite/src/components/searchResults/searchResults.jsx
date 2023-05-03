@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import useRecipeStore from "../../hooks/useRecipeStore";
 import { useEffect } from "react";
 
+import "./searchResults.css";
+
 export default function SearchResults() {
   //This gets the result from the filteredRecipeCollection.
   const recipeFromStore = useRecipeStore(
@@ -21,8 +23,17 @@ export default function SearchResults() {
     //This for-loop iterates over the array of recipes sent in as a parameter and creates recipecards and sends objekt-information to the recipe-page with the help of "State".
     for (let x = 0; x < recipes.length; x++) {
       RecipeCards.push(
-        <Link key={recipes[x].id} to="/searchresults/recipepage" state={recipes[x]}>
-          <RecipeCard id={recipes[x].id} title={recipes[x].title} img={recipes[x].img} />
+        <Link
+          className="w-44 md:w-auto"
+          key={recipes[x].id}
+          to="/searchresults/recipepage"
+          state={recipes[x]}
+        >
+          <RecipeCard
+            id={recipes[x].id}
+            title={recipes[x].title}
+            img={recipes[x].img}
+          />
         </Link>
       );
     }
@@ -30,10 +41,8 @@ export default function SearchResults() {
   };
 
   return (
-    <section className="w-56 lg:w-[28rem] mx-auto">
-      <nav className="flex flex-row flex-wrap justify-left ">
-        {displayRecipeCards(recipeFromStore)}
-      </nav>
-    </section>
+    <nav className="display-recipecards">
+      {displayRecipeCards(recipeFromStore)}
+    </nav>
   );
 }

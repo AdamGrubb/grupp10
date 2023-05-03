@@ -1,6 +1,6 @@
 export async function SearchRecipes(queryParams) {
   //API-key adds to the URL to be able to make API-calls
-  const apikey = "6224658806df44eaa8ccb7cfc9abe6e9";
+  const apikey = "e00dc2fe3f314cee86a4eb59100267ef";
 
   //6224658806df44eaa8ccb7cfc9abe6e9 JACOB
   //e00dc2fe3f314cee86a4eb59100267ef JOHANNES

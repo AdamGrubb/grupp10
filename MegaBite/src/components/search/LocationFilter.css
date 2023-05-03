@@ -1,0 +1,43 @@
+.dropdown-section {
+  margin-top: 10px;
+  border-radius: 2px;
+  border-color: black;
+  color: black;
+  border-radius: 20px;
+  width: 10rem;
+  height: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  background-color: rgb(232, 234, 229);
+}
+
+.dropdown-select {
+  margin-top: 0.3rem;
+}
+
+.dropdown-list {
+  position: relative;
+  background-color: rgb(232, 234, 229);
+  z-index: 1;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-height: 12rem;
+  overflow-y: auto;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 0.7rem;
+  font-size: 14px;
+  border-width: 2px;
+  border-color: rgb(207, 209, 204);
+}
+
+.checkbox-item {
+  font-size: 1rem;
+  background-color: rgb(232, 234, 229);
+  height: 1.8rem;
+}
+
+.btnRegion {
+  margin-top: 0.3rem;
+}
