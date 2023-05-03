@@ -13,7 +13,6 @@ import Location from "./LocationFilter";
 
 export default function Search() {
   const addRecipeData = useRecipeStore((state) => state.addRecipes);
-  const addMockData = useRecipeStore((state) => state.addMock);
   const [showFilters, setShowFilters] = useState(false);
   const [searchword, setSearchword] = useState("");
   const [recipeData, setRecipeData] = useState([]);
@@ -28,16 +27,20 @@ export default function Search() {
   //Checks if search is empty, makes API call and then sets the searchresult.
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (!searchword || !searchword.trim()) {
-    //   alert("Please enter a search query.");
-    //   return null;
-    // }
-    // console.log(searchword);
-    // const data = await SearchRecipes(searchword);
-    // if (data == null) {
-    //   return alert("Nothing to show");
-    // }
-    addMockData();
+    if (!searchword || !searchword.trim()) {
+      alert("Please enter a search query.");
+      return null;
+    }
+
+    const data = await SearchRecipes(searchword);
+
+    if (data == []) {
+      //Doesn't really provide any functionality
+      return alert("Nothing to show");
+    }
+
+    addRecipeData(data);
+
     e.target.reset();
     setSearchword("");
   };

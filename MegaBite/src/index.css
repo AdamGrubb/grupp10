@@ -26,9 +26,10 @@
 }
 
 .background-image {
-  background-image: url("./src/assets/searchBackground.png");
-  background-size: contain;
-  background-position: center;
+  /* background-image: url("./src/assets/siteBackground.jpg"); */
+  background-image: url("./src/assets/siteBackgroundNina.png");
+  background-size: auto;
+  background-position: center center;
 }
 
 .header {
