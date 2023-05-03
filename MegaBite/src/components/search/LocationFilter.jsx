@@ -45,17 +45,15 @@ export default function Location({ setLocation }) {
         className="dropdown-section mt-2 mr-12 justify-self-start text-sm border-2 border-solid dropdown-container dropdown-wrapper"
         ref={dropdownRef}
       >
-        <div
-          className="bg-receptDescriptionColor dropdown-select"
-          onClick={handleClick}
-        >
+        <div className=" dropdown-select" onClick={handleClick}>
           Select Locations
         </div>
         {isOpen && (
-          <ul className="bg-receptDescriptionColor dropdown-list">
+          <ul className="dropdown-list">
             {locationsArray.map((location) => (
               <li key={location.value} className="checkbox-item">
                 <button
+                  className="btnRegion"
                   type="button"
                   value={location.value}
                   onClick={() => handleChange(location)}
