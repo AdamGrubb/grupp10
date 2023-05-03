@@ -8,6 +8,7 @@ export function Footer() {
       <footer className="bg-footerColor footer">
         <div>
           <p className="FindUsAt">Find us at!</p>
+
           <div className="social-links">
             <p className="GitHub">
               <a href="https://github.com/AdamGrubb/grupp10" target="_blank" rel="noopener noreferrer">
@@ -25,6 +26,7 @@ export function Footer() {
               </a>
             </div>
           </div>
+          <p className="joke">What do you call cheese that isn't yours? Nacho cheese!"</p>
         </div>
       </footer>
     </>

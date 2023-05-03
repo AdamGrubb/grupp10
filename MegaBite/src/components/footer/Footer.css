@@ -1,5 +1,5 @@
 .LinkedIn, .GitHub, .office-logo {
-  color: black;
+  color: rgb(68, 68, 68);
   margin: 1px;
   font-weight: bold;
   font-size: 15px;
@@ -32,4 +32,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.joke {
+  font-size: 8px;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0 1rem;
+  color: black;
 }
