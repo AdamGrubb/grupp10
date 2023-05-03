@@ -1,3 +1,5 @@
+import "./Filter.css";
+
 export default function FilterButton(props) {
   return (
     <>
