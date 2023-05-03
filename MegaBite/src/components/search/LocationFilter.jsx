@@ -12,6 +12,7 @@ export default function Location({ setLocation }) {
   };
 
   const locationsArray = [
+    { value: "", displayText: "All Locations" },
     { value: "African", displayText: "African" },
     { value: "American", displayText: "American" },
     { value: "Chinese", displayText: "Chinese" },
@@ -40,24 +41,32 @@ export default function Location({ setLocation }) {
   };
   return (
     <>
-      {" "}
-      <section className="dropdown-section mt-2 mr-12 justify-self-start text-sm border-2 border-solid dropdown-container">
-        {" "}
-        <select
-          ref={dropdownRef}
-          className="bg-receptDescriptionColor dropdown-list"
-          onChange={handleChange}
+      <section
+        className="dropdown-section mt-2 mr-12 justify-self-start text-sm border-2 border-solid dropdown-container dropdown-wrapper"
+        ref={dropdownRef}
+      >
+        <div
+          className="bg-receptDescriptionColor dropdown-select"
           onClick={handleClick}
         >
-          {" "}
-          {locationsArray.map((location) => (
-            <option key={location.value} value={location.value}>
-              {" "}
-              {location.displayText}{" "}
-            </option>
-          ))}{" "}
-        </select>{" "}
-      </section>{" "}
+          Select Locations
+        </div>
+        {isOpen && (
+          <ul className="bg-receptDescriptionColor dropdown-list">
+            {locationsArray.map((location) => (
+              <li key={location.value} className="checkbox-item">
+                <button
+                  type="button"
+                  value={location.value}
+                  onClick={() => handleChange(location)}
+                >
+                  {location.displayText}
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
     </>
   );
 }

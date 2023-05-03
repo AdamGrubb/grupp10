@@ -1,5 +1,4 @@
-import porridge from "../../assets/porridge.jpg";
-import RecipeSuggestions from "../recipeSuggestions/RecipeSuggestion";
+//import RecipeSuggestions from "../recipeSuggestions/RecipeSuggestion";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./RecipePage.css";
 import Portions from "./PortionsFunction";
@@ -10,6 +9,15 @@ export default function RecipePage() {
   const location = useLocation();
   const recipeReal = location.state;
   console.log(recipeReal);
+
+  function checkItemUnit(itemUnit) {
+    if (!itemUnit) {
+      return null;
+    }
+    if (itemUnit) {
+      return itemUnit + " ";
+    }
+  }
 
   // OBJECT FOR CLOCK LOGO
   let clock = (
@@ -47,25 +55,6 @@ export default function RecipePage() {
     </svg>
   );
 
-  // TEMPORARY OBJECT TO READ AND PRESENT A RECIPE.
-  let recipe = {
-    title: "Oatmeal Porridge",
-    ingredients: [
-      { name: "havregryn", amount: 2 },
-      { name: "salt", amount: 4 },
-      { name: "havregryn", amount: 2 },
-    ],
-    description: [
-      "Koka upp vatten och havregryn och rör om under tiden.",
-      "Koka upp vatten och havregryn och rör om under tiden.",
-      "Koka upp vatten och havregryn och rör om under tiden.",
-      "Koka upp vatten och havregryn och rör om under tiden.",
-    ],
-    time: 12,
-    portions: 4,
-    allergens: ["egg", "vegan"],
-  };
-
   return (
     <>
       <article>
@@ -92,6 +81,7 @@ export default function RecipePage() {
                     <select
                       className="bg-receptDescriptionColor"
                       onChange={(e) => setPortions(e.target.value)}
+                      defaultValue={4}
                     >
                       <option value="2">2</option>
                       <option value="4">4</option>
@@ -102,21 +92,24 @@ export default function RecipePage() {
                 {/* <div className="flex">
                   <p>Allergens:&ensp;</p>
                   {recipeReal.allergens.map((item) => (
-                    <span key={item}>{item}</span>
+                    <span key={item}>{item.id}</span>
                   ))}
                 </div> */}
               </div>
             </section>
-                {/* Här klagar den ibland på att ingredienserna får samma key, ibland lägger den nämligen in samma ingrediens två gånger. Typ olika varianter av mängd smör i recept ger flera element med samma id. Se Banana Butter Pie. 
+            {/* Här klagar den ibland på att ingredienserna får samma key, ibland lägger den nämligen in samma ingrediens två gånger. Typ olika varianter av mängd smör i recept ger flera element med samma id. Se Banana Butter Pie. 
                 Ett alternativ skulle vara att använda "cleanName" då id:t blir unikt på riktigt.*/}
             <section className="ingredients bg-receptDescriptionColor rounded-lg">
               <h2 id="big">Ingredients:</h2>
               <div>
                 {recipeReal.ingredients.map((item) => (
                   <li key={item.id}>
+                    {Portions(portions, item.measures.us.amount)
+                      .toFixed(1)
+                      .replace(/[.,]0$/, "")}
+                    &ensp;
+                    {checkItemUnit(item.measures.us.unitShort)}
                     {item.name}
-                    <span> </span>
-                    {(Portions(portions, item.amount))}
                   </li>
                 ))}
               </div>
@@ -127,15 +120,17 @@ export default function RecipePage() {
           <section className="description bg-receptDescriptionColor rounded-lg">
             <h2 id="big">Description:</h2>
             {recipeReal.description.map((item) => (
-              <li key={item.number}>{item.step}</li>
+              <li className="mr-5" key={item.number}>
+                {item.step}
+              </li>
             ))}
           </section>
 
           {/* THIS SECTION MIGHT NEED SOME CHANGES WHEN RECIPE-SUGGESTIONS-TASK IS DONE */}
-          <section className="recipeSuggestion">
+          {/* <section className="recipeSuggestion">
             <h2 id="big">Suggestions</h2>
             <div>{<RecipeSuggestions />}</div>
-          </section>
+          </section> */}
         </div>
       </article>
     </>

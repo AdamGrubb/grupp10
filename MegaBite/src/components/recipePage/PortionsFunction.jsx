@@ -1,5 +1,7 @@
 export default function Portions(portions, amount) {
-  if (portions == 2) return amount * 0.5;
+  if (portions == 2) {
+    return amount * 0.5;
+  }
   if (portions == 4) {
     return amount;
   }
