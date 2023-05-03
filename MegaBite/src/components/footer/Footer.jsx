@@ -1,3 +1,4 @@
+import React from "react";
 import "../../index.css";
 import "./Footer.css";
 
@@ -6,8 +7,7 @@ export function Footer() {
     <>
       <footer className="bg-footerColor footer">
         <div>
-          <p className="FindUsAt">Hitta oss på!</p>
-          
+          <p className="FindUsAt">Find us at!</p>
           <div className="social-links">
             <p className="GitHub">
               <a href="https://github.com/AdamGrubb/grupp10" target="_blank" rel="noopener noreferrer">
@@ -19,6 +19,11 @@ export function Footer() {
                 <i className="fab fa-linkedin"></i> LinkedIn
               </a>
             </p>
+            <div className="office-logo">
+              <a href="https://www.iths.se/" target="_blank" rel="noopener noreferrer">
+                <i className="fas fa-building"></i> Office
+              </a>
+            </div>
           </div>
         </div>
       </footer>

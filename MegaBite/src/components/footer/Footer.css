@@ -1,17 +1,18 @@
-.LinkedIn, .GitHub {
+.LinkedIn, .GitHub, .office-logo {
   color: black;
   margin: 1px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
   width: auto;
   text-align: center;
+  text-decoration: none;
 }
 
 .FindUsAt {
   color: rgb(68, 68, 68);
   margin: 10px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
   width: auto;
   text-align: center;
 }
@@ -20,4 +21,15 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+
+.footer {
+  background-color: rgb(220, 237, 193);
+  height: 90px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
