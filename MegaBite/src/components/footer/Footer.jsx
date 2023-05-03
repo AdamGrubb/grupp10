@@ -9,7 +9,7 @@ export function Footer() {
           <h3>FOOTER</h3>
           <p className="LinkedIn">
           <a href="https://grupp10.carrd.co/" target="_blank" rel="noopener noreferrer">
-              LinkedIn
+              <i className="fab fa-linkedin"></i> LinkedIn
             </a>
           </p>
         </div>
