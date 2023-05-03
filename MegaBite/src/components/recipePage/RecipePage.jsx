@@ -1,5 +1,4 @@
-import porridge from "../../assets/porridge.jpg";
-import RecipeSuggestions from "../recipeSuggestions/RecipeSuggestion";
+//import RecipeSuggestions from "../recipeSuggestions/RecipeSuggestion";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./RecipePage.css";
 import Portions from "./PortionsFunction";
@@ -10,6 +9,15 @@ export default function RecipePage() {
   const location = useLocation();
   const recipeReal = location.state;
   console.log(recipeReal);
+
+  function checkItemUnit(itemUnit) {
+    if (!itemUnit) {
+      return null;
+    }
+    if (itemUnit) {
+      return itemUnit + " ";
+    }
+  }
 
   // OBJECT FOR CLOCK LOGO
   let clock = (
@@ -100,8 +108,7 @@ export default function RecipePage() {
                       .toFixed(1)
                       .replace(/[.,]0$/, "")}
                     &ensp;
-                    {item.unit}
-                    &ensp;
+                    {checkItemUnit(item.unit)}
                     {item.name}
                   </li>
                 ))}
