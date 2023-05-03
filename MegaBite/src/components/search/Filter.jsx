@@ -3,17 +3,17 @@ import { useEffect, useState } from "react";
 import { dietaryFilter } from "./dietaryFilter";
 
 
-export default function FilterButton({setFilters}, {filters}) {
+export default function FilterButton(props) {
   const recipesFromApi = useRecipeStore((state) => state.recipeCollection);
   const addFilteredRecipes = useRecipeStore((state) => state.addFilteredRecipes);
 
   const filterSet = () => {
-    addFilteredRecipes(dietaryFilter(recipesFromApi, filters));
+    addFilteredRecipes(dietaryFilter(recipesFromApi, props.filters));
   }
 
   useEffect(() => {
     filterSet();
-  }, [filters]);
+  }, [props.filters]);
 
   return (
     <>
@@ -25,9 +25,9 @@ export default function FilterButton({setFilters}, {filters}) {
           <input
             type="checkbox"
             name="breakfast"
-            checked={filters.breakfast}
+            checked={props.filters.breakfast}
             onChange={(e) => {
-              setFilters({ ...filters, breakfast: e.target.checked }
+              props.setFilters({ ...props.filters, breakfast: e.target.checked }
                 );
             }}
           />
@@ -39,9 +39,9 @@ export default function FilterButton({setFilters}, {filters}) {
           <input
             type="checkbox"
             name="lunch"
-            checked={filters.lunch}
+            checked={props.filters.lunch}
             onChange={(e) => {
-              setFilters({ ...filters, lunch: e.target.checked });
+              props.setFilters({ ...props.filters, lunch: e.target.checked });
             }}
           />
           <label htmlFor="lunch" className="ml-2">
@@ -52,9 +52,9 @@ export default function FilterButton({setFilters}, {filters}) {
           <input
             type="checkbox"
             name="dinner"
-            checked={filters.dinner}
+            checked={props.filters.dinner}
             onChange={(e) => {
-              setFilters({ ...filters, dinner: e.target.checked });
+              props.setFilters({ ...props.filters, dinner: e.target.checked });
             }}
           />
           <label htmlFor="dinner" className="ml-2">
@@ -65,9 +65,9 @@ export default function FilterButton({setFilters}, {filters}) {
           <input
             type="checkbox"
             name="glutenFree"
-            checked={filters.glutenFree}
+            checked={props.filters.glutenFree}
             onChange={(e) => {
-              setFilters({ ...filters, glutenFree: e.target.checked });
+              props.setFilters({ ...props.filters, glutenFree: e.target.checked });
             }}
           />
           <label htmlFor="gluten-free" className="ml-2">
@@ -78,9 +78,9 @@ export default function FilterButton({setFilters}, {filters}) {
           <input
             type="checkbox"
             name="dairyFree"
-            checked={filters.dairyFree}
+            checked={props.filters.dairyFree}
             onChange={(e) => {
-              setFilters({ ...filters, dairyFree: e.target.checked });
+              props.setFilters({ ...props.filters, dairyFree: e.target.checked });
             }}
           />
           <label htmlFor="dairy-free" className="ml-2">
@@ -91,9 +91,9 @@ export default function FilterButton({setFilters}, {filters}) {
           <input
             type="checkbox"
             name="vegan"
-            checked={filters.vegan}
+            checked={props.filters.vegan}
             onChange={(e) => {
-              setFilters({ ...filters, vegan: e.target.checked });
+              props.setFilters({ ...props.filters, vegan: e.target.checked });
             }}
           />
           <label htmlFor="vegan" className="ml-2">
@@ -104,9 +104,9 @@ export default function FilterButton({setFilters}, {filters}) {
           <input
             type="checkbox"
             name="vegetarian"
-            checked={filters.vegetarian}
+            checked={props.filters.vegetarian}
             onChange={(e) => {
-              setFilters({ ...filters, vegetarian: e.target.checked });
+              props.setFilters({ ...props.filters, vegetarian: e.target.checked });
             }}
           />
           <label htmlFor="vegetarian" className="ml-2">
