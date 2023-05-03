@@ -6,15 +6,22 @@ export function Footer() {
     <>
       <footer className="bg-footerColor footer">
         <div>
-          <h3>FOOTER</h3>
-          <p className="LinkedIn">
-          <a href="https://grupp10.carrd.co/" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-linkedin"></i> LinkedIn
-            </a>
-          </p>
+          <p className="FindUsAt">Hitta oss på!</p>
+          
+          <div className="social-links">
+            <p className="GitHub">
+              <a href="https://github.com/AdamGrubb/grupp10" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-github"></i> GitHub
+              </a>
+            </p>
+            <p className="LinkedIn">
+              <a href="https://grupp10.carrd.co/" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-linkedin"></i> LinkedIn
+              </a>
+            </p>
+          </div>
         </div>
       </footer>
-
     </>
   );
 }

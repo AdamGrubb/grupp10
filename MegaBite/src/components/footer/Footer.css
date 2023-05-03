@@ -1,9 +1,23 @@
-.LinkedIn{
+.LinkedIn, .GitHub {
   color: black;
-  border-width: 2px;
-  margin: 30px;
-  border-color: black;
+  margin: 1px;
   font-weight: bold;
   font-size: 20px;
   width: auto;
+  text-align: center;
+}
+
+.FindUsAt {
+  color: rgb(68, 68, 68);
+  margin: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  width: auto;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
