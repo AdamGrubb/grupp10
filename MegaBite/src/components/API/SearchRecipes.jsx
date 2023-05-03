@@ -10,15 +10,16 @@ export async function SearchRecipes(queryParams) {
 
   //URLSearchParams is used to manipulate the URL.
   const searchParams = new URLSearchParams();
+  searchParams.append("apiKey", apikey);
   searchParams.append("query", queryParams);
   searchParams.append("instructionsRequired", true);
-  searchParams.append("apiKey", apikey);
-  searchParams.append("number", 40);
+  searchParams.append("number", 15);
   searchParams.append("addRecipeInformation", true);
   searchParams.append("fillIngredients", true);
 
   //API call, if there is an error the error will be shown otherwise we return the data.
   try {
+    console.log(`${baseUrl}?${searchParams}`);
     const response = await fetch(`${baseUrl}?${searchParams}`);
     const apiResults = await response.json();
     const recipeArray = apiResults.results.map((item) => {
