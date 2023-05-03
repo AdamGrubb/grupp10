@@ -36,7 +36,7 @@ export default function Location({ setLocation }) {
   };
 
   const handleChange = (e) => {
-    setLocation(e.target.value);
+    setLocation(e.value);
     setIsOpen(false);
   };
   return (
