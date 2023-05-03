@@ -13,9 +13,8 @@ export default function Search() {
   const addRecipeData = useRecipeStore((state) => state.addRecipes);
   const [showFilters, setShowFilters] = useState(false);
   const [searchword, setSearchword] = useState("");
-
   const [location, setLocation] = useState();
-
+  
   const navigate = useNavigate();
 
   const [filters, setFilters] = useState({
