@@ -92,7 +92,7 @@ export default function RecipePage() {
                 {/* <div className="flex">
                   <p>Allergens:&ensp;</p>
                   {recipeReal.allergens.map((item) => (
-                    <span key={item}>{item}</span>
+                    <span key={item}>{item.id}</span>
                   ))}
                 </div> */}
               </div>
@@ -104,11 +104,11 @@ export default function RecipePage() {
               <div>
                 {recipeReal.ingredients.map((item) => (
                   <li key={item.id}>
-                    {Portions(portions, item.amount)
+                    {Portions(portions, item.measures.us.amount)
                       .toFixed(1)
                       .replace(/[.,]0$/, "")}
                     &ensp;
-                    {checkItemUnit(item.unit)}
+                    {checkItemUnit(item.measures.us.unitShort)}
                     {item.name}
                   </li>
                 ))}
