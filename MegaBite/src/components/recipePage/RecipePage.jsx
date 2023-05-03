@@ -96,7 +96,9 @@ export default function RecipePage() {
               <div>
                 {recipeReal.ingredients.map((item) => (
                   <li key={item.id}>
-                    {Portions(portions, item.amount)}
+                    {Portions(portions, item.amount)
+                      .toFixed(1)
+                      .replace(/[.,]0$/, "")}
                     &ensp;
                     {item.unit}
                     &ensp;
