@@ -47,25 +47,6 @@ export default function RecipePage() {
     </svg>
   );
 
-  // TEMPORARY OBJECT TO READ AND PRESENT A RECIPE.
-  let recipe = {
-    title: "Oatmeal Porridge",
-    ingredients: [
-      { name: "havregryn", amount: 2 },
-      { name: "salt", amount: 4 },
-      { name: "havregryn", amount: 2 },
-    ],
-    description: [
-      "Koka upp vatten och havregryn och rör om under tiden.",
-      "Koka upp vatten och havregryn och rör om under tiden.",
-      "Koka upp vatten och havregryn och rör om under tiden.",
-      "Koka upp vatten och havregryn och rör om under tiden.",
-    ],
-    time: 12,
-    portions: 4,
-    allergens: ["egg", "vegan"],
-  };
-
   return (
     <>
       <article>
@@ -137,10 +118,10 @@ export default function RecipePage() {
           </section>
 
           {/* THIS SECTION MIGHT NEED SOME CHANGES WHEN RECIPE-SUGGESTIONS-TASK IS DONE */}
-          <section className="recipeSuggestion">
+          {/* <section className="recipeSuggestion">
             <h2 id="big">Suggestions</h2>
             <div>{<RecipeSuggestions />}</div>
-          </section>
+          </section> */}
         </div>
       </article>
     </>

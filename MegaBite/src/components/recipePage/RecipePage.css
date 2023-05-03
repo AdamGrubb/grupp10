@@ -6,6 +6,7 @@
   font-weight: bold;
   font-size: 16px;
   width: auto;
+  padding: 2px;
 }
 
 /* CSS FOR MOBILE AND OTHER DEVICES UP TO 1024 PX */
@@ -73,6 +74,7 @@
     margin-bottom: 30px;
     padding-left: 10px;
     padding-top: 10px;
+    padding-bottom: 10px;
     color: black;
 }
 
@@ -139,14 +141,14 @@ div > span:last-of-type:after { content: "" }
     flex-direction: column;
     margin-left: 80px;
     margin-right: 80px;
-    align-items: center;
+    /* align-items: center; */
 
 }
 
 .img {
     width: 100%;
-    max-height: 503px;
-    margin-left: 10px;
+    max-height: 483px;
+    margin-left: 30px;
     margin-right: 70px;
     margin-top: 10px;
     
@@ -184,9 +186,10 @@ div > span:last-of-type:after { content: "" }
     min-width: 89%;
     min-height: 200px;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 130px;
     padding-left: 10px;
     padding-top: 10px;
+    padding-bottom: 10px;
     color: black;
 }
 
