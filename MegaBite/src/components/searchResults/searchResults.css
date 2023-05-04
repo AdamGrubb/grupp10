@@ -3,3 +3,18 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.recipe-label {
+  font-size: clamp(9px, 1.1vw, 20px);
+  font-family: 'Lato', sans-serif;
+  color: rgb(10, 10, 10);
+  text-align: center;
+  margin: auto;
+  
+}
+
+.recipe-overlay{
+  text-align: center;
+  margin: auto;
+  overflow: hidden;
+}
