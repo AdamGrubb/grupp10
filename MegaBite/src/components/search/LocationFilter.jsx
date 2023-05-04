@@ -3,6 +3,7 @@ import "./LocationFilter.css";
 
 export default function Location({ setLocation }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedLocation, setSelectedLocation] = useState("All Locations"); // visar location
   const dropdownRef = useRef(null);
 
   const handleClickOutside = (event) => {
@@ -35,18 +36,20 @@ export default function Location({ setLocation }) {
     setIsOpen(!isOpen);
   };
 
-  const handleChange = (e) => {
-    setLocation(e.value);
+  const handleChange = (location) => {
+    setLocation(location.value);
+    setSelectedLocation(location.displayText);
     setIsOpen(false);
   };
+
   return (
     <>
       <section
         className="dropdown-section mt-2 mr-12 justify-self-start text-sm border-2 border-solid dropdown-container dropdown-wrapper"
         ref={dropdownRef}
       >
-        <div className=" dropdown-select" onClick={handleClick}>
-          Select Locations
+        <div className="dropdown-select" onClick={handleClick}>
+          {selectedLocation}
         </div>
         {isOpen && (
           <ul className="dropdown-list">
@@ -55,8 +58,7 @@ export default function Location({ setLocation }) {
                 <button
                   className="btnRegion"
                   type="button"
-                  value={location.value}
-                  onClick={() => handleChange(location)}
+                  onClick={() => handleChange(location)} // Removed 'value' attribute
                 >
                   {location.displayText}
                 </button>
