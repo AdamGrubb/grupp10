@@ -35,7 +35,7 @@ export default function Search() {
     dinner: false,
   });
   // addMock();
-console.log(filters);
+  console.log(filters);
 
   //Used to grab whats typed into textfield.
   const handleChange = (e) => {
@@ -58,8 +58,6 @@ console.log(filters);
     }
 
     addRecipeData(data);
-
-    setSearchword("");
   };
 
   useEffect(() => {
@@ -108,7 +106,7 @@ console.log(filters);
             )}
           </div>
 
-          <Location setLocation={setLocation}/>
+          <Location setLocation={setLocation} />
         </div>
       </section>
     </>
