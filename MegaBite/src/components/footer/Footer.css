@@ -1,0 +1,46 @@
+.LinkedIn, .GitHub, .office-logo {
+  color: rgb(31, 48, 41);
+  margin: 1px;
+  font-weight: bold;
+  font-size: 15px;
+  width: auto;
+  text-align: center;
+  text-decoration: none;
+}
+
+.FindUsAt {
+  color: rgb(31, 48, 41);
+  font-family: "Inter", sans-serif;
+  margin: 3px;
+  font-weight: bold;
+  font-size: 15px;
+  width: auto;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer {
+  background-color: rgb(220, 237, 193);
+  height: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.joke {
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0 1rem;
+  color: rgb(31, 48, 41);
+}
+
