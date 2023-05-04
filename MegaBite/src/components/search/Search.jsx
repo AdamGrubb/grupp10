@@ -89,16 +89,15 @@ export default function Search() {
                 />
               </button>
             </form>
-            <button
-              className="absolute filter-button top-12 right-0"
-              onClick={() => setShowFilters(!showFilters)}
-            >
-              <img
-                src={FilterIcon}
-                className="filter-icon"
-                alt="Filterbutton"
-              />
-            </button>
+            <div className="filter-button">
+              <button className="" onClick={() => setShowFilters(!showFilters)}>
+                <img
+                  src={FilterIcon}
+                  className="filter-icon"
+                  alt="Filterbutton"
+                />
+              </button>
+            </div>
 
             {showFilters && (
               <FilterButton setFilters={setFilters} filters={filters} />

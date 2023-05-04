@@ -1,6 +1,7 @@
 .searchFilterArea {
-  border-radius: 2px;
-  opacity: 1;
+  border-radius: 20px;
+  border-color: rgb(212, 212, 212);
+  border-width: 2px;
 }
 
 .searchBoxWrapperDiv {
@@ -48,16 +49,14 @@
 }
 
 .filter-button {
+  position: absolute;
   color: black;
-}
-
-.filter-icon {
   max-width: 2rem;
-  margin-right: 1rem;
+  margin-left: 11.7rem;
   margin-top: 0.55rem;
 }
 
-.align-text-center{
+.align-text-center {
   text-align: center;
   color: black;
 }
