@@ -14,6 +14,9 @@ const useRecipeStore = create((set) => ({
   addFilteredRecipes: (recipes) =>
     set((state) => ({ filteredRecipeCollection: recipes })),
 
+  //This function clears the array of recipes.
+  clearRecipes: () => set((state) => ({ recipeCollection: [] })),
+
   //This function has no parameters and is called to fill the recipeCollection with mock-result. It is to be used to test functions without having to call the API for data.
   addMock: () => {
     set({
