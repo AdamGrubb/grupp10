@@ -9,7 +9,7 @@ export default function SiteContent() {
       <div className="content">
         <Search />
         <Outlet />
-        <RecipeSuggestions />
+        {/* <RecipeSuggestions /> */}
       </div>
     </>
   );
