@@ -19,11 +19,9 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <>
-        <div className="background-image">
-          <Header />
-          <Outlet />
-          <Footer />
-        </div>
+        <Header />
+        <Outlet />
+        <Footer />
       </>
     ),
     errorElement: <NotFound />,
