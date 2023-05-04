@@ -16,6 +16,7 @@ import dietaryFilter from "./dietaryFilter";
 
 export default function Search() {
   const recipesFromApi = useRecipeStore((state) => state.recipeCollection);
+  const addMockData = useRecipeStore((state) => state.addMock);
   const addFilteredRecipes = useRecipeStore(
     (state) => state.addFilteredRecipes
   );
@@ -57,6 +58,7 @@ export default function Search() {
     }
 
     addRecipeData(data);
+    addMockData();
 
     e.target.reset();
     setSearchword("");
