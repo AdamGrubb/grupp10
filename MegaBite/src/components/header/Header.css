@@ -1,3 +1,7 @@
+.headerTest {
+  background-color: rgb(204, 224, 196);
+}
+
 .header-logo {
   max-width: 94px;
   position: relative;
@@ -15,11 +19,14 @@
 .header-upper-font {
   font-family: "Inter", sans-serif;
   font-size: 32px;
+  color: rgb(31, 48, 41);
 }
 
 .header-lower-font {
-  font-family: "Italiana", serif;
-  font-size: 16px;
-  font-weight: 400;
-  margin-top: -10px;
+  font-family: "Inter", serif;
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: -8px;
+  text-align: center;
+  color: rgb(31, 48, 41);
 }

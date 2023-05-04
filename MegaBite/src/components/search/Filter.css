@@ -1,0 +1,7 @@
+.filter-box {
+  margin-top: 3.2rem;
+  color: black;
+  z-index: 1;
+  border-width: 2px;
+  border-color: rgb(207, 209, 204);
+}
