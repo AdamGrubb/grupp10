@@ -1,4 +1,6 @@
-.LinkedIn, .GitHub, .office-logo {
+.LinkedIn,
+.GitHub,
+.office-logo {
   color: rgb(31, 48, 41);
   margin: 1px;
   font-weight: bold;
@@ -25,7 +27,6 @@
 }
 
 .footer {
-  background-color: rgb(220, 237, 193);
   height: auto;
   left: 0;
   right: 0;
@@ -43,4 +44,3 @@
   padding: 0 1rem;
   color: rgb(31, 48, 41);
 }
-
