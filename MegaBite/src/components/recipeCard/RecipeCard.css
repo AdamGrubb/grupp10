@@ -1,7 +1,6 @@
 .recipeCard {
   min-width: 150px;
   max-width: 312px;
-  min-height: 231px;
   position: relative;
   border-width: 2px;
   border-color: rgb(126, 125, 125);
