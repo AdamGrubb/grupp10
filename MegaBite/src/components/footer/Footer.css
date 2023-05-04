@@ -24,16 +24,6 @@
   gap: 1rem;
 }
 
-.footer {
-  background-color: rgb(220, 237, 193);
-  height: auto;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .joke {
   font-family: "Inter", sans-serif;

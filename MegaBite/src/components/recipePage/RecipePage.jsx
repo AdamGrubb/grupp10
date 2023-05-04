@@ -1,6 +1,7 @@
 //import RecipeSuggestions from "../recipeSuggestions/RecipeSuggestion";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./RecipePage.css";
+import "../../index.css";
 import Portions from "./PortionsFunction";
 import React, { useState } from "react";
 export default function RecipePage() {
