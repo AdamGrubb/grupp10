@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -27,13 +26,6 @@
   width: 100%;
 }
 
-.background-image {
-  /* background-image: url("./src/assets/siteBackground.jpg"); */
-  background-image: url("./src/assets/siteBackgroundTest.jpg");
-  background-size: auto;
-  background-position: center center;
-}
-
 .header {
   top: 0;
   left: 0;
@@ -53,4 +45,10 @@
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.sitebackground {
+  width: 100%;
+  height: auto;
+  max-width: none;
 }
