@@ -1,9 +1,10 @@
-export const dietaryFilter = (recipes, filters) => {
+export const dietaryFilter = (recipes, filters, location) => {
   const filteredStore = [];
 
   const allMealtypes = !filters.breakfast && !filters.lunch && !filters.dinner;
 
   recipes.forEach((recipe) => {
+    console.log(recipe.cuisine);
     if (filters.glutenFree && !recipe.allergens[0].glutenFree) {
       return;
     }
@@ -15,6 +16,10 @@ export const dietaryFilter = (recipes, filters) => {
     }
     if (filters.vegan && !recipe.allergens[3].vegan) {
       return;
+    }
+    if (!location=="" && !recipe.cuisine.includes(location)){
+      console.log("Nu så är jag amerikan")
+      return
     }
     if (filters.breakfast && recipe.mealType.includes("breakfast")) {
       filteredStore.push(recipe);
