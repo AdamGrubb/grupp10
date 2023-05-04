@@ -57,7 +57,6 @@ export default function Search() {
 
     addRecipeData(data);
 
-    e.target.reset();
     setSearchword("");
   };
 
