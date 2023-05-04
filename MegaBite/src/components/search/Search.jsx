@@ -68,7 +68,10 @@ export default function Search() {
 
   return (
     <>
-      <section className="flex justify-center h-32 m-4 bg-grayColor searchFilterArea">
+      <section
+        id="search-section"
+        className="flex justify-center mr-2 h-32 bg-grayColor searchFilterArea"
+      >
         <div className="flex flex-col items-center justify-center">
           <div className="relative">
             <form onSubmit={handleSubmit}>

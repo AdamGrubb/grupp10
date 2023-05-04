@@ -1,7 +1,16 @@
 .searchFilterArea {
   border-radius: 20px;
-  border-color: rgb(212, 212, 212);
+  border-color: rgb(206, 205, 205);
   border-width: 2px;
+  margin: 1rem auto;
+
+  max-width: 45rem;
+}
+
+@media only screen and (max-width: 46rem) {
+  .searchFilterArea {
+    margin: 1rem;
+  }
 }
 
 .searchBoxWrapperDiv {
