@@ -10,6 +10,18 @@
   text-decoration: none;
 }
 
+.footer {
+  margin-top: auto;
+  height: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(204, 224, 196);
+}
+
 .FindUsAt {
   color: rgb(31, 48, 41);
   font-family: "Inter", sans-serif;
