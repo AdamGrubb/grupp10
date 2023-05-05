@@ -2,11 +2,15 @@ import logo from "../../assets/logo1.png";
 import { Link } from "react-router-dom";
 import "../../index.css";
 import "./Header.css";
+import useRecipeStore from "../../hooks/useRecipeStore";
 
 export function Header() {
+
+  const clearRecipes = useRecipeStore((state) => state.clearRecipes);
+
   return (
     <>
-      <header className="header h-24 headerTest">
+      <header className="header h-24 bg-headerColor" onClick={clearRecipes}>
         <Link to="/">
           <img src={logo} className="header-logo" alt="MegaBite logo" />
         </Link>

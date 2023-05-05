@@ -1,4 +1,6 @@
-.LinkedIn, .GitHub, .office-logo {
+.LinkedIn,
+.GitHub,
+.office-logo {
   color: rgb(31, 48, 41);
   margin: 1px;
   font-weight: bold;
@@ -24,7 +26,6 @@
   gap: 1rem;
 }
 
-
 .joke {
   font-family: "Inter", sans-serif;
   font-size: 8px;
@@ -33,4 +34,3 @@
   padding: 0 1rem;
   color: rgb(31, 48, 41);
 }
-

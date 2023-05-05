@@ -35,6 +35,8 @@ export default function Search() {
     lunch: false,
     dinner: false,
   });
+  // addMock();
+  console.log(filters);
 
   //Used to grab whats typed into textfield.
   const handleChange = (e) => {
@@ -57,19 +59,19 @@ export default function Search() {
     }
 
     addRecipeData(data);
-
-    e.target.reset();
-    setSearchword("");
   };
 
   useEffect(() => {
     navigate("/searchresults");
-    addFilteredRecipes(dietaryFilter(recipesFromApi, filters));
-  }, [recipesFromApi, filters]);
+    addFilteredRecipes(dietaryFilter(recipesFromApi, filters, location));
+  }, [recipesFromApi, filters, location]);
 
   return (
     <>
-      <section className="flex justify-center h-32 m-4 bg-grayColor searchFilterArea">
+      <section
+        id="search-section"
+        className="flex justify-center mr-2 h-32 bg-grayColor searchFilterArea"
+      >
         <div className="flex flex-col items-center justify-center">
           <div className="relative">
             <form onSubmit={handleSubmit}>
@@ -90,16 +92,15 @@ export default function Search() {
                 />
               </button>
             </form>
-            <button
-              className="absolute filter-button top-12 right-0"
-              onClick={() => setShowFilters(!showFilters)}
-            >
-              <img
-                src={FilterIcon}
-                className="filter-icon"
-                alt="Filterbutton"
-              />
-            </button>
+            <div className="filter-button">
+              <button className="" onClick={() => setShowFilters(!showFilters)}>
+                <img
+                  src={FilterIcon}
+                  className="filter-icon"
+                  alt="Filterbutton"
+                />
+              </button>
+            </div>
 
             {showFilters && (
               <FilterButton setFilters={setFilters} filters={filters} />

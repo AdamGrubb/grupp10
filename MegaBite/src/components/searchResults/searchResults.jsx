@@ -15,9 +15,9 @@ export default function SearchResults() {
 
   const displayRecipeCards = (recipes) => {
     //This if-statement checks if the result from recipeStore is null or empty (0) and if its the case shows a "No Result".
-    if (recipes == null || recipes.length < 1) {
-      return <h1>No result</h1>;
-    }
+    // if (recipes == null || recipes.length < 1) {
+    //   return <h1 className="noResult">No result</h1>;
+    // }
 
     //This array is storing the recipecard generated from the following for-loop.
     let RecipeCards = [];
