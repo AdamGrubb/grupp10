@@ -25,30 +25,3 @@
   flex-direction: column;
   width: 100%;
 }
-
-.header {
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.content {
-  min-height: 100vh;
-  flex-grow: 1;
-  left: 0;
-  right: 0;
-  overflow: auto;
-}
-.footer {
-  position: bottom;
-  height: 90px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.sitebackground {
-  width: 100%;
-  height: auto;
-  max-width: none;
-}
