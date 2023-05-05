@@ -1,7 +1,7 @@
 import RecipeCard from "../recipeCard/RecipeCard";
 import { Link } from "react-router-dom";
-import "../recipeCard/recipeCard.css"
-import "../../index.css"
+import "../recipeCard/RecipeCard.css";
+import "../../index.css";
 import useRecipeStore from "../../hooks/useRecipeStore";
 import { useEffect } from "react";
 
