@@ -14,7 +14,7 @@ export async function SearchRecipes(queryParams) {
   searchParams.append("apiKey", apikey);
   searchParams.append("query", queryParams);
   searchParams.append("instructionsRequired", true);
-  searchParams.append("number", 15);
+  searchParams.append("number", 50);
   searchParams.append("addRecipeInformation", true);
   searchParams.append("fillIngredients", true);
 
