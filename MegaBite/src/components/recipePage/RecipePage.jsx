@@ -4,7 +4,6 @@ import "./RecipePage.css";
 import "../../index.css";
 import Portions from "./PortionsFunction";
 import React, { useState } from "react";
-import SetAmount from "./SetPortions";
 export default function RecipePage() {
   const navigate = useNavigate();
   const [portions, setPortions] = useState(4);
