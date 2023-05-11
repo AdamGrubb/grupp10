@@ -7,6 +7,11 @@
   font-size: 16px;
   width: auto;
   padding: 2px;
+  background-color: white;
+}
+
+.newColour{
+    background-color: rgb(204, 224, 196);
 }
 
 /* CSS FOR MOBILE AND OTHER DEVICES UP TO 1024 PX */
@@ -63,8 +68,13 @@
 .recipeTitle {
     /* width: 300px; */
     color: rgb(9, 8, 8);
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
+    background-color: white;
+    width: fit-content;
+    margin: 0px auto;
+    border-width: 10px;
+    border-color: white;
 }
 
 .description {
@@ -177,9 +187,13 @@ div > span:last-of-type:after { content: "" }
 .recipeTitle {
     color: rgb(9, 8, 8);
     font-size: 2em;
-    width: 100%;
-    min-width: 260px;
+    width: fit-content;
+    /* min-width: 260px; */
     margin-left: 80px;
+    background-color: white;
+    border-width: 10px;
+    border-color: white;
+    
 }
 
 .description {

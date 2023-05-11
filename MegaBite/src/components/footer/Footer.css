@@ -1,4 +1,6 @@
-.LinkedIn, .GitHub, .office-logo {
+.LinkedIn,
+.GitHub,
+.office-logo {
   color: rgb(31, 48, 41);
   margin: 1px;
   font-weight: bold;
@@ -6,6 +8,18 @@
   width: auto;
   text-align: center;
   text-decoration: none;
+}
+
+.footer {
+  margin-top: auto;
+  height: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(204, 224, 196);
 }
 
 .FindUsAt {
@@ -24,17 +38,6 @@
   gap: 1rem;
 }
 
-.footer {
-  background-color: rgb(220, 237, 193);
-  height: auto;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .joke {
   font-family: "Inter", sans-serif;
   font-size: 8px;
@@ -43,4 +46,3 @@
   padding: 0 1rem;
   color: rgb(31, 48, 41);
 }
-

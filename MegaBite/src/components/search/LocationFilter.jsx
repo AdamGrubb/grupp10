@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "./LocationFilter.css";
 
-export default function Location({ setLocation }) {
+export default function Location(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState("All Locations"); // visar location
   const dropdownRef = useRef(null);
@@ -35,9 +35,8 @@ export default function Location({ setLocation }) {
   const handleClick = (e) => {
     setIsOpen(!isOpen);
   };
-
   const handleChange = (location) => {
-    setLocation(location.value);
+    props.setLocation(location.value);
     setSelectedLocation(location.displayText);
     setIsOpen(false);
   };
