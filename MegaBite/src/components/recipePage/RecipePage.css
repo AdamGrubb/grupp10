@@ -1,0 +1,239 @@
+.btnGoBack {
+  color: black;
+  border-width: 2px;
+  margin: 2px;
+  border-color: black;
+  font-weight: bold;
+  font-size: 16px;
+  width: auto;
+  padding: 2px;
+  background-color: white;
+}
+
+.newColour{
+    background-color: rgb(204, 224, 196);
+}
+
+/* CSS FOR MOBILE AND OTHER DEVICES UP TO 1024 PX */
+@media only screen and (max-width: 1024px)  {
+.portions {
+    margin-left: 30px;
+    margin-bottom: 5px;
+}
+
+.showContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.clock {
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.box {
+     
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      
+}
+.img {
+    max-width: 300px;
+    max-height: 500px;
+    margin: 10px;
+    
+}
+
+.info {
+    width: 300px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    color: black;
+}
+
+
+.ingredients {
+    max-width: 300px;
+    max-height: fit-content;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: black;
+}
+
+.recipeTitle {
+    /* width: 300px; */
+    color: rgb(9, 8, 8);
+    font-size: 1.5em;
+    text-align: center;
+    background-color: white;
+    width: fit-content;
+    margin: 0px auto;
+    border-width: 10px;
+    border-color: white;
+}
+
+.description {
+    max-width: 300px;
+    min-height: 200px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: black;
+}
+
+#big {
+    color:black;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.recipeSuggestion{
+
+    max-width: 300px;
+    
+    margin-bottom: 100px;
+    
+    padding-left: 10px;
+    
+    padding-top: 5px;
+    
+    padding-bottom: 10px; 
+    }
+
+/* just making the paragraphs inline */
+div > span { display: inline-block; }
+
+/* appending the commas */
+div > span:after { content: ", " }
+
+/* removing it for the last index */
+div > span:last-of-type:after { content: "" }
+}
+
+/* CSS FOR DESKTOP AND OTHER DEVICES DOWN TO 1024 PX */
+@media only screen and (min-width: 1024px)  {
+
+      
+  .portions {
+    margin-left: 20px;
+    margin-bottom: 5px;
+   }
+.clock {
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.showContent {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.infoBox {
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px;
+    width: 100%;
+
+}
+
+.showDescription{
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+    margin-right: 80px;
+    /* align-items: center; */
+
+}
+
+.img {
+    width: 100%;
+    max-height: 483px;
+    margin-left: 30px;
+    margin-right: 70px;
+    margin-top: 10px;
+    
+}
+
+.info {
+    width: 100%;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    color: black;
+}
+
+.ingredients {
+    max-width: 100%;
+    max-height: fit-content;
+    min-height: 400px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: black;
+}
+
+.recipeTitle {
+    color: rgb(9, 8, 8);
+    font-size: 2em;
+    width: fit-content;
+    /* min-width: 260px; */
+    margin-left: 80px;
+    background-color: white;
+    border-width: 10px;
+    border-color: white;
+    
+}
+
+.description {
+    min-width: 89%;
+    min-height: 200px;
+    margin-top: 30px;
+    margin-bottom: 130px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: black;
+}
+
+#big {
+    color:black;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.recipeSuggestion{
+
+    width: 300px;
+    
+    margin-bottom: 100px;
+    
+    padding-left: 10px;
+    
+    padding-top: 5px;
+    
+    padding-bottom: 10px; 
+    }
+
+/* just making the paragraphs inline */
+div > span { display: inline-block; }
+
+/* appending the commas */
+div > span:after { content: ", " }
+
+/* removing it for the last index */
+div > span:last-of-type:after { content: "" }
+
+   
+}
