@@ -1,6 +1,5 @@
 export default function IsValid(value) {
-  console.log(typeof value);
-  if (typeof value == [] && value !== null && typeof value !== "undefined") {
+  if (value !== null && typeof value !== "undefined" && Array.isArray(value)) {
     return true;
   } else {
     return false;
