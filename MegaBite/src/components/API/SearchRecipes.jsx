@@ -1,4 +1,4 @@
-import ResponseCheck from "./ResponseCheck";
+import ResponseOK from "./ResponseOK";
 
 export async function SearchRecipes(queryParams) {
   //API-key adds to the URL to be able to make API-calls
@@ -23,7 +23,7 @@ export async function SearchRecipes(queryParams) {
   //API call, if there is an error the error will be shown otherwise we return the data.
   try {
     const response = await fetch(`${baseUrl}?${searchParams}`);
-    if (ResponseCheck(response)) {
+    if (ResponseOK(response)) {
       const apiResults = await response.json();
       const recipeArray = apiResults.results.map((item) => {
         const instructions =
