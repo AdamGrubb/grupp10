@@ -52,6 +52,8 @@ export default function Search() {
 
     const data = await SearchRecipes(searchword);
 
+    //The function checks if data is an array, not null and not undefined.
+    //Otherwise the responsecode will show in a alert message.
     if (IsValid(data)) {
       addRecipeData(data);
     } else {
