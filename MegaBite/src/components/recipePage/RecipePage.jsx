@@ -3,12 +3,18 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./RecipePage.css";
 import Portions from "./PortionsFunction";
 import React, { useState } from "react";
+import SetAmount from "./SetPortions";
 export default function RecipePage() {
   const navigate = useNavigate();
   const [portions, setPortions] = useState(4);
   const location = useLocation();
   const recipeReal = location.state;
-  console.log(recipeReal);
+  console.log(recipeReal.ingredients);
+
+  let ingredientArray = recipeReal.ingredients.map((x) => x);
+
+  ingredientArray = SetAmount(recipeReal.servings, ingredientArray);
+  console.log(ingredientArray);
 
   function checkItemUnit(itemUnit) {
     if (!itemUnit) {
