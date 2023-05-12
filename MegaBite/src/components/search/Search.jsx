@@ -60,7 +60,6 @@ export default function Search() {
 
     addRecipeData(data);
     navigate("/searchresults");
-    setSearchword("");
   };
 
   useEffect(() => {
