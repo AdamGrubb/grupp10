@@ -21,11 +21,11 @@
     - feature
     - buggfix
     - ...
-  - The branchname begin with the name of the developer, branchtype and then the name of the assigmnent. 
+  - The branchname begin with the name of the developer, branchtype, Jiira-task-id and then the name of the assigmnent. 
   - Every seperate part in the branch is written in Camel casing.
     - developerName_branchtype_assigment
-      - **johannes_feature_headerComponent**
-      - **annas_buggfix_brokenNavbar**
+      - **johannes_feature_JMS-137_headerComponent**
+      - **annas_buggfix_JMS-129_brokenNavbar**
       
 To merge into our project, we use pull requests. Then a merge can be done directly in Github and the feature branch can be removed. You have to remove your local branch yourself.
 
