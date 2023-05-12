@@ -9,7 +9,6 @@ export default function RecipePage() {
   const [portions, setPortions] = useState(4);
   const location = useLocation();
   const recipeReal = location.state;
-  console.log(recipeReal);
 
   function checkItemUnit(itemUnit) {
     if (!itemUnit) {
@@ -107,7 +106,11 @@ export default function RecipePage() {
               <div>
                 {recipeReal.ingredients.map((item) => (
                   <li key={item.id}>
-                    {Portions(portions, item.measures.us.amount)
+                    {Portions(
+                      portions,
+                      recipeReal.servings,
+                      item.measures.us.amount
+                    )
                       .toFixed(1)
                       .replace(/[.,]0$/, "")}
                     &ensp;
