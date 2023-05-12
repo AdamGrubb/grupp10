@@ -1,4 +1,4 @@
-import "./recipeCard.css";
+import "./RecipeCard.css";
 
 export default function RecipeCard(props) {
   return (

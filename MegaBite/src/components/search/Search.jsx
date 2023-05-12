@@ -1,5 +1,6 @@
 //CSS ICONS
 import "./Search.css";
+import "../../index.css"
 
 import MagnifyingGlass from "../../assets/magnGlass.png";
 import FilterIcon from "../../assets/filter.png";
@@ -34,6 +35,8 @@ export default function Search() {
     lunch: false,
     dinner: false,
   });
+  // addMock();
+  console.log(filters);
 
   //Used to grab whats typed into textfield.
   const handleChange = (e) => {
@@ -61,8 +64,8 @@ export default function Search() {
   };
 
   useEffect(() => {
-    addFilteredRecipes(dietaryFilter(recipesFromApi, filters));
-  }, [recipesFromApi, filters]);
+    addFilteredRecipes(dietaryFilter(recipesFromApi, filters, location));
+  }, [recipesFromApi, filters, location]);
 
   return (
     <>

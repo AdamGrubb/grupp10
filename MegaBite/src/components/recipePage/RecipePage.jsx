@@ -1,6 +1,7 @@
 //import RecipeSuggestions from "../recipeSuggestions/RecipeSuggestion";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./RecipePage.css";
+import "../../index.css";
 import Portions from "./PortionsFunction";
 import React, { useState } from "react";
 export default function RecipePage() {
@@ -61,7 +62,9 @@ export default function RecipePage() {
         <button className="btnGoBack rounded" onClick={() => navigate(-1)}>
           Go Back
         </button>
-        <h1 className="recipeTitle">{recipeReal.title}</h1>
+        <div className="recipeTitle border-current rounded-full">
+          {recipeReal.title}
+        </div>
         <div className="showContent">
           <img
             className="img rounded-lg"
@@ -71,7 +74,7 @@ export default function RecipePage() {
           />
           <div className="infoBox">
             <section id="ServingsAndAllergens" className="">
-              <div className="info bg-receptDescriptionColor rounded-lg">
+              <div className="info newColour rounded-lg">
                 <div className="flex">
                   <p className="flex">
                     {clock} &ensp; {recipeReal.readyInMinutes} Min
@@ -79,7 +82,7 @@ export default function RecipePage() {
                   <div className="flex portions">
                     <p>{portionsInfo}</p>
                     <select
-                      className="bg-receptDescriptionColor"
+                      className="newColour"
                       onChange={(e) => setPortions(e.target.value)}
                       defaultValue={4}
                     >
@@ -99,7 +102,7 @@ export default function RecipePage() {
             </section>
             {/* Här klagar den ibland på att ingredienserna får samma key, ibland lägger den nämligen in samma ingrediens två gånger. Typ olika varianter av mängd smör i recept ger flera element med samma id. Se Banana Butter Pie. 
                 Ett alternativ skulle vara att använda "cleanName" då id:t blir unikt på riktigt.*/}
-            <section className="ingredients bg-receptDescriptionColor rounded-lg">
+            <section className="ingredients newColour rounded-lg">
               <h2 id="big">Ingredients:</h2>
               <div>
                 {recipeReal.ingredients.map((item) => (
@@ -117,7 +120,7 @@ export default function RecipePage() {
           </div>
         </div>
         <div className="showDescription showContent">
-          <section className="description bg-receptDescriptionColor rounded-lg">
+          <section className="description newColour rounded-lg">
             <h2 id="big">Description:</h2>
             {recipeReal.description.map((item) => (
               <li className="mr-5" key={item.number}>

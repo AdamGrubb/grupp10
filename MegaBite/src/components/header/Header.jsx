@@ -1,11 +1,9 @@
 import logo from "../../assets/logo1.png";
 import { Link } from "react-router-dom";
-import "../../index.css";
 import "./Header.css";
 import useRecipeStore from "../../hooks/useRecipeStore";
 
 export function Header() {
-
   const clearRecipes = useRecipeStore((state) => state.clearRecipes);
 
   return (
