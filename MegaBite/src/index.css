@@ -27,6 +27,32 @@
   width: 100%;
 }
 
+/* Band-aid solution for Mozilla Firefox(-moz-appearance) and Safari(-webkit-touch-callout) browsers, 
+to fix the slightly off-centered text present in these browers. Adjust values as needed.*/
+@supports (-moz-appearance:none) {
+  .searchBox {
+    padding-left: 1.5rem !important;
+  }
+  .ingredients{
+    padding-left: 1.5rem !important;
+  }
+  .description {
+    padding-left: 1.5rem !important;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .searchBox {
+    padding-left: 1.5rem !important; 
+  }
+  .ingredients{
+    padding-left: 1.5rem !important;
+  }
+  .description {
+    padding-left: 1.5rem !important;
+  }
+}
+
 .background-image {
   /* background-image: url("./src/assets/siteBackground.jpg"); */
   background-image: url("./src/assets/siteBackgroundTest.jpg");
