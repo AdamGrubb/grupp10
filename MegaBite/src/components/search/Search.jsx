@@ -56,12 +56,11 @@ export default function Search() {
     }
 
     addRecipeData(data);
-
+    navigate("/searchresults");
     setSearchword("");
   };
 
   useEffect(() => {
-    navigate("/searchresults");
     addFilteredRecipes(dietaryFilter(recipesFromApi, filters));
   }, [recipesFromApi, filters]);
 
