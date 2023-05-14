@@ -50,13 +50,18 @@ export default function Search() {
       alert("Please enter a search query.");
       return null;
     }
-
+    console.log(searchword);
     const data = await SearchRecipes(searchword);
 
     if (data == []) {
       //Doesn't really provide any functionality
       return alert("Nothing to show");
     }
+<<<<<<< Updated upstream
+=======
+    console.log(data);
+    addRecipeData(data);
+>>>>>>> Stashed changes
 
     addRecipeData(data);
   };
