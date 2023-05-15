@@ -8,7 +8,6 @@ try {
   if (response.ok)
   {
     const returnResult = await response.json();
-    console.log(returnResult);
     return {
       statusCode: 200,
       body: JSON.stringify(returnResult),
