@@ -28,7 +28,13 @@
   font-weight: bold;
   text-align: center;
   text-shadow: 1px 1px 50px rgba(0, 0, 0, 1);
-  /* transition: color 0.3s ease-in-out; */
+  padding: 5px;
+  line-height: 1.2;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 90%; 
 }
 
 .recipeThumb {
