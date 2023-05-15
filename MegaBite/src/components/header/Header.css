@@ -23,14 +23,14 @@
 }
 
 .header-upper-font {
-  font-family: "Inter", sans-serif;
-  font-size: 32px;
+  font-family: 'Bungee', cursive;
+  font-size: 34px;
   color: rgb(31, 48, 41);
 }
 
 .header-lower-font {
-  font-family: "Inter", serif;
-  font-size: 17px;
+  font-family: 'Sedgwick Ave', cursive;
+  font-size: 16px;
   font-weight: bold;
   margin-top: -8px;
   text-align: center;
