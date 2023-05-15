@@ -1,13 +1,13 @@
 exports.handler = async function (event, context) {
-
-    const baseUrl = "https://api.spoonacular.com/recipes/complexSearch";
-    const searchParams = new URLSearchParams();
-    searchParams.
-    searchParams.append("apiKey", process.env.SPOONACULAR_APIKEY_ADAM);
-    const response = await fetch(`${baseUrl}?${searchParams}`);
-    
-    return {
+  const baseUrl = "https://api.spoonacular.com/recipes/complexSearch";
+  console.log(event.queryStringParameters);
+  const querys = new URLSearchParams(event.queryStringParameters);
+  querys.append("apiKey", process.env.SPOONACULAR_APIKEY_STRAND);
+  const response = await fetch(`${baseUrl}?${querys}`);
+  const returnResult = await response.json();
+  console.log(returnResult);
+  return {
     statusCode: 200,
-    body: JSON.stringify(process.env.GREETING_BASE_URL)
-    } 
-    };
+    body: JSON.stringify(returnResult),
+  };
+};
