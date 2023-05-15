@@ -56,6 +56,7 @@ export default function Search() {
     //If there is a responsecode it will be shown otherwise only a simple alert message.
     if (IsValid(data)) {
       addRecipeData(data);
+      navigate("/searchresults");
     } else {
       if (data.length === 0) {
         alert("No result");
@@ -66,7 +67,6 @@ export default function Search() {
   };
 
   useEffect(() => {
-    navigate("/searchresults");
     addFilteredRecipes(dietaryFilter(recipesFromApi, filters, location));
   }, [recipesFromApi, filters, location]);
 
