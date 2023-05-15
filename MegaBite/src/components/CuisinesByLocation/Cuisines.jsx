@@ -29,7 +29,7 @@ const cuisines = [
   },
   {
     cuisine: "European",
-    countries: ["Various"],
+    countries: ["Sweden"],
   },
   {
     cuisine: "French",
@@ -73,7 +73,7 @@ const cuisines = [
   },
   {
     cuisine: "Mediterranean",
-    countries: ["Various"],
+    countries: ["Albania"],
   },
   {
     cuisine: "Mexican",
