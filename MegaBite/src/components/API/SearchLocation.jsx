@@ -1,30 +1,31 @@
 export async function SearchLocation(coordinateIncomingParams) {
-    const apikey = "005ff50ab67648419887f11cca86bfe";
-    //8
+    const apikey = "005ff50ab67648419887f11cca86bfe8";
   
-//undefined koordinater: [{Latitude: -15.618611}, {Longitude: -9.868314}] 
-//koordinater: [{Latitude: 55.4993}, {Longitude: 9.7307}]
-//const coordinateIncomingParams = [{Latitude: 55.4993}, {Longitude: 9.7307}];
-const latitude = coordinateIncomingParams[0].Latitude;
-const longitude = coordinateIncomingParams[1].Longitude;
-const coordinateParams = latitude + "+" + longitude;
+    const latitude = coordinateIncomingParams[0].Latitude;
+    const longitude = coordinateIncomingParams[1].Longitude;
+    const coordinateParams = latitude + "+" + longitude;
 
-    //https://api.opencagedata.com/geocode/v1/json?q=LAT+LNG&key=YOUR-API-KEY
+    //Requested format https://api.opencagedata.com/geocode/v1/json?q=LAT+LNG&key=YOUR-API-KEY
     const baseUrl = "https://api.opencagedata.com/geocode/v1/json?";
   
+    //Append coordinates and key to base.
     const searchParams = new URLSearchParams();
     searchParams.append("q", coordinateParams);
     searchParams.append("key", apikey);
   
     try {
       const response = await fetch(`${baseUrl}${searchParams}`);
+      
+      //Check for problems with call and return error code.
       if (!response.ok) {
         alert(`HTTP error! status: ${response.status} Check console for response message.`);
       }
+
       const apiResults = await response.json();
       const country = apiResults.results[0].components.country;
       const continent = apiResults.results[0].components.continent;
       
+      //If country or continent are undefined empty strings should be returned in same format as a correct result.
       if (typeof country === "undefined" || typeof continent === "undefined"){
         return {country:"", continent:""};
       }
