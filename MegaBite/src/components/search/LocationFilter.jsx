@@ -4,7 +4,6 @@ import "./LocationFilter.css";
 export default function LocationFilter(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState("All Locations");
-  const [currentCoordinates, setCurrentCoordinates] = useState(null); // State för koordinaterna
   const dropdownRef = useRef(null);
 
   const handleClickOutside = (event) => {
@@ -40,23 +39,12 @@ export default function LocationFilter(props) {
   const handleLocationClick = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
-        async (position) => {
-          try {
-            const { latitude, longitude } = position.coords;
-            props.setLocation({ latitude, longitude });
-            setSelectedLocation("My Location");
-            setCurrentCoordinates({ latitude, longitude }); // Sätter koordinaterna i state
-
-            const response = await fetch(
-              `https://api.mapbox.com/geocoding/v5/mapbox.places/${longitude},${latitude}.json?access_token=pk.eyJ1IjoiaHVuZHJhMCIsImEiOiJjbGhucXg2N3gxb3d5M3FudTdjYXhodXMwIn0.CoCcBmeZ7hOkSU9ujWVPNw`
-            );
-            const data = await response.json();
-            const placeName = data.features[0].place_name;
-            console.log('User location:', placeName);
-            // Do something with the location information
-          } catch (error) {
-            console.error('Error getting location information:', error);
-          }
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          const coordinates = { latitude, longitude };
+          props.setLocation(coordinates);
+          setSelectedLocation("My Location");
+          return coordinates; // Returnera koordinaterna
         },
         (error) => {
           console.error('Error getting location:', error);
@@ -80,22 +68,22 @@ export default function LocationFilter(props) {
           {selectedLocation}
         </div>
         {isOpen && (
-           <ul className="dropdown-list">
-           <li key="my-location" className="checkbox-item">
-             <button className="btnRegion" type="button" onClick={handleLocationClick}>
-               Use My Location
-             </button>
-           </li>
-           {locationsArray.map((location) => (
-             <li key={location.value} className="checkbox-item">
-               <button className="btnRegion" type="button" onClick={() => handleChange(location)}>
-                 {location.displayText}
-               </button>
-             </li>
-           ))}
-         </ul>
-       )}
-     </section>
-   </>
- );
+          <ul className="dropdown-list">
+            <li key="my-location" className="checkbox-item">
+              <button className="btnRegion" type="button" onClick={handleLocationClick}>
+                Use My Location
+              </button>
+            </li>
+            {locationsArray.map((location) => (
+              <li key={location.value} className="checkbox-item">
+                <button className="btnRegion" type="button" onClick={() => handleChange(location)}>
+                  {location.displayText}
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    </>
+  );
 }
