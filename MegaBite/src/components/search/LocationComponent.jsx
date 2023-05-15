@@ -4,12 +4,14 @@ const LocationComponent = (props) => {
   const [location, setLocation] = useState(null);
 
   useEffect(() => {
+    // Check if geolocation is supported by the browser
     if (navigator.geolocation) {
+      // Get the current position
       navigator.geolocation.getCurrentPosition(
         position => {
           const { latitude, longitude } = position.coords;
           setLocation({ latitude, longitude });
-          props.setLocation({ latitude, longitude }); // Skicka koordinaterna till överordnade komponenten
+          props.setLocation({ latitude, longitude }); // Pass the coordinates to the parent component
         },
         error => {
           console.error('Error getting location:', error);
