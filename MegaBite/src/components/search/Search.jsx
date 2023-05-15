@@ -57,11 +57,6 @@ export default function Search() {
       //Doesn't really provide any functionality
       return alert("Nothing to show");
     }
-<<<<<<< Updated upstream
-=======
-    console.log(data);
-    addRecipeData(data);
->>>>>>> Stashed changes
 
     addRecipeData(data);
   };
