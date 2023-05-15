@@ -8,7 +8,7 @@ export async function SearchRecipes(queryParams) {
   //e00dc2fe3f314cee86a4eb59100267ef JOHANNES
   //29f9e7adbc11492184269307e04a5dad JONATHAN S
 
-  //The base URL uses incoming recipeId and inserts it into the URL.
+  //Set the url to call the SpoonacularApi function
   const baseUrl = "/.netlify/functions/SpoonacularApi";
 
   //URLSearchParams is used to manipulate the URL.

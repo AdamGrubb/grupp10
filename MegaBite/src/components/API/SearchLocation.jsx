@@ -1,42 +1,43 @@
 export async function SearchLocation(coordinateIncomingParams) {
-    const apikey = "005ff50ab67648419887f11cca86bfe8";
-  
-    const latitude = coordinateIncomingParams[0].Latitude;
-    const longitude = coordinateIncomingParams[1].Longitude;
-    const coordinateParams = latitude + "+" + longitude;
+  const apikey = "005ff50ab67648419887f11cca86bfe8";
 
-    //Requested format https://api.opencagedata.com/geocode/v1/json?q=LAT+LNG&key=YOUR-API-KEY
-    const baseUrl = "https://api.opencagedata.com/geocode/v1/json?";
-  
-    //Append coordinates and key to base.
-    const searchParams = new URLSearchParams();
-    searchParams.append("q", coordinateParams);
-    searchParams.append("key", apikey);
-  
-    try {
-      const response = await fetch(`${baseUrl}${searchParams}`);
-      
-      //Check for problems with call and return error code.
-      if (!response.ok) {
-        alert(`HTTP error! status: ${response.status} Check console for response message.`);
-      }
+  const latitude = coordinateIncomingParams[0].Latitude;
+  const longitude = coordinateIncomingParams[1].Longitude;
+  const coordinateParams = latitude + "+" + longitude;
 
-      const apiResults = await response.json();
-      const country = apiResults.results[0].components.country;
-      const continent = apiResults.results[0].components.continent;
-      
-      //If country or continent are undefined empty strings should be returned in same format as a correct result.
-      if (typeof country === "undefined" || typeof continent === "undefined"){
-        return {country:"", continent:""};
-      }
+  //Set the url to call the OpenCageAPI function
+  const baseUrl = "/.netlify/functions/OpenCageApi?";
 
-      const geoLocation = {country, continent};
-    
-      return geoLocation;
+  //Append coordinates to base.
+  const searchParams = new URLSearchParams();
+  searchParams.append("q", coordinateParams);
 
-    } catch(error)
-     {
-      console.log(error + `
+  try {
+    const response = await fetch(`${baseUrl}${searchParams}`);
+
+    //Check for problems with call and return error code.
+    if (!response.ok) {
+      alert(
+        `HTTP error! status: ${response.status} Check console for response message.`
+      );
+    }
+
+    const apiResults = await response.json();
+    const country = apiResults.results[0].components.country;
+    const continent = apiResults.results[0].components.continent;
+
+    //If country or continent are undefined empty strings should be returned in same format as a correct result.
+    if (typeof country === "undefined" || typeof continent === "undefined") {
+      return { country: "", continent: "" };
+    }
+
+    const geoLocation = { country, continent };
+
+    return geoLocation;
+  } catch (error) {
+    console.log(
+      error +
+        `
       400	Invalid request (bad request; a required parameter is missing; invalid coordinates; invalid version; invalid format)
       401	Unable to authenticate - missing, invalid, or unknown API key
       402	Valid request but quota exceeded (payment required)
@@ -47,7 +48,7 @@ export async function SearchLocation(coordinateIncomingParams) {
       410	Request too long
       426	Upgrade required (unsupported TLS)
       429	Too many requests (too quickly, rate limiting)
-      503	Internal server error`)
-    }
+      503	Internal server error`
+    );
   }
-  
+}
