@@ -3,18 +3,6 @@ import LocationComponent from "../search/LocationComponent";
 import "./Footer.css";
 
 export function Footer() {
-  const [coordinates, setCoordinates] = useState(null);
-  const [showPopup, setShowPopup] = useState(false);
-
-  const handleSetLocation = (location) => {
-    setCoordinates(location);
-    setShowPopup(false);
-  };
-
-  const handleUseLocation = () => {
-    setShowPopup(true);
-  };
-
   return (
     <>
       <footer className="bg-footerColor footer">
@@ -54,15 +42,6 @@ export function Footer() {
             What do you call cheese that isn't yours? Nacho cheese!"
           </p>
         </div>
-        <button onClick={handleUseLocation}>Use my location</button>
-        {showPopup && <LocationComponent setLocation={handleSetLocation} />}
-        {coordinates !== null && (
-          <div>
-            <h2>Coordinates:</h2>
-            <p>Latitude: {coordinates.latitude}</p>
-            <p>Longitude: {coordinates.longitude}</p>
-          </div>
-        )}
       </footer>
     </>
   );

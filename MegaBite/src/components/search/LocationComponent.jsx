@@ -22,7 +22,7 @@ const LocationComponent = ({ setLocation }) => {
     getLocation();
   }, [setLocation]);
 
-  return null;
+  return setLocation;
 };
 
 export default LocationComponent;

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./LocationFilter.css";
+import LocationCuisine from "./LocationCuisine";
 
 export default function Location(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,6 +33,13 @@ export default function Location(props) {
     };
   }, []);
 
+  const handleGeolocation = () => {
+    location = LocationCuisine();
+
+    setSelectedLocation(location);
+    setIsOpen(false);
+  };
+
   const handleClick = (e) => {
     setIsOpen(!isOpen);
   };
@@ -52,6 +60,15 @@ export default function Location(props) {
         </div>
         {isOpen && (
           <ul className="dropdown-list">
+            <li key="my-location" className="checkbox-item">
+              <button
+                className="btnRegion"
+                type="button"
+                onClick={handleGeolocation}
+              >
+                Use My Location
+              </button>
+            </li>
             {locationsArray.map((location) => (
               <li key={location.value} className="checkbox-item">
                 <button
