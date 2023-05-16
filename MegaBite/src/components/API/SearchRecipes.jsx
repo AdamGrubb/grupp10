@@ -1,12 +1,6 @@
 import ResponseOK from "./ResponseOK";
 
 export async function SearchRecipes(queryParams) {
-  //API-key adds to the URL to be able to make API-calls
-  const apikey = "6224658806df44eaa8ccb7cfc9abe6e9";
-
-  //6224658806df44eaa8ccb7cfc9abe6e9 JACOB
-  //e00dc2fe3f314cee86a4eb59100267ef JOHANNES
-  //29f9e7adbc11492184269307e04a5dad JONATHAN S
 
   //Set the url to call the SpoonacularApi function
   const baseUrl = "/.netlify/functions/SpoonacularApi";
