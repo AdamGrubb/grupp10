@@ -177,8 +177,7 @@ div > span:last-of-type:after { content: "" }
 
 .ingredients {
     max-width: 100%;
-    max-height: fit-content;
-    min-height: 400px;
+    min-height: fit-content;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
