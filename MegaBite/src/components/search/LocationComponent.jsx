@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from "react";
 
-const LocationComponent = (props) => {
-  const [location, setLocation] = useState(null);
-
+const LocationComponent = ({ setLocation }) => {
   useEffect(() => {
-    // Check if geolocation is supported by the browser
-    if (navigator.geolocation) {
-      // Get the current position
-      navigator.geolocation.getCurrentPosition(
-        position => {
-          const { latitude, longitude } = position.coords;
-          setLocation({ latitude, longitude });
-          props.setLocation({ latitude, longitude }); // Pass the coordinates to the parent component
-        },
-        error => {
-          console.error('Error getting location:', error);
-        }
-      );
-    } else {
-      console.error('Geolocation is not supported by this browser.');
-    }
-  }, [props]);
+    const getLocation = () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const lat = position.coords.latitude;
+            const long = position.coords.longitude;
+            setLocation({ latitude: lat, longitude: long });
+          },
+          (error) => {
+            console.error("Error getting location:", error);
+          }
+        );
+      } else {
+        console.error("Geolocation is not supported by this browser.");
+      }
+    };
+
+    getLocation();
+  }, [setLocation]);
 
   return null;
 };
