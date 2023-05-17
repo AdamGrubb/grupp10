@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./LocationFilter.css";
+import { LocationCuisine } from "./LocationCuisine";
 
 export default function Location(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,13 +17,30 @@ export default function Location(props) {
     { value: "", displayText: "All Locations" },
     { value: "African", displayText: "African" },
     { value: "American", displayText: "American" },
+    { value: "British", displayText: "British" },
+    { value: "Cajun", displayText: "Cajun" },
+    { value: "Caribbean", displayText: "Caribbean" },
     { value: "Chinese", displayText: "Chinese" },
+    { value: "Eastern European", displayText: "Eastern European" },
     { value: "European", displayText: "European" },
+    { value: "French", displayText: "French" },
+    { value: "German", displayText: "German" },
     { value: "Greek", displayText: "Greek" },
+    { value: "Indian", displayText: "Indian" },
+    { value: "Irish", displayText: "Irish" },
+    { value: "Italian", displayText: "Italian" },
     { value: "Japanese", displayText: "Japanese" },
+    { value: "Jewish", displayText: "Jewish" },
+    { value: "Korean", displayText: "Korean" },
+    { value: "Latin American", displayText: "Latin American" },
+    { value: "Mediterranean", displayText: "Mediterranean" },
     { value: "Mexican", displayText: "Mexican" },
     { value: "Middle Eastern", displayText: "Middle Eastern" },
+    { value: "Nordic", displayText: "Nordic" },
+    { value: "Southern", displayText: "Southern" },
+    { value: "Spanish", displayText: "Spanish" },
     { value: "Thai", displayText: "Thai" },
+    { value: "Vietnamese", displayText: "Vietnamese" },
   ];
 
   useEffect(() => {
@@ -31,6 +49,13 @@ export default function Location(props) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const handleGeolocation = async () => {
+    const location = await LocationCuisine();
+    props.setLocation(location);
+    setSelectedLocation(location);
+    setIsOpen(false);
+  };
 
   const handleClick = (e) => {
     setIsOpen(!isOpen);
@@ -52,6 +77,15 @@ export default function Location(props) {
         </div>
         {isOpen && (
           <ul className="dropdown-list">
+            <li key="my-location" className="checkbox-item">
+              <button
+                className="btnRegion"
+                type="button"
+                onClick={handleGeolocation}
+              >
+                Use My Location
+              </button>
+            </li>
             {locationsArray.map((location) => (
               <li key={location.value} className="checkbox-item">
                 <button

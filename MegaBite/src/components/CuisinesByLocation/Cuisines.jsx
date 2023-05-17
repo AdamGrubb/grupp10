@@ -29,7 +29,7 @@ const cuisines = [
   },
   {
     cuisine: "European",
-    countries: ["Sweden"],
+    countries: ["Slovakia"],
   },
   {
     cuisine: "French",

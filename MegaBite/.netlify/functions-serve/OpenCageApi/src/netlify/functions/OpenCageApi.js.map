@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../../../\u00C4GARE/source/repos/Grupp10/grupp10/MegaBite/netlify/functions/OpenCageApi.js"],
+  "sourceRoot": "C:/Users/GARE~1/AppData/Local/Temp/tmp-16316-5rD98HtvhBOG",
+  "sourcesContent": ["exports.handler = async function (event, context) {\r\n    const baseUrl = \"https://api.opencagedata.com/geocode/v1/json?\";\r\n  try {\r\n    const querys = new URLSearchParams(event.queryStringParameters);\r\n    querys.append(\"key\", process.env.OPENCAGE_APIKEY);\r\n    const response = await fetch(`${baseUrl}${querys}`);\r\n    const responseStatus = response.status;\r\n    if (response.ok)\r\n    {\r\n      const returnResult = await response.json();\r\n      return {\r\n        statusCode: 200,\r\n        body: JSON.stringify(returnResult),\r\n      };\r\n    }\r\n  return {\r\n    statusCode: responseStatus, \r\n  }\r\n  }\r\n  catch (error) {\r\n    return{\r\n      statusCode: 500\r\n    }\r\n  }\r\n  \r\n  };\r\n  "],
+  "mappings": ";AAAA,QAAQ,UAAU,eAAgB,OAAO,SAAS;AAC9C,QAAM,UAAU;AAClB,MAAI;AACF,UAAM,SAAS,IAAI,gBAAgB,MAAM,qBAAqB;AAC9D,WAAO,OAAO,OAAO,QAAQ,IAAI,eAAe;AAChD,UAAM,WAAW,MAAM,MAAM,GAAG,UAAU,QAAQ;AAClD,UAAM,iBAAiB,SAAS;AAChC,QAAI,SAAS,IACb;AACE,YAAM,eAAe,MAAM,SAAS,KAAK;AACzC,aAAO;AAAA,QACL,YAAY;AAAA,QACZ,MAAM,KAAK,UAAU,YAAY;AAAA,MACnC;AAAA,IACF;AACF,WAAO;AAAA,MACL,YAAY;AAAA,IACd;AAAA,EACA,SACO,OAAP;AACE,WAAM;AAAA,MACJ,YAAY;AAAA,IACd;AAAA,EACF;AAEA;",
+  "names": []
+}

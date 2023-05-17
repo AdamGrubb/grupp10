@@ -49,7 +49,6 @@ export default function Search() {
       alert("Please enter a search query.");
       return null;
     }
-    console.log(searchword);
     const data = await SearchRecipes(searchword);
 
     //The function checks if data is an array, not null, not undefined and length > 1.
