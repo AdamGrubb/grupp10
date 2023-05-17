@@ -3,14 +3,14 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     colors: {
-      headerColor: "#CCE0C4",
+      headerColor: "#25252b",
       searchFilterAreaColor: "#ADD37D",
-      grayColor: "#E8EAE5",
+      grayColor: "#e5e8ea",
       locationDropdownColor: "#AAD37D",
       receptDescriptionColor: "#AAD37D",
       foodNamebarColor: "#AAD37D",
       backgroundColor: "#E9EAE5",
-      footerColor: "#CCE0C4",
+      footerColor: "#25252b",
     },
     extend: {},
   },

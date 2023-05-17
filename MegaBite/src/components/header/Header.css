@@ -24,8 +24,8 @@
 
 .header-upper-font {
   font-family: 'Bungee', cursive;
-  font-size: 34px;
-  color: rgb(31, 48, 41);
+  font-size: 32px;
+  color: rgb(235, 235, 235);
 }
 
 .header-lower-font {
@@ -34,5 +34,5 @@
   font-weight: bold;
   margin-top: -8px;
   text-align: center;
-  color: rgb(31, 48, 41);
+  color: rgb(235, 235, 235);
 }
