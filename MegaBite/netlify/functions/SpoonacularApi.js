@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 exports.handler = async function (event, context) {
   const baseUrl = "https://api.spoonacular.com/recipes/complexSearch?";
 try {
@@ -6,8 +8,7 @@ try {
 
   //Get the API-key from .env file.
   querys.append("apiKey", process.env.SPOONACULAR_APIKEY);
-   console.log(querys)
-    console.log(`${baseUrl}${querys}`)
+
   const response = await fetch(`${baseUrl}${querys}`);
   console.log(response)
 
