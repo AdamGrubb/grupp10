@@ -3,13 +3,19 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./RecipePage.css";
 import "../../index.css";
 import Portions from "./PortionsFunction";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 export default function RecipePage() {
   const navigate = useNavigate();
   const [portions, setPortions] = useState(4);
   const location = useLocation();
   const recipeReal = location.state;
-  console.log(recipeReal);
+
+
+  // When a recipe is clicked on it sends the user to the top of the page, 
+  // this is to prevent having to scroll up on the recipe page if the recipe was lower down in the list in the search results
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   function checkItemUnit(itemUnit) {
     if (!itemUnit) {
@@ -107,7 +113,11 @@ export default function RecipePage() {
               <div>
                 {recipeReal.ingredients.map((item) => (
                   <li key={item.id}>
-                    {Portions(portions, item.measures.us.amount)
+                    {Portions(
+                      portions,
+                      recipeReal.servings,
+                      item.measures.us.amount
+                    )
                       .toFixed(1)
                       .replace(/[.,]0$/, "")}
                     &ensp;

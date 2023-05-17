@@ -1,6 +1,6 @@
 //CSS ICONS
 import "./Search.css";
-import "../../index.css"
+import "../../index.css";
 
 import MagnifyingGlass from "../../assets/magnGlass.png";
 import FilterIcon from "../../assets/filter.png";
@@ -13,6 +13,7 @@ import FilterButton from "./Filter";
 import useRecipeStore from "../../hooks/useRecipeStore";
 import Location from "./LocationFilter";
 import dietaryFilter from "./dietaryFilter";
+import IsValid from "./IsValid";
 
 export default function Search() {
   const recipesFromApi = useRecipeStore((state) => state.recipeCollection);
@@ -35,8 +36,6 @@ export default function Search() {
     lunch: false,
     dinner: false,
   });
-  // addMock();
-  console.log(filters);
 
   //Used to grab whats typed into textfield.
   const handleChange = (e) => {
@@ -50,19 +49,24 @@ export default function Search() {
       alert("Please enter a search query.");
       return null;
     }
-
+    console.log(searchword);
     const data = await SearchRecipes(searchword);
 
-    if (data == []) {
-      //Doesn't really provide any functionality
-      return alert("Nothing to show");
+    //The function checks if data is an array, not null, not undefined and length > 1.
+    //If there is a responsecode it will be shown otherwise only a simple alert message.
+    if (IsValid(data)) {
+      addRecipeData(data);
+      navigate("/searchresults");
+    } else {
+      if (data.length === 0) {
+        alert("No result");
+      } else {
+        return alert(data + ": No result");
+      }
     }
-
-    addRecipeData(data);
   };
 
   useEffect(() => {
-    navigate("/searchresults");
     addFilteredRecipes(dietaryFilter(recipesFromApi, filters, location));
   }, [recipesFromApi, filters, location]);
 

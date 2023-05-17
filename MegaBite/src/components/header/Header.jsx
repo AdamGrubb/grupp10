@@ -15,7 +15,7 @@ export function Header() {
         <Link className="header-title" to="/">
           <div>
             <h4 className="header-upper-font">MegaBite</h4>
-            <h4 className="header-lower-font">One bite at a time</h4>
+            <h4 className="header-lower-font">One bite at a time...</h4>
           </div>
         </Link>
       </header>

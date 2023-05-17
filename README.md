@@ -32,3 +32,4 @@ To merge into our project, we use pull requests. Then a merge can be done direct
 At least 3 people must approve a pull request, and preferably write comments on the code. We do this so that everyone gets a chance to have their code properly reviewed before merging to the Development branch.
 
 Testing occurs continuously, but it should be well tested at all levels. Before the feature branch is merged into the Development branch and before the Development branch is merged into Master.
+
