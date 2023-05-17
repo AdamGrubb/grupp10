@@ -17,13 +17,30 @@ export default function Location(props) {
     { value: "", displayText: "All Locations" },
     { value: "African", displayText: "African" },
     { value: "American", displayText: "American" },
+    { value: "British", displayText: "British" },
+    { value: "Cajun", displayText: "Cajun" },
+    { value: "Caribbean", displayText: "Caribbean" },
     { value: "Chinese", displayText: "Chinese" },
+    { value: "Eastern European", displayText: "Eastern European" },
     { value: "European", displayText: "European" },
+    { value: "French", displayText: "French" },
+    { value: "German", displayText: "German" },
     { value: "Greek", displayText: "Greek" },
+    { value: "Indian", displayText: "Indian" },
+    { value: "Irish", displayText: "Irish" },
+    { value: "Italian", displayText: "Italian" },
     { value: "Japanese", displayText: "Japanese" },
+    { value: "Jewish", displayText: "Jewish" },
+    { value: "Korean", displayText: "Korean" },
+    { value: "Latin American", displayText: "Latin American" },
+    { value: "Mediterranean", displayText: "Mediterranean" },
     { value: "Mexican", displayText: "Mexican" },
     { value: "Middle Eastern", displayText: "Middle Eastern" },
+    { value: "Nordic", displayText: "Nordic" },
+    { value: "Southern", displayText: "Southern" },
+    { value: "Spanish", displayText: "Spanish" },
     { value: "Thai", displayText: "Thai" },
+    { value: "Vietnamese", displayText: "Vietnamese" },
   ];
 
   useEffect(() => {
@@ -33,9 +50,9 @@ export default function Location(props) {
     };
   }, []);
 
-  const handleGeolocation = () => {
-    location = LocationCuisine();
-
+  const handleGeolocation = async () => {
+    const location = await LocationCuisine();
+    props.setLocation(location);
     setSelectedLocation(location);
     setIsOpen(false);
   };

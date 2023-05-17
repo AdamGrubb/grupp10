@@ -6,8 +6,6 @@ import { LocationCuisine } from "../search/LocationCuisine";
 import "./SiteContent.css";
 
 export default function SiteContent() {
-  LocationCuisine();
-
   return (
     <>
       <div className="content">
