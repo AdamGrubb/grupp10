@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
 exports.handler = async function (event, context) {
   const baseUrl = "https://api.spoonacular.com/recipes/complexSearch?";
@@ -34,7 +34,6 @@ catch (error) {
     statusCode: 500
   }
 }
-
 };
 
 
