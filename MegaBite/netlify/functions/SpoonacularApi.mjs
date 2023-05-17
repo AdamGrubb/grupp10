@@ -16,10 +16,6 @@ try {
   console.log(`${baseUrl}${querys}`)
 
   const response = await fetch(`${baseUrl}${querys}`)
-  .then(res=>{
-    console.log(res) 
-    return res
-  })
   
   console.log(response)
 
