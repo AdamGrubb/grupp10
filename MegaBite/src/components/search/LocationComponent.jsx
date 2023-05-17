@@ -13,11 +13,10 @@ const LocationComponent = async () => {
         }
       );
     } else {
-      reject("your browser doesn't support geolocation API");
+      reject("Your browser doesn't support geolocation API");
     }
   });
   const locations = await promises;
-  console.log(locations);
   return locations;
 };
 export default LocationComponent;
