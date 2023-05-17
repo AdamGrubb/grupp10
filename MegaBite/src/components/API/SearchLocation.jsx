@@ -5,16 +5,16 @@ export async function SearchLocation(coordinateIncomingParams) {
   const longitude = coordinateIncomingParams.longitude;
   const coordinateParams = latitude + "+" + longitude;
 
-  //Requested format https://api.opencagedata.com/geocode/v1/json?q=LAT+LNG&key=YOUR-API-KEY
-  const baseUrl = "https://api.opencagedata.com/geocode/v1/json?";
+  //Set the url to call the OpenCageAPI function
+  const baseUrl = "/.netlify/functions/OpenCageApi?";
 
   const lang = "en";
 
-  //Append coordinates and key to base.
+  //Append coordinates to base.
   const searchParams = new URLSearchParams();
   searchParams.append("q", coordinateParams);
-  searchParams.append("key", apikey);
   searchParams.append("language", lang);
+
   try {
     const response = await fetch(`${baseUrl}${searchParams}`);
 
