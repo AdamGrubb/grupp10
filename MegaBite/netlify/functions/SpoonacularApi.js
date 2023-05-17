@@ -3,10 +3,22 @@ exports.handler = async function (event, context) {
 try {
   //Saves the querys sent from front-end call.
   const querys = new URLSearchParams(event.queryStringParameters);
+  
+  console.log(`${baseUrl}${querys}`)
 
   //Get the API-key from .env file.
   querys.append("apiKey", process.env.SPOONACULAR_APIKEY);
+   console.log(querys)
   const response = await fetch(`${baseUrl}${querys}`);
+  console.log(response)
+  
+  
+  querys.append("apiKey", process.env.SPOONACULAR_APIKEY);
+  
+ 
+  const response = await fetch(`${baseUrl}${querys}`);
+
+  console.log(response)
 
   //Saves the responsstatus to be sent with a return if the API-call fails.
   const responseStatus = response.status;
