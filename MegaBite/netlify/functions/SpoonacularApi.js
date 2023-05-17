@@ -6,10 +6,20 @@ try {
   //Saves the querys sent from front-end call.
   const querys = new URLSearchParams(event.queryStringParameters);
 
+  
+
   //Get the API-key from .env file.
   querys.append("apiKey", process.env.SPOONACULAR_APIKEY);
 
-  const response = await fetch(`${baseUrl}${querys}`);
+  console.log(querys)
+
+  console.log(`${baseUrl}${querys}`)
+
+  const response = await fetch(`${baseUrl}${querys}`)
+  .then(res=>{
+    console.log(res) 
+    return res
+  })
   console.log(response)
 
   console.log(response)
