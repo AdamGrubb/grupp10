@@ -1,7 +1,7 @@
 .LinkedIn,
 .GitHub,
 .office-logo {
-  color: rgb(31, 48, 41);
+  color: rgb(235, 235, 235);
   margin: 1px;
   font-weight: bold;
   font-size: 15px;
@@ -23,7 +23,7 @@
 }
 
 .FindUsAt {
-  color: rgb(31, 48, 41);
+  color: rgb(235, 235, 235);
   font-family: "Inter", sans-serif;
   margin: 3px;
   font-weight: bold;
@@ -44,5 +44,5 @@
   text-align: center;
   margin-top: 1rem;
   padding: 0 1rem;
-  color: rgb(31, 48, 41);
+  color: rgb(235, 235, 235);
 }
