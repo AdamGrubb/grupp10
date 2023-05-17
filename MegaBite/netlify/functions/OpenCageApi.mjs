@@ -1,4 +1,6 @@
-exports.handler = async function (event, context) {
+import fetch from 'node-fetch';
+
+export const handler  = async function (event, context) {
     const baseUrl = "https://api.opencagedata.com/geocode/v1/json?";
   try {
     //Saves the querys sent from front-end call.

@@ -11,13 +11,7 @@ try {
   //Get the API-key from .env file.
   querys.append("apiKey", process.env.SPOONACULAR_APIKEY);
 
-  console.log(querys)
-
-  console.log(`${baseUrl}${querys}`)
-
   const response = await fetch(`${baseUrl}${querys}`)
-  
-  console.log(response)
 
   //Saves the responsstatus to be sent with a return if the API-call fails.
   const responseStatus = response.status;
@@ -34,7 +28,6 @@ return {
 }
 }
 catch (error) {
-  console.log(error)
   return{
     statusCode: 500
   }
