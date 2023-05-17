@@ -10,8 +10,6 @@ try {
     console.log(`${baseUrl}${querys}`)
   const response = await fetch(`${baseUrl}${querys}`);
   console.log(response)
-  
-  const response = await fetch(`${baseUrl}${querys}`);
 
   console.log(response)
 
