@@ -1,28 +1,23 @@
-import React, { useEffect } from "react";
-
-const LocationComponent = ({ setLocation }) => {
-  useEffect(() => {
-    const getLocation = () => {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            const lat = position.coords.latitude;
-            const long = position.coords.longitude;
-            setLocation({ latitude: lat, longitude: long });
-          },
-          (error) => {
-            console.error("Error getting location:", error);
-          }
-        );
-      } else {
-        console.error("Geolocation is not supported by this browser.");
-      }
-    };
-
-    getLocation();
-  }, [setLocation]);
-
-  return setLocation;
+const LocationComponent = async () => {
+  const promises = new Promise((resolve, reject) => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude;
+          const long = position.coords.longitude;
+          resolve({ latitude: lat, longitude: long });
+        },
+        (error) => {
+          console.error("Error getting location:", error);
+          reject("Error getting location:");
+        }
+      );
+    } else {
+      reject("your browser doesn't support geolocation API");
+    }
+  });
+  const locations = await promises;
+  console.log(locations);
+  return locations;
 };
-
 export default LocationComponent;

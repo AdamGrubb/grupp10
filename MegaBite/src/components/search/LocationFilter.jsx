@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./LocationFilter.css";
-import LocationCuisine from "./LocationCuisine";
+import { LocationCuisine } from "./LocationCuisine";
 
 export default function Location(props) {
   const [isOpen, setIsOpen] = useState(false);

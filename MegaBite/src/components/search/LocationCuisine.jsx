@@ -2,13 +2,13 @@ import getCuisineByCountry from "../CuisinesByLocation/CuisineFeature";
 import { SearchLocation } from "../API/SearchLocation";
 import LocationComponent from "./LocationComponent";
 
-export default function LocationCuisine() {
+export async function LocationCuisine() {
   console.log("jag är här inne");
-  //coordinates = LocationComponent();
-  //console.log(coordinates);
+  const coordinates = await LocationComponent();
+  console.log(coordinates);
 
-  const country = SearchLocation();
-  console.log("nu är jag här");
+  const country = await SearchLocation(coordinates);
+  console.log(country);
   const result = getCuisineByCountry(country);
   console.log(result);
 
