@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-exports.handler = async function (event, context) {
+export const handler = async function (event, context) {
   const baseUrl = "https://api.spoonacular.com/recipes/complexSearch?";
 try {
   //Saves the querys sent from front-end call.
@@ -20,8 +20,7 @@ try {
     console.log(res) 
     return res
   })
-  console.log(response)
-
+  
   console.log(response)
 
   //Saves the responsstatus to be sent with a return if the API-call fails.
