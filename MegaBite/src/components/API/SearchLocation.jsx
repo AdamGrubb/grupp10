@@ -1,6 +1,4 @@
 export async function SearchLocation(coordinateIncomingParams) {
-  const apikey = "005ff50ab67648419887f11cca86bfe8";
-
   const latitude = coordinateIncomingParams.latitude;
   const longitude = coordinateIncomingParams.longitude;
   const coordinateParams = latitude + "+" + longitude;

@@ -1,8 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../../../\u00C4GARE/source/repos/Grupp10/grupp10/MegaBite/netlify/functions/SpoonacularApi.js"],
-  "sourceRoot": "C:/Users/GARE~1/AppData/Local/Temp/tmp-16316-68ByPbXof5iZ",
-  "sourcesContent": ["exports.handler = async function (event, context) {\r\n  const baseUrl = \"https://api.spoonacular.com/recipes/complexSearch?\";\r\ntry {\r\n  const querys = new URLSearchParams(event.queryStringParameters);\r\n  querys.append(\"apiKey\", process.env.SPOONACULAR_APIKEY);\r\n  const response = await fetch(`${baseUrl}${querys}`);\r\n  const responseStatus = response.status;\r\n  if (response.ok)\r\n  {\r\n    const returnResult = await response.json();\r\n    return {\r\n      statusCode: 200,\r\n      body: JSON.stringify(returnResult),\r\n    };\r\n  }\r\nreturn {\r\n  statusCode: responseStatus, \r\n}\r\n}\r\ncatch (error) {\r\n  return{\r\n    statusCode: 500\r\n  }\r\n}\r\n\r\n};\r\n"],
-  "mappings": ";AAAA,QAAQ,UAAU,eAAgB,OAAO,SAAS;AAChD,QAAM,UAAU;AAClB,MAAI;AACF,UAAM,SAAS,IAAI,gBAAgB,MAAM,qBAAqB;AAC9D,WAAO,OAAO,UAAU,QAAQ,IAAI,kBAAkB;AACtD,UAAM,WAAW,MAAM,MAAM,GAAG,UAAU,QAAQ;AAClD,UAAM,iBAAiB,SAAS;AAChC,QAAI,SAAS,IACb;AACE,YAAM,eAAe,MAAM,SAAS,KAAK;AACzC,aAAO;AAAA,QACL,YAAY;AAAA,QACZ,MAAM,KAAK,UAAU,YAAY;AAAA,MACnC;AAAA,IACF;AACF,WAAO;AAAA,MACL,YAAY;AAAA,IACd;AAAA,EACA,SACO,OAAP;AACE,WAAM;AAAA,MACJ,YAAY;AAAA,IACd;AAAA,EACF;AAEA;",
-  "names": []
-}

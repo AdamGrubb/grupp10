@@ -1,4 +1,6 @@
-exports.handler = async function (event, context) {
+import fetch from 'node-fetch';
+
+export const handler = async function (event, context) {
   const baseUrl = "https://api.spoonacular.com/recipes/complexSearch?";
 try {
   //Saves the querys sent from front-end call.
@@ -23,6 +25,7 @@ return {
 }
 }
 catch (error) {
+  console.log(error)
   return{
     statusCode: 500
   }
