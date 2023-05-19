@@ -26,6 +26,10 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
 }
 
+.recipeTitle{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
 
 
 
@@ -85,11 +89,10 @@
     color: rgb(9, 8, 8);
     font-size: 1.5em;
     text-align: center;
-    background-color: white;
     width: fit-content;
     margin: 0px auto;
-    border-width: 10px;
-    border-color: white;
+    padding: 10px;
+    background-color: #e5e8ea;
 }
 
 .description {
@@ -207,10 +210,9 @@ div > span:last-of-type:after { content: "" }
     width: fit-content;
     /* min-width: 260px; */
     margin-left: 80px;
-    background-color: white;
-    border-width: 10px;
-    border-color: white;
-    
+    background-color: #e5e8ea;
+    padding: 5px 15px 5px 15px;
+    margin-bottom: 15px;    
 }
 
 .description {
