@@ -10,61 +10,57 @@
   background-color: white;
 }
 
-.newColour{
-    background-color: #e5e8ea;
+.newColour {
+  background-color: #e5e8ea;
 }
 
-.ingredients{
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+.ingredients {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
 }
 
-.description{
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-}
-
-.info{
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-}
-
-.recipeTitle{
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-}
-
-
-
-
-/* CSS FOR MOBILE AND OTHER DEVICES UP TO 1024 PX */
-@media only screen and (max-width: 1024px)  {
-.portions {
-    margin-left: 30px;
-    margin-bottom: 5px;
-}
-
-.showContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.clock {
-    margin-left: 10px;
-    margin-bottom: 5px;
-}
-
-.box {
-     
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      
-}
-.img {
-    max-width: 300px;
-    max-height: 500px;
-    margin: 10px;
-    
+.description {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
 }
 
 .info {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+.recipeTitle {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+/* CSS FOR MOBILE AND OTHER DEVICES UP TO 1024 PX */
+@media only screen and (max-width: 1024px) {
+  .portions {
+    margin-left: 30px;
+    margin-bottom: 5px;
+  }
+
+  .showContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .clock {
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+
+  .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .img {
+    max-width: 300px;
+    max-height: 500px;
+    margin: 10px;
+  }
+
+  .info {
     width: 300px;
     margin-bottom: 30px;
     padding-left: 10px;
@@ -72,19 +68,18 @@
     padding-bottom: 10px;
     margin-top: 10px;
     color: black;
-}
+  }
 
-
-.ingredients {
+  .ingredients {
     max-width: 300px;
     max-height: fit-content;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     color: black;
-}
+  }
 
-.recipeTitle {
+  .recipeTitle {
     /* width: 300px; */
     color: rgb(9, 8, 8);
     font-size: 1.5em;
@@ -93,9 +88,9 @@
     margin: 0px auto;
     padding: 10px;
     background-color: #e5e8ea;
-}
+  }
 
-.description {
+  .description {
     max-width: 300px;
     min-height: 200px;
     margin-top: 30px;
@@ -104,78 +99,78 @@
     padding-top: 10px;
     padding-bottom: 10px;
     color: black;
-}
+  }
 
-#big {
-    color:black;
+  #big {
+    color: black;
     font-size: 1.2em;
     font-weight: 500;
-}
+  }
 
-.recipeSuggestion{
-
+  .recipeSuggestion {
     max-width: 300px;
-    
+
     margin-bottom: 100px;
-    
+
     padding-left: 10px;
-    
+
     padding-top: 5px;
-    
-    padding-bottom: 10px; 
-    }
 
-/* just making the paragraphs inline */
-div > span { display: inline-block; }
+    padding-bottom: 10px;
+  }
 
-/* appending the commas */
-div > span:after { content: ", " }
+  /* just making the paragraphs inline */
+  div > span {
+    display: inline-block;
+  }
 
-/* removing it for the last index */
-div > span:last-of-type:after { content: "" }
+  /* appending the commas */
+  div > span:after {
+    content: ", ";
+  }
+
+  /* removing it for the last index */
+  div > span:last-of-type:after {
+    content: "";
+  }
 }
 
 /* CSS FOR DESKTOP AND OTHER DEVICES DOWN TO 1024 PX */
-@media only screen and (min-width: 1024px)  {
-
-      
+@media only screen and (min-width: 1024px) {
   .portions {
     margin-left: 20px;
     margin-bottom: 5px;
-   }
-.clock {
+  }
+
+  .clock {
     margin-left: 10px;
     margin-bottom: 5px;
-}
+  }
 
-.showContent {
+  .showContent {
     display: flex;
     justify-content: space-around;
     flex-direction: row-reverse;
     margin-right: 10px;
     margin-left: 10px;
-    
-}
+  }
 
-
-.infoBox {
+  .infoBox {
     display: flex;
     flex-direction: column;
     margin-left: 70px;
     width: 100%;
+  }
 
-}
-
-.showDescription{
+  .showDescription {
     display: flex;
     flex-direction: column;
     margin-left: 80px;
     margin-right: 80px;
     /* align-items: center; */
+  }
 
-}
-
-.img {
+  .img {
     width: 100%;
     height: 100%;
     max-height: 483px;
@@ -183,9 +178,9 @@ div > span:last-of-type:after { content: "" }
     margin-right: 70px;
     margin-top: 10px;
     object-fit: contain;
-}
+  }
 
-.info {
+  .info {
     width: 100%;
     margin-bottom: 30px;
     padding-left: 10px;
@@ -193,18 +188,18 @@ div > span:last-of-type:after { content: "" }
     padding-bottom: 10px;
     margin-top: 10px;
     color: black;
-}
+  }
 
-.ingredients {
+  .ingredients {
     max-width: 100%;
     min-height: fit-content;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     color: black;
-}
+  }
 
-.recipeTitle {
+  .recipeTitle {
     color: rgb(9, 8, 8);
     font-size: 2em;
     width: fit-content;
@@ -212,10 +207,10 @@ div > span:last-of-type:after { content: "" }
     margin-left: 80px;
     background-color: #e5e8ea;
     padding: 5px 15px 5px 15px;
-    margin-bottom: 15px;    
-}
+    margin-bottom: 15px;
+  }
 
-.description {
+  .description {
     min-width: 89%;
     min-height: 200px;
     margin-top: 30px;
@@ -224,35 +219,38 @@ div > span:last-of-type:after { content: "" }
     padding-top: 10px;
     padding-bottom: 10px;
     color: black;
-}
+  }
 
-#big {
-    color:black;
+  #big {
+    color: black;
     font-size: 1.2em;
     font-weight: 500;
-}
+  }
 
-.recipeSuggestion{
-
+  .recipeSuggestion {
     width: 300px;
-    
+
     margin-bottom: 100px;
-    
+
     padding-left: 10px;
-    
+
     padding-top: 5px;
-    
-    padding-bottom: 10px; 
-    }
 
-/* just making the paragraphs inline */
-div > span { display: inline-block; }
+    padding-bottom: 10px;
+  }
 
-/* appending the commas */
-div > span:after { content: ", " }
+  /* just making the paragraphs inline */
+  div > span {
+    display: inline-block;
+  }
 
-/* removing it for the last index */
-div > span:last-of-type:after { content: "" }
+  /* appending the commas */
+  div > span:after {
+    content: ", ";
+  }
 
-   
+  /* removing it for the last index */
+  div > span:last-of-type:after {
+    content: "";
+  }
 }
