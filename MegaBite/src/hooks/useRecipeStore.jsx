@@ -7,12 +7,17 @@ const useRecipeStore = create((set) => ({
   //filteredRecipeCollection is used to store a filtered version of recipeCollection.
   filteredRecipeCollection: [],
 
+  randomRecipeCollection: [],
+
   //You call on this function to store an array of recipe in recipeCollection. The parameter to the function is an array of recipes.
   addRecipes: (recipes) => set((state) => ({ recipeCollection: recipes })),
 
   //You call on this function to store an array of recipe in filteredRecipeCollection. The parameter to the function is an array of recipes.
   addFilteredRecipes: (recipes) =>
     set((state) => ({ filteredRecipeCollection: recipes })),
+
+  addRandomRecipes: (recipes) =>
+    set((state) => ({ randomRecipeCollection: recipes })),
 
   //This function clears the array of recipes.
   clearRecipes: () => set((state) => ({ recipeCollection: [] })),
