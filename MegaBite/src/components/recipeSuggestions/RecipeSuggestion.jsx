@@ -21,7 +21,7 @@ export default function RecipeSuggestions() {
   // and the result is added to the storefunction.
   const loadRandomReceipes = async () => {
     const randomKeyword = getRandomKeyword(keywords, 1);
-    const data = await SearchRecipes(randomKeyword, 3);
+    const data = await SearchRecipes(randomKeyword, 8);
     addRandomData(data);
   };
 
@@ -52,9 +52,12 @@ export default function RecipeSuggestions() {
   };
 
   return (
-    <nav className="display-recipecards">
+    <div className="suggestionsBox">
+      <h3>Recipe suggestions for you!</h3>
+      <nav className="display-recipecards">
       {displayRandomRecipeCards(randomRecipesFromStore)}
     </nav>
+      </div>
   );
 }
 
