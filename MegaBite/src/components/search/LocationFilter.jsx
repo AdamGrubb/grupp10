@@ -5,7 +5,7 @@ import locationsArray from "./LocationArray";
 
 export default function Location(props) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLocation, setSelectedLocation] = useState("All Locations"); // visar location
+  const [selectedLocation, setSelectedLocation] = useState("All Locations"); // shows location
   const dropdownRef = useRef(null);
 
   // Code for the dropdown list to close if clicked outside
