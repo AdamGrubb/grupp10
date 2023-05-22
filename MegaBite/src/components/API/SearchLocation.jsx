@@ -1,14 +1,17 @@
 export async function SearchLocation(coordinateIncomingParams) {
-  const latitude = coordinateIncomingParams[0].Latitude;
-  const longitude = coordinateIncomingParams[1].Longitude;
+  const latitude = coordinateIncomingParams.latitude;
+  const longitude = coordinateIncomingParams.longitude;
   const coordinateParams = latitude + "+" + longitude;
 
   //Set the url to call the OpenCageAPI function
   const baseUrl = "/.netlify/functions/OpenCageApi?";
 
+  const lang = "en";
+
   //Append coordinates to base.
   const searchParams = new URLSearchParams();
   searchParams.append("q", coordinateParams);
+  searchParams.append("language", lang);
 
   try {
     const response = await fetch(`${baseUrl}${searchParams}`);
