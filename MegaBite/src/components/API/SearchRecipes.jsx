@@ -28,7 +28,7 @@ export async function SearchRecipes(queryParams, number) {
           title: item.title,
           allergens: [
             { glutenFree: item.glutenFree },
-            { lactose: item.dairyFree },
+            { dairyFree: item.dairyFree },
             { vegetarian: item.vegetarian },
             { vegan: item.vegan },
           ],
