@@ -57,7 +57,7 @@
   }
 }
 
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 875px) {
   .recipe-overlay {
     top:70%;
     height: 20%;
@@ -68,26 +68,26 @@
   }
 }
 
-@media only screen and (max-width: 849px) {
+@media only screen and (max-width: 874px) {
   .recipeCard {
     width: 170px;
     height: 130px;
   }
   .recipe-label{
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 
-
-
-
-
-@media only screen and (max-width: 370px) {
+@media only screen and (max-width: 391px) {
   .recipeCard {
-    width: 270px;
-    height: 230px;
+    width: 260px;
+    height: 220px;
   }
   .recipe-label{
     font-size: 1rem;
+  }
+  .recipe-overlay {
+    top:70%;
+    height: 20%;
   }
 }
