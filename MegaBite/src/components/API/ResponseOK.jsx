@@ -1,3 +1,4 @@
+//Uses an HTML response and returnes a bool
 const ResponseOK = (response) => {
   const code = response.status;
   if (code == 200 || code == 201 || code == 204) {
@@ -8,5 +9,3 @@ const ResponseOK = (response) => {
 };
 
 export default ResponseOK;
-
-//OK
