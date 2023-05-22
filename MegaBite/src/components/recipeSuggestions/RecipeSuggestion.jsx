@@ -6,32 +6,32 @@ import useRecipeStore from "../../hooks/useRecipeStore";
 import { useEffect } from "react";
 
 export default function RecipeSuggestions() {
+  //This gets the result from the randomRecipeCollection.
   const randomRecipesFromStore = useRecipeStore(
     (state) => state.randomRecipeCollection
   );
   const addRandomData = useRecipeStore((state) => state.addRandomRecipes);
 
+  //When the page is mounted the load-function is fired
   useEffect(() => {
-    handleLoad();
+    loadRandomReceipes();
   }, []);
 
-  const handleLoad = async () => {
+  // Gets a random keyword which is sent to the API call
+  // and the result is added to the storefunction.
+  const loadRandomReceipes = async () => {
     const randomKeyword = getRandomKeyword(keywords, 1);
     const data = await SearchRecipes(randomKeyword, 3);
-    console.log(data);
     addRandomData(data);
   };
 
   const displayRandomRecipeCards = (recipes) => {
-    //This if-statement checks if the result from recipeStore is null or empty (0) and if its the case shows a "No Result".
-    // if (recipes == null || recipes.length < 1) {
-    //   return <h1 className="noResult">No result</h1>;
-    // }
-
-    //This array is storing the recipecard generated from the following for-loop.
+    // This array is storing the recipecard generated from the following for-loop.
     let RecipeCards = [];
 
-    //This for-loop iterates over the array of recipes sent in as a parameter and creates recipecards and sends objekt-information to the recipe-page with the help of "State".
+    // This for-loop iterates over the array of recipes
+    // sent in as a parameter and creates recipecards and sends objekt-information
+    // to the recipe-page with the help of "State".
     for (let x = 0; x < recipes.length; x++) {
       RecipeCards.push(
         <Link
