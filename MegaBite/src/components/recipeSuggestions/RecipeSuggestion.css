@@ -7,9 +7,20 @@
 .suggestionsBox {
   background-color: #e5e8ea;
   padding: 20px;
-  margin-top: 25px;
   text-align: center;
   color: rgb(8, 9, 8);
   font-size: 1.5em;
-  margin-bottom: 1rem;
+  border-radius: 20px;
+  border-color: rgb(133, 133, 133);
+  border-width: 2px;
+  max-width: 90rem;
+  margin: 10px auto;
+  justify-content: flex;
+  overflow:auto;
+}
+
+@media only screen and (max-width: 90rem) {
+  .suggestionsBox {
+    margin: 2rem;
+  }
 }

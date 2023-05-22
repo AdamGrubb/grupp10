@@ -35,7 +35,7 @@ export default function RecipeSuggestions() {
     for (let x = 0; x < recipes.length; x++) {
       RecipeCards.push(
         <Link
-          className="w-40 md:w-auto"
+          className="random-recipe-container"
           key={recipes[x].id}
           to="/recipepage"
           state={recipes[x]}

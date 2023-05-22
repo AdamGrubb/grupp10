@@ -15,11 +15,12 @@
 
 .recipe-overlay {
   position: absolute;
-  top: 60%;
+  top: 70%;
   width: 100%;
-  height: 33%;
+  height: 20%;
   background-color: rgba(0, 0, 0, 0.6);
   transition: opacity 0.3s ease-in-out;
+  
 }
 
 .recipe-label {
@@ -39,6 +40,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 90%; 
+  font-size: 1.3rem;
 }
 
 .recipeThumb {
@@ -52,38 +54,21 @@
   opacity: 0;
 }
 
-
-@media only screen and (min-width: 874px) {
-  .recipe-overlay {
-    top:70%;
-    height: 20%;
-  }
-
-  .recipe-label{
-    font-size: 1.2rem;
-  }
-}
-
-@media only screen and (min-width: 875px) {
-  .recipe-label{
-    font-size: 1.3rem;
-  }
-}
-
 @media only screen and (max-width: 874px) {
   .recipeCard {
     width: 170px;
     height: 130px;
   }
   .recipe-label{
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
 
-@media only screen and (max-width: 391px) {
+@media only screen and (max-width: 500px) {
   .recipeCard {
-    width: 260px;
-    height: 220px;
+    width: auto;
+    height: auto;
+    max-width: 312px;
   }
   .recipe-label{
     font-size: 1.2rem;
