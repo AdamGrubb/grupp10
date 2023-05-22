@@ -51,13 +51,9 @@
 .recipeCard:hover .recipe-overlay {
   opacity: 0;
 }
-@media only screen and (min-width: 1344px) {
-  .recipe-label{
-    font-size: 1.3rem;
-  }
-}
 
-@media only screen and (min-width: 875px) {
+
+@media only screen and (min-width: 874px) {
   .recipe-overlay {
     top:70%;
     height: 20%;
@@ -65,6 +61,12 @@
 
   .recipe-label{
     font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 875px) {
+  .recipe-label{
+    font-size: 1.3rem;
   }
 }
 
@@ -84,7 +86,7 @@
     height: 220px;
   }
   .recipe-label{
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   .recipe-overlay {
     top:70%;
