@@ -4,6 +4,8 @@ import "./Header.css";
 import useRecipeStore from "../../hooks/useRecipeStore";
 
 export function Header() {
+  // When someone clicks on the logo or the text in header
+  // the previous search is erased.
   const clearRecipes = useRecipeStore((state) => state.clearRecipes);
 
   return (
