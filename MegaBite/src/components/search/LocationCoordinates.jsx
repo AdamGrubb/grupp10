@@ -1,4 +1,6 @@
-const LocationComponent = async () => {
+//  Function that will create and return an object with ->
+//  coordinates based on the users current position
+const GetCoordinates = async () => {
   const promises = new Promise((resolve, reject) => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -19,4 +21,4 @@ const LocationComponent = async () => {
   const locations = await promises;
   return locations;
 };
-export default LocationComponent;
+export default GetCoordinates;

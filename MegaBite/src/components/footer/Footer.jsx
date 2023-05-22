@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import LocationComponent from "../search/LocationComponent";
 import "./Footer.css";
 
 export function Footer() {
