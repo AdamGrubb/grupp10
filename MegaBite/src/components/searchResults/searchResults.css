@@ -5,10 +5,10 @@
 }
 
 .noResult {
-color: black;
-font-size: 1.3rem;
-border-radius: 25px;
-padding: 0.5rem;
-background: rgb(204, 224, 196);
-border: solid 1px;
+  color: black;
+  font-size: 1.3rem;
+  border-radius: 25px;
+  padding: 0.5rem;
+  background: rgb(204, 224, 196);
+  border: solid 1px;
 }
