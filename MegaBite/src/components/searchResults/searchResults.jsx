@@ -26,7 +26,7 @@ export default function SearchResults() {
     for (let x = 0; x < recipes.length; x++) {
       RecipeCards.push(
         <Link
-          className="w-44 md:w-auto"
+          className="recipe-container"
           key={recipes[x].id}
           to="/searchresults/recipepage"
           state={recipes[x]}

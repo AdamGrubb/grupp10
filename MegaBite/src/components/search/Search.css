@@ -27,6 +27,7 @@
 .searchBox {
   color: black;
   height: 36px;
+  width: 210px;
   position: relative;
   background-color: rgba(255, 0, 0, 0);
   outline: none;

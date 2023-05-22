@@ -29,9 +29,6 @@
 /* Band-aid solution for Mozilla Firefox(-moz-appearance) and Safari(-webkit-touch-callout) browsers, 
 to fix the slightly off-centered text present in these browers. Adjust values as needed.*/
 @supports (-moz-appearance:none) {
-  .searchBox {
-    padding-left: 1.5rem !important;
-  }
   .ingredients{
     padding-left: 1.5rem !important;
   }
@@ -41,9 +38,6 @@ to fix the slightly off-centered text present in these browers. Adjust values as
 }
 
 @supports (-webkit-touch-callout: none) {
-  .searchBox {
-    padding-left: 1.5rem !important; 
-  }
   .ingredients{
     padding-left: 1.5rem !important;
   }

@@ -38,7 +38,7 @@ export function Footer() {
             </div>
           </div>
           <p className="joke">
-            What do you call cheese that isn't yours? Nacho cheese!"
+            What do you call cheese that isn't yours? "Nacho cheese!"
           </p>
         </div>
       </footer>

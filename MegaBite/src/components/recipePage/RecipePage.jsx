@@ -111,8 +111,8 @@ export default function RecipePage() {
             <section className="ingredients newColour rounded-lg">
               <h2 id="big">Ingredients:</h2>
               <div>
-                {recipeReal.ingredients.map((item) => (
-                  <li key={item.id}>
+                {recipeReal.ingredients.map((item, index) => (
+                  <li key={`${item.id}-${index}`}>
                     {Portions(
                       portions,
                       recipeReal.servings,
@@ -132,8 +132,8 @@ export default function RecipePage() {
         <div className="showDescription showContent">
           <section className="description newColour rounded-lg">
             <h2 id="big">Description:</h2>
-            {recipeReal.description.map((item) => (
-              <li className="mr-5" key={item.number}>
+            {recipeReal.description.map((item, index) => (
+              <li className="mr-5" key={`${item.number}-${index}`}>
                 {item.step}
               </li>
             ))}

@@ -24,7 +24,7 @@
 
 .header-upper-font {
   font-family: 'Bungee', cursive;
-  font-size: 32px;
+  font-size: 34px;
   color: rgb(235, 235, 235);
 }
 
@@ -35,4 +35,24 @@
   margin-top: -8px;
   text-align: center;
   color: rgb(235, 235, 235);
+}
+
+@media only screen and (max-width: 380px)  {
+  .header-title{
+    padding-left: 45px;
+  }
+}
+
+@media only screen and (max-width: 320px)  {
+  .header-title{
+    padding-left: 85px;
+  }
+
+  .header-upper-font{
+    font-size: 24px;
+  }
+
+  .header-lower-font{
+    font-size: 12px;
+  }
 }
