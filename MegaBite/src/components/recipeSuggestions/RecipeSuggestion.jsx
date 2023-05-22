@@ -35,7 +35,7 @@ export default function RecipeSuggestions() {
     for (let x = 0; x < recipes.length; x++) {
       RecipeCards.push(
         <Link
-          className="w-44 md:w-auto"
+          className="w-40 md:w-auto"
           key={recipes[x].id}
           to="/recipepage"
           state={recipes[x]}
@@ -53,11 +53,11 @@ export default function RecipeSuggestions() {
 
   return (
     <div className="suggestionsBox">
-      <h3>Recipe suggestions for you!</h3>
+      <h3>Suggestions for you!</h3>
       <nav className="display-recipecards">
-      {displayRandomRecipeCards(randomRecipesFromStore)}
-    </nav>
-      </div>
+        {displayRandomRecipeCards(randomRecipesFromStore)}
+      </nav>
+    </div>
   );
 }
 
