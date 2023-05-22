@@ -1,3 +1,4 @@
+// a list of which cuisine countries belong to
 const cuisines = [
   {
     cuisine: "African",
