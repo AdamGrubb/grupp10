@@ -14,18 +14,9 @@
   background-color: #e5e8ea;
 }
 
-.ingredients {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-}
-
-.description {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-}
-
-.info {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-}
-
+.ingredients,
+.description,
+.info,
 .recipeTitle {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
 }
@@ -53,7 +44,7 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   .img {
     max-width: 300px;
     max-height: 500px;
