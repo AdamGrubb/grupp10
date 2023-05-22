@@ -13,13 +13,13 @@
   border-radius: 20px;
   border-color: rgb(133, 133, 133);
   border-width: 2px;
-  max-width: 180rem;
+  max-width: 175rem;
   margin: 10px auto;
   justify-content: flex;
   overflow:auto;
 }
 
-@media only screen and (max-width: 180rem) {
+@media only screen and (max-width: 175rem) {
   .suggestionsBox {
     margin: 2rem;
   }
