@@ -15,19 +15,23 @@
 }
 
 .ingredients{
-    box-shadow: 0 0 10px rgba(0, 0, 6, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .description{
-    box-shadow: 0 0 10px rgba(0, 0, 6, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .info{
-    box-shadow: 0 0 10px rgba(0, 0, 6, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .img{
-    box-shadow: 0 0 10px rgba(0, 0, 6, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.recipeTitle {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 
