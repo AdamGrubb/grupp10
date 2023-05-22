@@ -11,8 +11,23 @@
 }
 
 .newColour{
-    background-color: rgb(204, 224, 196);
+    background-color: #e5e8ea;
 }
+
+.ingredients{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+.description{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+.info{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+
+
 
 /* CSS FOR MOBILE AND OTHER DEVICES UP TO 1024 PX */
 @media only screen and (max-width: 1024px)  {
@@ -136,7 +151,9 @@ div > span:last-of-type:after { content: "" }
     flex-direction: row-reverse;
     margin-right: 10px;
     margin-left: 10px;
+    
 }
+
 
 .infoBox {
     display: flex;

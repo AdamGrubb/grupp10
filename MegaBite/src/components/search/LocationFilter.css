@@ -17,7 +17,7 @@
 
 .dropdown-list {
   position: relative;
-  background-color: rgb(232, 234, 229);
+  background-color: #e5e8ea;
   z-index: 1;
   list-style-type: none;
   margin: 0;
@@ -34,7 +34,7 @@
 
 .checkbox-item {
   font-size: 1rem;
-  background-color: rgb(232, 234, 229);
+  background-color: #e5e8ea;
   height: 1.8rem;
 }
 

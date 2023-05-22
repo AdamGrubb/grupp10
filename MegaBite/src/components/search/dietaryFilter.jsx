@@ -18,7 +18,6 @@ export const dietaryFilter = (recipes, filters, location) => {
       return;
     }
     if (!location=="" && !recipe.cuisine.includes(location)){
-      console.log("Nu så är jag amerikan")
       return
     }
     if (filters.breakfast && recipe.mealType.includes("breakfast")) {
