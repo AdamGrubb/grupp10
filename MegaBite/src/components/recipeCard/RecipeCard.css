@@ -35,7 +35,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 90%; 
+  width: 90%;
 }
 
 .recipeThumb {
@@ -45,7 +45,3 @@
 .recipeCard:hover .recipe-overlay {
   opacity: 0;
 }
-
-/* .recipeCard:hover .recipe-label {
-  color: #fff9c6;
-} */
