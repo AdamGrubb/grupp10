@@ -13,8 +13,7 @@ export const NotFound = () => {
           onClick={() => {
             navigate("/");
           }}
-          className="btnError mt-2 rounded-full"
-        >
+          className="btnError mt-2 rounded-full" >
           To Homepage
         </button>
       </div>
