@@ -4,10 +4,6 @@
   right: 0;
 }
 
-.headerTest {
-  background-color: rgb(204, 224, 196);
-}
-
 .header-logo {
   max-width: 94px;
   position: relative;
@@ -23,13 +19,13 @@
 }
 
 .header-upper-font {
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
   font-size: 32px;
   color: rgb(235, 235, 235);
 }
 
 .header-lower-font {
-  font-family: 'Sedgwick Ave', cursive;
+  font-family: "Sedgwick Ave", cursive;
   font-size: 16px;
   font-weight: bold;
   margin-top: -8px;
