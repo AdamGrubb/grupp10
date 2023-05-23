@@ -54,7 +54,7 @@
   opacity: 0;
 }
 
-@media only screen and (max-width: 874px) {
+@media only screen and (max-width: 900px) {
   .recipeCard {
     width: 150px;
     height: 130px;
