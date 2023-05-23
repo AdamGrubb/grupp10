@@ -3,22 +3,16 @@ import { Link } from "react-router-dom";
 import "../recipeCard/RecipeCard.css";
 import "../../index.css";
 import useRecipeStore from "../../hooks/useRecipeStore";
-import { useEffect } from "react";
 
 import "./searchResults.css";
 
 export default function SearchResults() {
-  //This gets the result from the filteredRecipeCollection.
+  //This gets recipies stored in the filteredRecipeCollection from useRecipeStore.
   const recipeFromStore = useRecipeStore(
     (state) => state.filteredRecipeCollection
   );
 
   const displayRecipeCards = (recipes) => {
-    //This if-statement checks if the result from recipeStore is null or empty (0) and if its the case shows a "No Result".
-    // if (recipes == null || recipes.length < 1) {
-    //   return <h1 className="noResult">No result</h1>;
-    // }
-
     //This array is storing the recipecard generated from the following for-loop.
     let RecipeCards = [];
 

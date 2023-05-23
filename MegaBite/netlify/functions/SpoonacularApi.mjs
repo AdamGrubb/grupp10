@@ -12,6 +12,8 @@ export const handler = async function (event, context) {
 
     //Saves the responsstatus to be sent with a return if the API-call fails.
     const responseStatus = response.status;
+
+    //If response is in the 200-range, the information will be sent to the front-end.
     if (response.ok) {
       const returnResult = await response.json();
       return {

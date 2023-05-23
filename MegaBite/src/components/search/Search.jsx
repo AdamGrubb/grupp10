@@ -49,7 +49,7 @@ export default function Search() {
       alert("Please enter a search query.");
       return null;
     }
-    const data = await SearchRecipes(searchword);
+    const data = await SearchRecipes(searchword, 50);
 
     //The function checks if data is an array, not null, not undefined and length > 1.
     //If there is a responsecode it will be shown otherwise only a simple alert message.
@@ -65,6 +65,7 @@ export default function Search() {
     }
   };
 
+  //When changes are made to searchword, filter or location the filtered array in store is updated.
   useEffect(() => {
     addFilteredRecipes(dietaryFilter(recipesFromApi, filters, location));
   }, [recipesFromApi, filters, location]);

@@ -1,47 +1,19 @@
 import { useState, useEffect, useRef } from "react";
 import "./LocationFilter.css";
 import { LocationCuisine } from "./LocationCuisine";
+import locationsArray from "./LocationArray";
 
 export default function Location(props) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLocation, setSelectedLocation] = useState("All Locations"); // visar location
+  const [selectedLocation, setSelectedLocation] = useState("All Locations"); // shows location
   const dropdownRef = useRef(null);
 
+  // Code for the dropdown list to close if clicked outside
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setIsOpen(false);
     }
   };
-
-  const locationsArray = [
-    { value: "", displayText: "All Locations" },
-    { value: "African", displayText: "African" },
-    { value: "American", displayText: "American" },
-    { value: "British", displayText: "British" },
-    { value: "Cajun", displayText: "Cajun" },
-    { value: "Caribbean", displayText: "Caribbean" },
-    { value: "Chinese", displayText: "Chinese" },
-    { value: "Eastern European", displayText: "Eastern European" },
-    { value: "European", displayText: "European" },
-    { value: "French", displayText: "French" },
-    { value: "German", displayText: "German" },
-    { value: "Greek", displayText: "Greek" },
-    { value: "Indian", displayText: "Indian" },
-    { value: "Irish", displayText: "Irish" },
-    { value: "Italian", displayText: "Italian" },
-    { value: "Japanese", displayText: "Japanese" },
-    { value: "Jewish", displayText: "Jewish" },
-    { value: "Korean", displayText: "Korean" },
-    { value: "Latin American", displayText: "Latin American" },
-    { value: "Mediterranean", displayText: "Mediterranean" },
-    { value: "Mexican", displayText: "Mexican" },
-    { value: "Middle Eastern", displayText: "Middle Eastern" },
-    { value: "Nordic", displayText: "Nordic" },
-    { value: "Southern", displayText: "Southern" },
-    { value: "Spanish", displayText: "Spanish" },
-    { value: "Thai", displayText: "Thai" },
-    { value: "Vietnamese", displayText: "Vietnamese" },
-  ];
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -50,6 +22,7 @@ export default function Location(props) {
     };
   }, []);
 
+  // Code for the "Get my location option in the dropdown list"
   const handleGeolocation = async () => {
     const location = await LocationCuisine();
     props.setLocation(location);
@@ -57,9 +30,12 @@ export default function Location(props) {
     setIsOpen(false);
   };
 
+  // Code to open the dropdown list if clicked on
   const handleClick = (e) => {
     setIsOpen(!isOpen);
   };
+
+  // Code to set and present the value if a cuisine is selected
   const handleChange = (location) => {
     props.setLocation(location.value);
     setSelectedLocation(location.displayText);
@@ -91,7 +67,7 @@ export default function Location(props) {
                 <button
                   className="btnRegion"
                   type="button"
-                  onClick={() => handleChange(location)} // Removed 'value' attribute
+                  onClick={() => handleChange(location)}
                 >
                   {location.displayText}
                 </button>

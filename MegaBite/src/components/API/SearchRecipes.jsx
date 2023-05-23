@@ -1,7 +1,6 @@
 import ResponseOK from "./ResponseOK";
 
-export async function SearchRecipes(queryParams) {
-
+export async function SearchRecipes(queryParams, number) {
   //Set the url to call the SpoonacularApi function
   const baseUrl = "/.netlify/functions/SpoonacularApi";
 
@@ -9,11 +8,12 @@ export async function SearchRecipes(queryParams) {
   const searchParams = new URLSearchParams();
   searchParams.append("query", queryParams);
   searchParams.append("instructionsRequired", true);
-  searchParams.append("number", 50);
+  searchParams.append("number", number);
   searchParams.append("addRecipeInformation", true);
   searchParams.append("fillIngredients", true);
 
-  //API call, if there is an error the error will be shown otherwise we return the data.
+  // API call, if there is an error the error will be shown
+  // otherwise we return data of interest.
   try {
     const response = await fetch(`${baseUrl}?${searchParams}`);
     if (ResponseOK(response)) {
@@ -29,7 +29,7 @@ export async function SearchRecipes(queryParams) {
           title: item.title,
           allergens: [
             { glutenFree: item.glutenFree },
-            { lactose: item.dairyFree },
+            { dairyFree: item.dairyFree },
             { vegetarian: item.vegetarian },
             { vegan: item.vegan },
           ],
