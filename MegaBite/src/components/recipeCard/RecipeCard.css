@@ -64,14 +64,14 @@
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 391px) {
   .recipeCard {
-    width: auto;
-    height: auto;
-    max-width: 312px;
+    
+    max-width: 150px;
+    height: 130px;
   }
   .recipe-label{
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .recipe-overlay {
     top:70%;
