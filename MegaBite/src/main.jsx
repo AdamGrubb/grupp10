@@ -36,13 +36,12 @@ const router = createBrowserRouter([
           },
         ],
       },
-
       {
         path: "/searchresults/recipepage",
         element: <RecipePage />,
       },
       {
-        path: "/recipepage", ///:recipeId
+        path: "/recipepage",
         element: <RecipePage />,
       },
     ],
