@@ -6,7 +6,7 @@
 
 .suggestionsBox {
   background-color: #e5e8ea;
-  padding: 20px;
+  padding-top: 10px;
   text-align: center;
   color: rgb(8, 9, 8);
   font-size: 1.5em;
@@ -14,13 +14,12 @@
   border-color: rgb(133, 133, 133);
   border-width: 2px;
   max-width: 175rem;
-  margin: 10px auto;
   justify-content: flex;
   overflow:auto;
 }
 
 @media only screen and (max-width: 175rem) {
   .suggestionsBox {
-    margin: 2rem;
+    margin: 1rem;
   }
 }
