@@ -61,8 +61,10 @@ export default function RecipeSuggestions() {
   );
 }
 
+//Array of searchwords to be randomly selected from. Add more if wanted.
 const keywords = ["porridge", "pasta", "chicken", "pizza", "shrimps"];
 
+//Gets random searchword from above array "keywords".
 const getRandomKeyword = (array, count) => {
   const shuffledArray = array.sort(() => 0.5 - Math.random());
   return shuffledArray.slice(0, count);

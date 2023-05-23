@@ -12,7 +12,8 @@ export async function SearchRecipes(queryParams, number) {
   searchParams.append("addRecipeInformation", true);
   searchParams.append("fillIngredients", true);
 
-  //API call, if there is an error the error will be shown otherwise we return the data.
+  // API call, if there is an error the error will be shown
+  // otherwise we return data of interest.
   try {
     const response = await fetch(`${baseUrl}?${searchParams}`);
     if (ResponseOK(response)) {
@@ -28,7 +29,7 @@ export async function SearchRecipes(queryParams, number) {
           title: item.title,
           allergens: [
             { glutenFree: item.glutenFree },
-            { lactose: item.dairyFree },
+            { dairyFree: item.dairyFree },
             { vegetarian: item.vegetarian },
             { vegan: item.vegan },
           ],

@@ -65,6 +65,7 @@ export default function Search() {
     }
   };
 
+  //When changes are made to searchword, filter or location the filtered array in store is updated.
   useEffect(() => {
     addFilteredRecipes(dietaryFilter(recipesFromApi, filters, location));
   }, [recipesFromApi, filters, location]);
