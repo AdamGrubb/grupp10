@@ -16,6 +16,7 @@
   max-width: 175rem;
   justify-content: flex;
   overflow:auto;
+  margin: 10px auto;
 }
 
 @media only screen and (max-width: 175rem) {
