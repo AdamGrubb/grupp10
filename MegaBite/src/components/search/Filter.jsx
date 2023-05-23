@@ -1,5 +1,6 @@
 import "./Filter.css";
 
+//Contains checkboxes for filter choices for mealtype and allergens/diet
 export default function FilterButton(props) {
   return (
     <>
